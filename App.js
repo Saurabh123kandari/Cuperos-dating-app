@@ -16,7 +16,8 @@ import Signupthree from './src/components/Auth/Signup/Signupthree';
 import ForgotPassword from './src/components/ForgotPassword/ForgotPassword';
 // import SplashScreen from './src/components/Splash/SplashScreen';
 import Onboarding1 from './src/components/Onboarding/Onboarding1';
-import Navigation from './src/Navigation';
+import Questionaire1 from './src/components/Questionaires/Questionaire1';
+// import Navigation from './src/Navigation';
 
 const App = props => {
   return (
@@ -28,7 +29,8 @@ const App = props => {
       {/* <Signupthree /> */}
       {/* <ForgotPassword /> */}
       {/* <Onboarding1/> */}
-      <Navigation {...props}/>
+      {/* <Navigation {...props}/> */}
+      <Questionaire1/>
     </NativeBaseProvider>
   );
 };
