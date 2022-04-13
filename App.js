@@ -17,6 +17,9 @@ import ForgotPassword from './src/components/ForgotPassword/ForgotPassword';
 // import SplashScreen from './src/components/Splash/SplashScreen';
 import Onboarding1 from './src/components/Onboarding/Onboarding1';
 import Questionaire1 from './src/components/Questionaires/Questionaire1';
+// import QuestionairesSeven from './src/components/Questionaires/QuestionaireSeven';
+import QuestionaireSeven from './src/components/Questionaires/QuestionaireSeven'
+
 // import Navigation from './src/Navigation';
 
 const App = props => {
@@ -30,7 +33,8 @@ const App = props => {
       {/* <ForgotPassword /> */}
       {/* <Onboarding1/> */}
       {/* <Navigation {...props}/> */}
-      <Questionaire1/>
+      <QuestionaireSeven/>
+      {/* <QuestionairesSeven /> */}
     </NativeBaseProvider>
   );
 };
