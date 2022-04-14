@@ -1,11 +1,12 @@
 import React from 'react'
 import { SafeAreaView,StyleSheet,View,Text,TouchableOpacity,} from 'react-native';
-import {ChevronLeftIcon,Progress} from 'native-base'
+import {ChevronLeftIcon,Progress, ScrollView} from 'native-base'
 import LinearGradient from 'react-native-linear-gradient';
 
 const Questionairesix = () => {
   return (
     <SafeAreaView style={styles.MainContainer}>
+        <ScrollView>
 <View style={styles.icon_view_one}>
 
 <ChevronLeftIcon iconName="chevron-left" size="7" mx={3}/>
@@ -114,7 +115,7 @@ const Questionairesix = () => {
                 </TouchableOpacity>
               </LinearGradient>
       </View>
-
+</ScrollView>
     </SafeAreaView>
   )
 }
