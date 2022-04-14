@@ -20,6 +20,9 @@ import Questionaireone from './src/components/Questionaires/Questionaireone';
 import Questionairetwo from './src/components/Questionaires/Questionairetwo';
 import Questionairethree from './src/components/Questionaires/Questionairethree';
 import Questionaireseven from './src/components/Questionaires/Questionaireseven';
+import Questionairefour from './src/components/Questionaires/Questionairefour';
+import Questionairefive from './src/components/Questionaires/Questionairefive';
+import Questionairesix from './src/components/Questionaires/Questionairesix';
 // import Navigation from './src/Navigation';
 
 const App = props => {
@@ -36,7 +39,11 @@ const App = props => {
       {/* <Questionaireone/> */}
       {/* <Questionairetwo/> */}
       {/* <Questionairethree/> */}
-      <Questionaireseven />
+      {/* <Questionaireseven /> */}
+      <Questionairefour/>
+      {/* <Questionairefive/> */}
+      {/* <Questionairesix/> */}
+      
     </NativeBaseProvider>
   );
 };
