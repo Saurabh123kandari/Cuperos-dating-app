@@ -31,7 +31,7 @@ const App = props => {
       {/* <SplashScreen /> */}
       {/* <SignupOne /> */}
       {/* <Signuptwo /> */}
-      {/* <Signupthree /> */}
+      <Signupthree />
       {/* <ForgotPassword /> */}
       {/* <Onboarding1/> */}
       {/* <Navigation {...props}/> */}
@@ -41,7 +41,7 @@ const App = props => {
       {/* <Questionaireseven /> */}
       {/* <Questionairefour/> */}
       {/* <Questionairefive/> */}
-      <Questionairesix/>
+      {/* <Questionairesix/> */}
       
     </NativeBaseProvider>
   );
