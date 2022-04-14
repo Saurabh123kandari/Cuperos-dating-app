@@ -16,10 +16,13 @@ import Signupthree from './src/components/Auth/Signup/Signupthree';
 import ForgotPassword from './src/components/ForgotPassword/ForgotPassword';
 // import SplashScreen from './src/components/Splash/SplashScreen';
 import Onboarding1 from './src/components/Onboarding/Onboarding1';
-import Questionaire1 from './src/components/Questionaires/Questionaire1';
-// import QuestionairesSeven from './src/components/Questionaires/QuestionaireSeven';
-import QuestionaireSeven from './src/components/Questionaires/QuestionaireSeven'
-
+import Questionaireone from './src/components/Questionaires/Questionaireone';
+import Questionairetwo from './src/components/Questionaires/Questionairetwo';
+import Questionairethree from './src/components/Questionaires/Questionairethree';
+import Questionaireseven from './src/components/Questionaires/Questionaireseven';
+import Questionairefour from './src/components/Questionaires/Questionairefour';
+import Questionairefive from './src/components/Questionaires/Questionairefive';
+import Questionairesix from './src/components/Questionaires/Questionairesix';
 // import Navigation from './src/Navigation';
 
 const App = props => {
@@ -33,8 +36,14 @@ const App = props => {
       {/* <ForgotPassword /> */}
       {/* <Onboarding1/> */}
       {/* <Navigation {...props}/> */}
-      <QuestionaireSeven/>
-      {/* <QuestionairesSeven /> */}
+      {/* <Questionaireone/> */}
+      {/* <Questionairetwo/> */}
+      {/* <Questionairethree/> */}
+      {/* <Questionaireseven /> */}
+      <Questionairefour/>
+      {/* <Questionairefive/> */}
+      {/* <Questionairesix/> */}
+      
     </NativeBaseProvider>
   );
 };
