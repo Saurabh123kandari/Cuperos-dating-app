@@ -1,35 +1,29 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, View, Text, Image,TouchableOpacity} from 'react-native';
-import {ChevronLeftIcon, Progress} from 'native-base';
+import {ChevronLeftIcon, Progress, ScrollView} from 'native-base';
 
 import LinearGradient from 'react-native-linear-gradient';
 
 const Questionairefour = () => {
-  const iconone = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Group1.png',
-  };
-  const icontwo = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Group2.png',
-  };
-  const iconthree = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Group.png',
-  };
-  const iconfour= {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Frame.png',
-  };
-  const iconfive = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Vector4.png',
-  };
-  const iconsix = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Group4.png',
-  };
-  const icons = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Frame1.png',
-  };
+  
+    const iconone = require('../../assets/Group1.png');
+    const icontwo = require('../../assets/Group2.png');
+    
+    const iconthree = require('../../assets/Group.png');
+     
+    const iconfour = require('../../assets/Frame.png');
+    
+    const iconfive =require('../../assets/Vector4.png');
+     
+    const iconsix = require('../../assets/Group4.png');
+    
+    const icons = require('../../assets/Frame1.png');
+  
   
 
   return (
     <SafeAreaView style={styles.MainContainer}>
+        <ScrollView>
       <View style={styles.icon_view_one}>
         <ChevronLeftIcon iconName="chevron-left" size="7" mx={3} />
         <Progress
@@ -121,6 +115,7 @@ const Questionairefour = () => {
                 </TouchableOpacity>
               </LinearGradient>
       </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

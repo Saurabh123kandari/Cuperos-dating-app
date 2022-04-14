@@ -1,14 +1,15 @@
 import React from 'react'
 import { SafeAreaView,StyleSheet,View,Text,TouchableOpacity,Image} from 'react-native';
-import {ChevronLeftIcon,Progress} from 'native-base'
+import {ChevronLeftIcon,Progress, ScrollView} from 'native-base'
 import LinearGradient from 'react-native-linear-gradient';
 
 const Questionairefive = () => {
-    const plusicon = {
-        uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Vector3.png',
-      };
+ 
+  
+    const plusicon = require('../../assets/Vector3.png');
   return (
     <SafeAreaView style={styles.MainContainer}>
+        <ScrollView>
 <View style={styles.icon_view_one}>
 
 <ChevronLeftIcon iconName="chevron-left" size="7" mx={3}/>
@@ -157,8 +158,7 @@ const Questionairefive = () => {
                 <Text style={styles.buttonText}>Next</Text>
                 </TouchableOpacity>
               </LinearGradient>
-      </View>
-
+      </View></ScrollView>
     </SafeAreaView>
   )
 }
