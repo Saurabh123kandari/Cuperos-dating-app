@@ -7,12 +7,13 @@ import {
   StyleSheet,
   ImageBackground,
   View,
+  
 } from 'react-native';
 // import {styles} from '@navigation/styles';ChevronLeftIcon,
 import {ChevronLeftIcon} from 'native-base';
 import {ComponentWrapper} from './ComponentWrapper';
 
-import SignupThree from '../components/Auth/Signup/Signupthree';
+// import SignupThree from '../components/Auth/Signup/Signupthree';
 import SignupTwo from '../components/Auth/Signup/Signuptwo';
 import SignupOne from '../components/Auth/Signup/SignupOne';
 // import {View} from 'native-base';
@@ -22,7 +23,7 @@ const Stack = createNativeStackNavigator();
 // const DrawerStack = createDrawerNavigator();
 const stackArray = [
   {
-    name: 'signup',
+    name: 'signupone',
     component: props => (
       <ComponentWrapper>
      <SignupOne {...props}/>
@@ -45,18 +46,7 @@ const stackArray = [
       showBack: false,
     },
   },
-  {
-    name: 'signupthree',
-    component: props => (
-      <ComponentWrapper>
-        <SignupThree {...props} />
-      </ComponentWrapper>
-    ),
-    headerProps: {
-      title: 'pro',
-      showBack: false,
-    },
-  },
+
 ];
 // function LogoTitle() {
 //   return (
@@ -73,7 +63,7 @@ export const PublicRoute = props => {
     shadowColor: 'transparent',
   };
   return (
-    <Stack.Navigator initialRouteName="signup">
+    <Stack.Navigator initialRouteName="signupone">
       {stackArray.map((item, index) => {
         const isHeader = true;
         return (

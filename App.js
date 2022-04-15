@@ -5,7 +5,8 @@
  * @format
  * @flow strict-local
  */
-
+ console.disableYellowBox = true;
+ 
 import React from 'react';
 
 import {SafeAreaView, ScrollView, StyleSheet, View,Text} from 'react-native';
@@ -23,18 +24,18 @@ import Questionaireseven from './src/components/Questionaires/Questionaireseven'
 import Questionairefour from './src/components/Questionaires/Questionairefour';
 import Questionairefive from './src/components/Questionaires/Questionairefive';
 import Questionairesix from './src/components/Questionaires/Questionairesix';
-// import Navigation from './src/Navigation';
+import Navigation from './src/Navigation';
 
 const App = props => {
   return (
     <NativeBaseProvider>
       {/* <SplashScreen /> */}
       {/* <SignupOne /> */}
-      <Signuptwo />
+      {/* <Signuptwo /> */}
       {/* <Signupthree /> */}
       {/* <ForgotPassword /> */}
       {/* <Onboarding1/> */}
-      {/* <Navigation {...props}/> */}
+      <Navigation {...props}/>
       {/* <Questionaireone/> */}
       {/* <Questionairetwo/> */}
       {/* <Questionairethree/> */}
