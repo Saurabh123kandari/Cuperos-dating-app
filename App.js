@@ -6,7 +6,6 @@
  * @flow strict-local
  */
  console.disableYellowBox = true;
- 
 import React from 'react';
 
 import {SafeAreaView, ScrollView, StyleSheet, View,Text} from 'react-native';
@@ -24,6 +23,8 @@ import Questionaireseven from './src/components/Questionaires/Questionaireseven'
 import Questionairefour from './src/components/Questionaires/Questionairefour';
 import Questionairefive from './src/components/Questionaires/Questionairefive';
 import Questionairesix from './src/components/Questionaires/Questionairesix';
+ import ResetPassword from './src/components/ForgotPassword/ResetPassword';
+import Verification from './src/components/ForgotPassword/Verification';
 import Navigation from './src/Navigation';
 
 const App = props => {
@@ -43,6 +44,8 @@ const App = props => {
       {/* <Questionairefour/> */}
       {/* <Questionairefive/> */}
       {/* <Questionairesix/> */}
+      {/* <ResetPassword/> */}
+      {/* <Verification/> */}
       
     </NativeBaseProvider>
   );
