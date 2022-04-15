@@ -12,7 +12,7 @@ import {SafeAreaView, ScrollView, StyleSheet, View,Text} from 'react-native';
 import {NativeBaseProvider} from 'native-base';
 import SignupOne from './src/components/Auth/Signup/SignupOne';
 import Signuptwo from './src/components/Auth/Signup/Signuptwo';
-import Signupthree from './src/components/Auth/Signup/Signupthree';
+import Signupthree from './src/components/Auth/Signup/Signuptwo';
 import ForgotPassword from './src/components/ForgotPassword/ForgotPassword';
 // import SplashScreen from './src/components/Splash/SplashScreen';
 import Onboarding1 from './src/components/Onboarding/Onboarding1';
@@ -30,14 +30,14 @@ const App = props => {
     <NativeBaseProvider>
       {/* <SplashScreen /> */}
       {/* <SignupOne /> */}
-      {/* <Signuptwo /> */}
+      <Signuptwo />
       {/* <Signupthree /> */}
       {/* <ForgotPassword /> */}
       {/* <Onboarding1/> */}
       {/* <Navigation {...props}/> */}
       {/* <Questionaireone/> */}
       {/* <Questionairetwo/> */}
-      <Questionairethree/>
+      {/* <Questionairethree/> */}
       {/* <Questionaireseven /> */}
       {/* <Questionairefour/> */}
       {/* <Questionairefive/> */}

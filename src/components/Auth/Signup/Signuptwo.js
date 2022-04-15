@@ -5,7 +5,7 @@ import {
   Text,
   View,
   ImageBackground,
-  TouchableOpacity
+  Image
 } from 'react-native';
 import {
   Box,
@@ -14,12 +14,11 @@ import {
   FormControl,
   Input,
   Button,
-  ChevronLeftIcon,
-  Progress,
   ScrollView,
+  Checkbox
 } from 'native-base';
-import {Select, CheckIcon} from 'native-base';
-import LinearGradient from 'react-native-linear-gradient';
+import {Select, CheckIcon, ChevronLeftIcon, Progress} from 'native-base';
+// import LinearGradient from 'react-native-linear-gradient';
 import ButtonGrad from './ButtonGrad';
 
 const Signuptwo = () => {
@@ -27,6 +26,8 @@ const Signuptwo = () => {
   const image = {
     uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg_pattern.png',
   };
+  const iconn = require('../../../assets/Group6.png');
+  //const iconone = require('../../assets/Group1.png');
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ImageBackground source={image} style={{width: '100%', height: '100%'}}>
@@ -44,25 +45,58 @@ const Signuptwo = () => {
             />
           </View>
           <Box style={styles.form_view}>
-            <VStack space={3} mt="3">
-              <FormControl mt="4">
+            <VStack space={3} >
+              <FormControl mt="3">
                 <FormControl.Label>
-                  <Text style={styles.text}>Occupation</Text>
+                  <Text style={styles.text}>Spirituality/Religion</Text>
                 </FormControl.Label>
                 <Box>
                   <Select
                     py="3.5"
-                    fontSize="16"
-                    fontWeight="400"
                     borderRadius="10"
-                    backgroundColor="#F8F8F8"
                     borderColor="#C4C4C4"
+                    backgroundColor="#F8F8F8"
                     selectedValue={service}
                     minWidth="200"
                     accessibilityLabel="Choose Service"
-                    placeholder="Select your Occupation"
+                    placeholder="Select your Religion"
+                    fontSize="16"
+                    fontWeight="400"
                     _selectedItem={{
                       bg: '#F8F8F8',
+                      endIcon: <CheckIcon size="5" />,
+                    }}
+                    onValueChange={itemValue => setService(itemValue)}>
+                    <Select.Item label="UX Research" value="ux" />
+                    <Select.Item label="Web Development" value="web" />
+                    <Select.Item
+                      label="Cross Platform Development"
+                      value="cross"
+                    />
+                    <Select.Item label="UI Designing" value="ui" />
+                    <Select.Item label="Backend Development" value="backend" />
+                  </Select>
+                </Box>
+              </FormControl>
+              <FormControl mt="4">
+                <FormControl.Label>
+                  <Text style={styles.text}>Belong to</Text>
+                </FormControl.Label>
+                <Box>
+                  <Select
+                    py="3.5"
+                    borderColor="#C4C4C4"
+                    borderRadius="10"
+                    backgroundColor="#F8F8F8"
+                    fontSize="16"
+                    fontWeight="400"
+                    selectedValue={service}
+                    minWidth="200"
+                    accessibilityLabel="Choose Service"
+                    placeholder="Asian"
+                    _selectedItem={{
+                      bg: '#F8F8F8',
+
                       endIcon: <CheckIcon size="5" />,
                     }}
                     onValueChange={itemValue => setService(itemValue)}>
@@ -111,20 +145,20 @@ const Signuptwo = () => {
               </FormControl>
               <FormControl mt="4">
                 <FormControl.Label>
-                  <Text style={styles.text}>Education Level</Text>
+                  <Text style={styles.text}>Qualification</Text>
                 </FormControl.Label>
                 <Box>
                   <Select
                     py="3.5"
+                    fontSize="16"
+                    fontWeight="400"
                     borderRadius="10"
-                    borderColor="#C4C4C4"
                     backgroundColor="#F8F8F8"
+                    borderColor="#C4C4C4"
                     selectedValue={service}
                     minWidth="200"
                     accessibilityLabel="Choose Service"
-                    placeholder="Highest Degree"
-                    fontSize="16"
-                    fontWeight="400"
+                    placeholder="Select your Education Level"
                     _selectedItem={{
                       bg: '#F8F8F8',
                       endIcon: <CheckIcon size="5" />,
@@ -142,40 +176,9 @@ const Signuptwo = () => {
                 </Box>
               </FormControl>
               <FormControl mt="4">
-                <FormControl.Label>
-                  <Text style={styles.text}>Annual Income</Text>
-                </FormControl.Label>
-                <Box>
-                  <Select
-                    py="3.5"
-                    borderRadius="10"
-                    borderColor="#C4C4C4"
-                    backgroundColor="#F8F8F8"
-                    selectedValue={service}
-                    minWidth="200"
-                    accessibilityLabel="Choose Service"
-                    placeholder="Select your annual income"
-                    fontSize="16"
-                    fontWeight="400"
-                    _selectedItem={{
-                      bg: '#F8F8F8',
-                      endIcon: <CheckIcon size="5" />,
-                    }}
-                    onValueChange={itemValue => setService(itemValue)}>
-                    <Select.Item label="UX Research" value="ux" />
-                    <Select.Item label="Web Development" value="web" />
-                    <Select.Item
-                      label="Cross Platform Development"
-                      value="cross"
-                    />
-                    <Select.Item label="UI Designing" value="ui" />
-                    <Select.Item label="Backend Development" value="backend" />
-                  </Select>
-                </Box>
-              </FormControl>
-              <FormControl mt="4">
-                <FormControl.Label>
+                <FormControl.Label >
                   <Text style={styles.text}>Where do you live</Text>
+                  <Image source={iconn} style={{width:18,height:18,marginLeft:10}}></Image>
                 </FormControl.Label>
                 <Box>
                   <Select
@@ -214,21 +217,86 @@ const Signuptwo = () => {
                 fontSize="16"
                 fontWeight="400"
               />
-              {/* <ButtonGrad title="Next" /> */}
-              <LinearGradient
-                colors={['#D72D79', '#9264F2']}
-                start={{x: 0, y: 0}}
-                end={{x: 0, y: 1}}
-                style={styles.linearGradient}>
-                  <TouchableOpacity
-                  onPress={() => {
-                    // console.log(props.navigation, 'e..');
-                    props.navigation.navigate('signupthree');
-                  }}>
-                <Text style={styles.buttonText}>Next</Text>
-                </TouchableOpacity>
-              </LinearGradient>
+              <FormControl mt="4">
+                <FormControl.Label>
+                  <Text style={styles.text}>Password</Text>
+                </FormControl.Label>
+                <Input
+                 borderColor="#C4C4C4"
+                  placeholder="Password"
+                  backgroundColor="#F8F8F8"
+                  py="3.5"
+                  borderRadius="10"
+                  fontSize="16"
+                  fontWeight="400"
+                />
+                <Input
+                  mt="4"
+                  borderColor="#C4C4C4"
+                  placeholder="Confirm Password"
+                  backgroundColor="#F8F8F8"
+                  py="3.5"
+                  borderRadius="10"
+                  fontSize="16"
+                  fontWeight="400"
+                />
+              </FormControl>
+              <FormControl mt="4">
+                <FormControl.Label>
+                  <Text style={styles.text}>Contact Number</Text>
+                </FormControl.Label>
+                <Box>
+                  <Select
+                    py="3.5"
+                    fontSize="16"
+                    fontWeight="400"
+                    borderRadius="10"
+                    backgroundColor="#F8F8F8"
+                    borderColor="#C4C4C4"
+                    selectedValue={service}
+                    minWidth="200"
+                    accessibilityLabel="Choose Service"
+                    placeholder=""
+                    _selectedItem={{
+                      bg: '#F8F8F8',
+                      endIcon: <CheckIcon size="5" />,
+                    }}
+                    onValueChange={itemValue => setService(itemValue)}>
+                    <Select.Item label="UX Research" value="ux" />
+                    <Select.Item label="Web Development" value="web" />
+                    <Select.Item
+                      label="Cross Platform Development"
+                      value="cross"
+                    />
+                    <Select.Item label="UI Designing" value="ui" />
+                    <Select.Item label="Backend Development" value="backend" />
+                  </Select>
+                </Box>
+              </FormControl>
+
+              <View style={styles.outerview}>
+              <Checkbox value="test" accessibilityLabel="This is a dummy checkbox" />
+              <Text style={styles.textthree}>I agree to cuperos’s terms and conditions 
+to continue to the sign up page</Text>
+                </View>
+             
+              {/* <LinearGradient
+              colors={['#D72D79', '#9264F2']}
+              start={{x: 0, y: 0}}
+              end={{x: 0, y: 1}}
+              style={styles.linearGradient}>
+              <Text style={styles.buttonText}>Signup</Text>
+            </LinearGradient> */}
+              <ButtonGrad title="Signup" />
             </VStack>
+            <View style={styles.last_view}>
+              <Text style={styles.last_view_text}>
+                Already have an account? 
+              </Text>
+              <Text style={[styles.last_view_text, {color: 'red'}]}>
+                 Signin Now
+              </Text>
+            </View>
           </Box>
         </ScrollView>
       </ImageBackground>
@@ -284,13 +352,26 @@ const styles = StyleSheet.create({
     marginTop: 20,
     //background:linearGradient(180deg),
   },
+  last_view: {
+    display: 'flex',
+    flexDirection: 'row',
+    paddingHorizontal: 10,
+    paddingTop: 30,
+    //position: 'absolute',
+    //width: 339
+  },
+  last_view_text: {
+    fontSize: 16,
+    fontWeight: '400',
+    color: '#000000',
+  },
   linearGradient: {
     width: '100%',
     marginTop: 20,
     paddingLeft: 15,
     paddingRight: 15,
     borderRadius: 5,
-    paddingVertical: 5,
+    paddingVertical: 4,
   },
   buttonText: {
     fontSize: 18,
@@ -300,6 +381,17 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     // backgroundColor: 'transparent',
   },
+  textthree:{
+color:'#000000',
+fontSize:16,
+maxWidth:300,
+
+  },
+  outerview:{
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-around'
+  }
 });
 
 export default Signuptwo;
