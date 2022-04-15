@@ -12,7 +12,7 @@ import {
 import {ChevronLeftIcon} from 'native-base';
 import {ComponentWrapper} from './ComponentWrapper';
 
-import SignupThree from '../components/Auth/Signup/Signupthree';
+import SignupThree from '../components/Auth/Signup/Signuptwo';
 import SignupTwo from '../components/Auth/Signup/Signuptwo';
 import SignupOne from '../components/Auth/Signup/SignupOne';
 // import {View} from 'native-base';
