@@ -138,7 +138,8 @@ const styles = StyleSheet.create({
     
   },
   view_two: {
-    flex: 0.8,
+      marginTop:20,
+    flex: 0.7,
     paddingHorizontal:20,
    //backgroundColor: 'red',
   },

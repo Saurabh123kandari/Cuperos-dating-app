@@ -31,13 +31,13 @@ const App = props => {
       {/* <SplashScreen /> */}
       {/* <SignupOne /> */}
       {/* <Signuptwo /> */}
-      <Signupthree />
+      {/* <Signupthree /> */}
       {/* <ForgotPassword /> */}
       {/* <Onboarding1/> */}
       {/* <Navigation {...props}/> */}
       {/* <Questionaireone/> */}
       {/* <Questionairetwo/> */}
-      {/* <Questionairethree/> */}
+      <Questionairethree/>
       {/* <Questionaireseven /> */}
       {/* <Questionairefour/> */}
       {/* <Questionairefive/> */}

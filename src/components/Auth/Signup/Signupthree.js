@@ -5,6 +5,7 @@ import {
   Text,
   View,
   ImageBackground,
+  Image
 } from 'react-native';
 import {
   Box,
@@ -25,12 +26,14 @@ const Signupthree = () => {
   const image = {
     uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg_pattern.png',
   };
+  const iconn = require('../../../assets/Group6.png');
+  //const iconone = require('../../assets/Group1.png');
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ImageBackground source={image} style={{width: '100%', height: '100%'}}>
         <ScrollView>
           <View style={styles.icon_view_one}>
-            <ChevronLeftIcon iconName="chevron-left" size="8" />
+            <ChevronLeftIcon iconName="chevron-left" size="7" mx={3}/>
             <Progress
               mx="10"
               mt="4"
@@ -173,8 +176,9 @@ const Signupthree = () => {
                 </Box>
               </FormControl>
               <FormControl mt="4">
-                <FormControl.Label>
+                <FormControl.Label >
                   <Text style={styles.text}>Where do you live</Text>
+                  <Image source={iconn} style={{width:18,height:18}}></Image>
                 </FormControl.Label>
                 <Box>
                   <Select
