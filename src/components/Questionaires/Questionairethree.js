@@ -22,14 +22,11 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 
 const Questionairethree = () => {
-  const icon = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Vector.png',
-  };
-  const mainicon = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Vectors.png',
-  };
+    const icon = require('../../assets/Vector.png');
+    const mainicon = require('../../assets/Vectors.png');
   return (
     <SafeAreaView style={styles.MainContainer}>
+        <ScrollView>
       <View style={styles.icon_view_one}>
            <ChevronLeftIcon iconName="chevron-left" size="7" mx={3}/>
         <Progress
@@ -117,6 +114,7 @@ const Questionairethree = () => {
                 </TouchableOpacity>
               </LinearGradient>
       </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -140,7 +138,8 @@ const styles = StyleSheet.create({
     
   },
   view_two: {
-    flex: 0.8,
+      marginTop:20,
+    flex: 0.7,
     paddingHorizontal:20,
    //backgroundColor: 'red',
   },

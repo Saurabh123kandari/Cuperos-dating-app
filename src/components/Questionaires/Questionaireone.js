@@ -6,6 +6,7 @@ import {
   View,
   ImageBackground,
   TouchableOpacity,
+  
 } from 'react-native';
 import {
   Box,
@@ -18,18 +19,18 @@ import {
   ChevronLeftIcon,
   ScrollView,
   Image,
+  
 } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 
 const Questionaireone = () => {
-  const icon = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Vector.png',
-  };
-  const mainicon = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Vectors.png',
-  };
+  const icon = require('../../assets/Vector.png');
+  const mainicons = require('../../assets/Vector_3.png');
+  const mainicon = require('../../assets/Vectors.png');
+ 
   return (
     <SafeAreaView style={styles.MainContainer}>
+      <ScrollView>
       <View style={styles.icon_view_one}>
       <ChevronLeftIcon iconName="chevron-left" size="7" mx={3}/>
         <Progress
@@ -66,11 +67,11 @@ const Questionaireone = () => {
             />
           </View>
         </View>
-        <View style={styles.inner_view_two}>
+        <View style={[styles.inner_view_two,{borderColor:'#FF0000'}]}>
           <Text style={styles.text_two}>Love</Text>
-          <View style={styles.anotherview}>
+          <View style={[styles.anotherview]}>
             <Image
-              source={mainicon}
+              source={mainicons}
               style={{width: 35, height: 35,paddingHorizontal:15}}
               alt="Alternate Text"
             />
@@ -181,6 +182,7 @@ const Questionaireone = () => {
                 </TouchableOpacity>
               </LinearGradient>
       </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

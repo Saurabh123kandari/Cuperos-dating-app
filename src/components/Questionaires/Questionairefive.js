@@ -1,14 +1,15 @@
 import React from 'react'
 import { SafeAreaView,StyleSheet,View,Text,TouchableOpacity,Image} from 'react-native';
-import {ChevronLeftIcon,Progress} from 'native-base'
+import {ChevronLeftIcon,Progress, ScrollView} from 'native-base'
 import LinearGradient from 'react-native-linear-gradient';
 
 const Questionairefive = () => {
-    const plusicon = {
-        uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/Vector3.png',
-      };
+ 
+  
+    const plusicon = require('../../assets/Vector3.png');
   return (
     <SafeAreaView style={styles.MainContainer}>
+        <ScrollView>
 <View style={styles.icon_view_one}>
 
 <ChevronLeftIcon iconName="chevron-left" size="7" mx={3}/>
@@ -22,8 +23,9 @@ const Questionairefive = () => {
           background="#D0D0D0"
         />
          <Text style={styles.innertext}>
-         What type of sports do you like? (Choose all that applies)
+         What type of sports do you like? 
         </Text>
+        <Text style={styles.innertextt}>(Choose all that applies)</Text>
         
 
 </View>
@@ -157,8 +159,7 @@ const Questionairefive = () => {
                 <Text style={styles.buttonText}>Next</Text>
                 </TouchableOpacity>
               </LinearGradient>
-      </View>
-
+      </View></ScrollView>
     </SafeAreaView>
   )
 }
@@ -174,14 +175,22 @@ const styles=StyleSheet.create({
         //backgroundColor:'red'
       },
       innertext: {
-        fontSize: 24,
+        fontSize: 22,
         fontWeight: '500',
         textAlign: 'center',
-        maxWidth:280,
+        maxWidth:210,
         alignSelf:'center'
         
       },
+      innertextt:{
+        fontSize: 22,
+        fontWeight: '500',
+        textAlign: 'center',
+        maxWidth:250,
+        alignSelf:'center'
+      },
       view_two: {
+          marginTop:20,
         flex: 0.75,
         paddingHorizontal:20,
        //backgroundColor: 'red',
@@ -211,7 +220,8 @@ const styles=StyleSheet.create({
       text_two: {
         color: '#A4A4A4',
         fontWeight: '500',
-        fontSize:16
+        fontSize:16,
+        marginLeft:10
       },
       linearGradient: {
         width: '100%',
