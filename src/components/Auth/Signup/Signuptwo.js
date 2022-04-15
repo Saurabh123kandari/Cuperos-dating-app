@@ -5,7 +5,8 @@ import {
   Text,
   View,
   ImageBackground,
-  Image
+  Image,
+  TouchableOpacity
 } from 'react-native';
 import {
   Box,
@@ -20,15 +21,64 @@ import {
 import {Select, CheckIcon, ChevronLeftIcon, Progress} from 'native-base';
 // import LinearGradient from 'react-native-linear-gradient';
 import ButtonGrad from './ButtonGrad';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 
-const Signuptwo = () => {
-  let [service, setService] = React.useState('');
+const SignupSchema = Yup.object().shape({
+  religion: Yup.string().required('Required'),
+  belongTo: Yup.string().required('Required'),
+  martialStatus: Yup.string().required('Required'),
+  qualification: Yup.string().required('Required'),
+  country: Yup.string().required('Required'),
+  postal: Yup.string().required('Required'),
+  password: Yup.string().required('Required'),
+  confirmPassword: Yup.string().required('Required'),
+  contactNumber: Yup.string().required('Required'),
+});
+const Signuptwo = (props) => {
+  const [service ,setService] =React.useState('');
+  const [belongTo, setBelongTo] = React.useState('');
+const [religion, setReligion]  = React.useState('');
+const [maritalStatus, setMaritalStatus] =  React.useState('');
+const [qualification, setQualification] =  React.useState('');
+const [country, setCountry] =  React.useState('');
   const image = {
     uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg_pattern.png',
   };
   const iconn = require('../../../assets/Group6.png');
+  const prevPayload = props.route.params?.payload;
+  console.log(prevPayload,'pppppp')
   //const iconone = require('../../assets/Group1.png');
   return (
+    <Formik
+    initialValues={{
+      religion: '',
+      belongTo: '',
+      maritalStatus: '',
+      qualification: '',
+      country: '',
+      postal: '',
+      password: '',
+      confirmPassword: '',
+      contactNumber: ''
+    }}
+    // validationSchema={SignupSchema}
+    onSubmit={values => {
+      console.log(values,'val')
+      let payload = {
+      religion: religion,
+      belongTo: belongTo,
+      martialStatus: maritalStatus,
+      qualification: qualification,
+      country: country,
+      postal: values.postal,
+      password: values.password,
+      confirmPassword: values.confirmPassword,
+      contactNumber: values.contactNumber
+      };
+      console.log(payload,'payyy')
+    }}>
+    {({handleChange, handleBlur, handleSubmit, values, errors}) => (
     <SafeAreaView style={styles.MainContainer}>
       <ImageBackground source={image} style={{width: '100%', height: '100%'}}>
         <ScrollView>
@@ -56,7 +106,7 @@ const Signuptwo = () => {
                     borderRadius="10"
                     borderColor="#C4C4C4"
                     backgroundColor="#F8F8F8"
-                    selectedValue={service}
+                    selectedValue={religion}
                     minWidth="200"
                     accessibilityLabel="Choose Service"
                     placeholder="Select your Religion"
@@ -66,15 +116,11 @@ const Signuptwo = () => {
                       bg: '#F8F8F8',
                       endIcon: <CheckIcon size="5" />,
                     }}
-                    onValueChange={itemValue => setService(itemValue)}>
-                    <Select.Item label="UX Research" value="ux" />
-                    <Select.Item label="Web Development" value="web" />
-                    <Select.Item
-                      label="Cross Platform Development"
-                      value="cross"
-                    />
-                    <Select.Item label="UI Designing" value="ui" />
-                    <Select.Item label="Backend Development" value="backend" />
+                    onValueChange={itemValue => setReligion(itemValue)}>
+                    <Select.Item label="Hindu" value="Hindu" />
+                    <Select.Item label= "Muslim" value="Muslim" />
+                    <Select.Item label="Christian" value="Christian" />
+                    <Select.Item label="Sikh" value="Sikh" />
                   </Select>
                 </Box>
               </FormControl>
@@ -90,7 +136,7 @@ const Signuptwo = () => {
                     backgroundColor="#F8F8F8"
                     fontSize="16"
                     fontWeight="400"
-                    selectedValue={service}
+                    selectedValue={belongTo}
                     minWidth="200"
                     accessibilityLabel="Choose Service"
                     placeholder="Asian"
@@ -99,15 +145,11 @@ const Signuptwo = () => {
 
                       endIcon: <CheckIcon size="5" />,
                     }}
-                    onValueChange={itemValue => setService(itemValue)}>
-                    <Select.Item label="UX Research" value="ux" />
-                    <Select.Item label="Web Development" value="web" />
-                    <Select.Item
-                      label="Cross Platform Development"
-                      value="cross"
-                    />
-                    <Select.Item label="UI Designing" value="ui" />
-                    <Select.Item label="Backend Development" value="backend" />
+                    onValueChange={itemValue => setBelongTo(itemValue)}>
+                    <Select.Item label="Asian" value="Asian" />
+                    <Select.Item label= "African" value="African" />
+                    <Select.Item label="Western" value="Western" />
+                    <Select.Item label="American" value="American" />
                   </Select>
                 </Box>
               </FormControl>
@@ -123,7 +165,7 @@ const Signuptwo = () => {
                     fontWeight="400"
                     borderRadius="10"
                     backgroundColor="#F8F8F8"
-                    selectedValue={service}
+                    selectedValue={maritalStatus}
                     minWidth="200"
                     accessibilityLabel="Choose Service"
                     placeholder="Select your maritial Status"
@@ -131,15 +173,10 @@ const Signuptwo = () => {
                       bg: '#F8F8F8',
                       endIcon: <CheckIcon size="5" />,
                     }}
-                    onValueChange={itemValue => setService(itemValue)}>
-                    <Select.Item label="UX Research" value="ux" />
-                    <Select.Item label="Web Development" value="web" />
-                    <Select.Item
-                      label="Cross Platform Development"
-                      value="cross"
-                    />
-                    <Select.Item label="UI Designing" value="ui" />
-                    <Select.Item label="Backend Development" value="backend" />
+                    onValueChange={itemValue => setMaritalStatus(itemValue)}>
+                    <Select.Item label="Married" value="Married" />
+                    <Select.Item label= "Unmarried" value="Unmarried" />
+                  
                   </Select>
                 </Box>
               </FormControl>
@@ -155,7 +192,7 @@ const Signuptwo = () => {
                     borderRadius="10"
                     backgroundColor="#F8F8F8"
                     borderColor="#C4C4C4"
-                    selectedValue={service}
+                    selectedValue={qualification}
                     minWidth="200"
                     accessibilityLabel="Choose Service"
                     placeholder="Select your Education Level"
@@ -163,15 +200,11 @@ const Signuptwo = () => {
                       bg: '#F8F8F8',
                       endIcon: <CheckIcon size="5" />,
                     }}
-                    onValueChange={itemValue => setService(itemValue)}>
-                    <Select.Item label="UX Research" value="ux" />
-                    <Select.Item label="Web Development" value="web" />
-                    <Select.Item
-                      label="Cross Platform Development"
-                      value="cross"
-                    />
-                    <Select.Item label="UI Designing" value="ui" />
-                    <Select.Item label="Backend Development" value="backend" />
+                    onValueChange={itemValue => setQualification(itemValue)}>
+                    <Select.Item label="B Tech " value="B Tech " />
+                    <Select.Item label= "BCA" value="BCA" />
+                    <Select.Item label="B.Ed" value="B.Ed" />
+                    <Select.Item label="B.Com" value="B.Com" />
                   </Select>
                 </Box>
               </FormControl>
@@ -186,7 +219,7 @@ const Signuptwo = () => {
                     backgroundColor="#F8F8F8"
                     borderRadius="10"
                     py="3.5"
-                    selectedValue={service}
+                    selectedValue={country}
                     minWidth="200"
                     accessibilityLabel="Choose Service"
                     placeholder="Select your Country"
@@ -196,19 +229,20 @@ const Signuptwo = () => {
                       bg: 'teal.600',
                       endIcon: <CheckIcon size="5" />,
                     }}
-                    onValueChange={itemValue => setService(itemValue)}>
-                    <Select.Item label="UX Research" value="ux" />
-                    <Select.Item label="Web Development" value="web" />
-                    <Select.Item
-                      label="Cross Platform Development"
-                      value="cross"
-                    />
-                    <Select.Item label="UI Designing" value="ui" />
-                    <Select.Item label="Backend Development" value="backend" />
+                    onValueChange={itemValue => setCountry(itemValue)}>
+                     <Select.Item label="India" value="India" />
+                    <Select.Item label= "Pakistan" value="Pakistan" />
+                    <Select.Item label="Sri Lanka" value="Sri Lanka" />
+                    <Select.Item label="Bhutan" value="Bhutan" />
                   </Select>
                 </Box>
               </FormControl>
               <Input
+               type="postal"
+               name="postal"
+               onChangeText={handleChange('postal')}
+               onBlur={handleBlur('postal')}
+               value={values.postal}
                borderColor="#C4C4C4"
                 placeholder="Postal/Zipcode"
                 backgroundColor="#F8F8F8"
@@ -217,11 +251,21 @@ const Signuptwo = () => {
                 fontSize="16"
                 fontWeight="400"
               />
+               {errors.postal && (
+                      <Text style={{fontSize: 15, color: 'red'}}>
+                        {errors.postal}
+                      </Text>
+                    )}
               <FormControl mt="4">
                 <FormControl.Label>
                   <Text style={styles.text}>Password</Text>
                 </FormControl.Label>
                 <Input
+                 type="password"
+                 name="password"
+                 onChangeText={handleChange('password')}
+                 onBlur={handleBlur('password')}
+                 value={values.password}
                  borderColor="#C4C4C4"
                   placeholder="Password"
                   backgroundColor="#F8F8F8"
@@ -230,16 +274,31 @@ const Signuptwo = () => {
                   fontSize="16"
                   fontWeight="400"
                 />
+                 {errors.password && (
+                      <Text style={{fontSize: 15, color: 'red'}}>
+                        {errors.password}
+                      </Text>
+                    )}
                 <Input
+                 type="confirmPassword"
+                 name="confirmPassword"
+                 onChangeText={handleChange('confirmPassword')}
+                 onBlur={handleBlur('confirmPassword')}
+                 value={values.confirmPassword}
                   mt="4"
                   borderColor="#C4C4C4"
-                  placeholder="Confirm Password"
+                  placeholder="Confirm confirmPassword"
                   backgroundColor="#F8F8F8"
                   py="3.5"
                   borderRadius="10"
                   fontSize="16"
                   fontWeight="400"
                 />
+                {errors.confirmPassword && (
+                      <Text style={{fontSize: 15, color: 'red'}}>
+                        {errors.confirmPassword}
+                      </Text>
+                    )}
               </FormControl>
               <FormControl mt="4">
                 <FormControl.Label>
@@ -279,7 +338,6 @@ const Signuptwo = () => {
               <Text style={styles.textthree}>I agree to cuperos’s terms and conditions 
 to continue to the sign up page</Text>
                 </View>
-             
               {/* <LinearGradient
               colors={['#D72D79', '#9264F2']}
               start={{x: 0, y: 0}}
@@ -287,7 +345,9 @@ to continue to the sign up page</Text>
               style={styles.linearGradient}>
               <Text style={styles.buttonText}>Signup</Text>
             </LinearGradient> */}
+            <TouchableOpacity onPress={handleSubmit}>
               <ButtonGrad title="Signup" />
+              </TouchableOpacity>
             </VStack>
             <View style={styles.last_view}>
               <Text style={styles.last_view_text}>
@@ -301,6 +361,8 @@ to continue to the sign up page</Text>
         </ScrollView>
       </ImageBackground>
     </SafeAreaView>
+)}
+</Formik>
   );
 };
 

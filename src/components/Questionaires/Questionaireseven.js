@@ -20,9 +20,11 @@ import {
 //   ScrollView,
 } from 'native-base';
 import {Select, CheckIcon} from 'native-base';
+
 import LinearGradient from 'react-native-linear-gradient';
 //import ButtonGrad from './ButtonGrad';
-const Questionaireseven = props => {
+
+const QuestionaireSeven = props => {
   let [service, setService] = React.useState('');
   //   const image = {
   //     uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg_pattern.png',
@@ -33,13 +35,13 @@ const Questionaireseven = props => {
       {/* <ImageBackground source={image} style={{width: '100%', height: '100%'}}> */}
       {/* <ScrollView> */}
       <View style={styles.icon_view_one}>
-      <ChevronLeftIcon iconName="chevron-left" size="7" mx={3}/>
+        {/* <ChevronLeftIcon iconName="chevron-left" size="8" /> */}
         <Progress
           mx="10"
           mt="4"
           mb="4"
           colorScheme="red"
-          value={100}
+          value={15}
           height="1.5"
           background="#D0D0D0"
         />
@@ -56,7 +58,6 @@ const Questionaireseven = props => {
           <FormControl mt="5">
             <Box>
               <Select
-              mt={1}
                 py="3.5"
                 borderRadius="10"
                 backgroundColor="#F8F8F8"
@@ -66,7 +67,6 @@ const Questionaireseven = props => {
                 minWidth="200"
                 accessibilityLabel="Choose Service"
                 placeholder="Never"
-                placeholderTextColor="#A4A4A4"
                 _selectedItem={{
                   bg: '#F8F8F8',
                   endIcon: <CheckIcon size="5" />,
@@ -78,7 +78,7 @@ const Questionaireseven = props => {
               </Select>
             </Box>
           </FormControl>
-          <FormControl mt="3">
+          <FormControl mt="4">
             <FormControl.Label>
               <Text style={styles.text}>
                 What smoking habits would you accept from your partner?
@@ -86,7 +86,6 @@ const Questionaireseven = props => {
             </FormControl.Label>
             <Box>
               <Select
-              mt={1}
                 py="3.5"
                 borderRadius="10"
                 backgroundColor="#F8F8F8"
@@ -96,7 +95,6 @@ const Questionaireseven = props => {
                 minWidth="200"
                 accessibilityLabel="Choose Service"
                 placeholder="Never"
-                placeholderTextColor="#A4A4A4"
                 _selectedItem={{
                   bg: '#F8F8F8',
                   endIcon: <CheckIcon size="5" />,
@@ -108,13 +106,12 @@ const Questionaireseven = props => {
               </Select>
             </Box>
           </FormControl>
-          <FormControl mt="3">
+          <FormControl mt="4">
             <FormControl.Label>
               <Text style={styles.text}>How often do you drink?</Text>
             </FormControl.Label>
             <Box>
               <Select
-              mt={1}
                 py="3.5"
                 borderRadius="10"
                 backgroundColor="#F8F8F8"
@@ -124,7 +121,6 @@ const Questionaireseven = props => {
                 minWidth="200"
                 accessibilityLabel="Choose Service"
                 placeholder="Never"
-                placeholderTextColor="#A4A4A4"
                 _selectedItem={{
                   bg: '#F8F8F8',
                   endIcon: <CheckIcon size="5" />,
@@ -136,7 +132,7 @@ const Questionaireseven = props => {
               </Select>
             </Box>
           </FormControl>
-          <FormControl mt="3">
+          <FormControl mt="4">
             <FormControl.Label>
               <Text style={styles.text}>
                 What drinking habits would you accept from your partner?
@@ -144,7 +140,6 @@ const Questionaireseven = props => {
             </FormControl.Label>
             <Box>
               <Select
-                mt={1}
                 py="3.5"
                 borderRadius="10"
                 backgroundColor="#F8F8F8"
@@ -154,7 +149,6 @@ const Questionaireseven = props => {
                 minWidth="200"
                 accessibilityLabel="Choose Service"
                 placeholder="Never"
-                placeholderTextColor="#A4A4A4"
                 _selectedItem={{
                   bg: '#F8F8F8',
                   endIcon: <CheckIcon size="5" />,
@@ -166,13 +160,12 @@ const Questionaireseven = props => {
               </Select>
             </Box>
           </FormControl>
-          <FormControl mt="3">
+          <FormControl mt="4">
             <FormControl.Label>
               <Text style={styles.text}>How did you hear about us?</Text>
             </FormControl.Label>
             <Box>
               <Select
-              mt={1}
                 py="3.5"
                 borderRadius="10"
                 backgroundColor="#F8F8F8"
@@ -182,7 +175,6 @@ const Questionaireseven = props => {
                 minWidth="200"
                 accessibilityLabel="Choose Service"
                 placeholder="Never"
-                placeholderTextColor="#A4A4A4"
                 _selectedItem={{
                   bg: '#F8F8F8',
                   endIcon: <CheckIcon size="5" />,
@@ -204,6 +196,7 @@ const Questionaireseven = props => {
                   }}>
                    <ButtonGrad title="Next"  />
                 </TouchableOpacity> */}
+
           <LinearGradient
             colors={['#D72D79', '#9264F2']}
             start={{x: 0, y: 0}}
@@ -214,7 +207,7 @@ const Questionaireseven = props => {
                 // console.log(props.navigation, 'e..');
                 props.navigation.navigate('signuptwo');
               }}>
-              <Text style={styles.buttonText}>Finish</Text>
+              <Text style={styles.buttonText}>Next</Text>
             </TouchableOpacity>
           </LinearGradient>
         </VStack>
@@ -225,6 +218,7 @@ const Questionaireseven = props => {
     </SafeAreaView>
   );
 };
+
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
@@ -244,7 +238,7 @@ const styles = StyleSheet.create({
   },
   heading_one: {
     fontSize: 22,
-    fontWeight: '500',
+    fontWeight: '600',
     color: '#000000',
     textAlign: 'center',
   },
@@ -257,7 +251,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    fontWeight: '400',
+    fontWeight: '600',
     color: '#000000',
   },
   label_heading: {
@@ -270,6 +264,7 @@ const styles = StyleSheet.create({
   },
   button_view: {
     borderRadius: 10,
+
     marginTop: 20,
   },
   button_text: {
@@ -291,8 +286,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
     color: '#ffffff',
-    fontWeight:'500'
     // backgroundColor: 'transparent',
   },
 });
-export default Questionaireseven;
+
+export default QuestionaireSeven;
