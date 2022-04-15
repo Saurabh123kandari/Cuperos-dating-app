@@ -56,6 +56,7 @@ const Signuptwo = () => {
                     fontWeight="400"
                     borderRadius="10"
                     backgroundColor="#F8F8F8"
+                    borderColor="#C4C4C4"
                     selectedValue={service}
                     minWidth="200"
                     accessibilityLabel="Choose Service"
@@ -83,6 +84,7 @@ const Signuptwo = () => {
                 <Box>
                   <Select
                     py="3.5"
+                    borderColor="#C4C4C4"
                     fontSize="16"
                     fontWeight="400"
                     borderRadius="10"
@@ -115,6 +117,7 @@ const Signuptwo = () => {
                   <Select
                     py="3.5"
                     borderRadius="10"
+                    borderColor="#C4C4C4"
                     backgroundColor="#F8F8F8"
                     selectedValue={service}
                     minWidth="200"
@@ -146,6 +149,7 @@ const Signuptwo = () => {
                   <Select
                     py="3.5"
                     borderRadius="10"
+                    borderColor="#C4C4C4"
                     backgroundColor="#F8F8F8"
                     selectedValue={service}
                     minWidth="200"
@@ -175,6 +179,7 @@ const Signuptwo = () => {
                 </FormControl.Label>
                 <Box>
                   <Select
+                   borderColor="#C4C4C4"
                     backgroundColor="#F8F8F8"
                     borderRadius="10"
                     py="3.5"
@@ -201,6 +206,7 @@ const Signuptwo = () => {
                 </Box>
               </FormControl>
               <Input
+               borderColor="#C4C4C4"
                 placeholder="Postal/Zipcode"
                 backgroundColor="#F8F8F8"
                 py="3.5"

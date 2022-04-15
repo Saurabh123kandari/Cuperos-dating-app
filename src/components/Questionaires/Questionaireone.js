@@ -25,6 +25,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const Questionaireone = () => {
   const icon = require('../../assets/Vector.png');
+  const mainicons = require('../../assets/Vector_3.png');
   const mainicon = require('../../assets/Vectors.png');
  
   return (
@@ -66,11 +67,11 @@ const Questionaireone = () => {
             />
           </View>
         </View>
-        <View style={styles.inner_view_two}>
+        <View style={[styles.inner_view_two,{borderColor:'#FF0000'}]}>
           <Text style={styles.text_two}>Love</Text>
-          <View style={styles.anotherview}>
+          <View style={[styles.anotherview]}>
             <Image
-              source={mainicon}
+              source={mainicons}
               style={{width: 35, height: 35,paddingHorizontal:15}}
               alt="Alternate Text"
             />

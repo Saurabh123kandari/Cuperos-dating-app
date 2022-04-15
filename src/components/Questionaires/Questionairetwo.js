@@ -158,6 +158,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   view_two: {
+      marginTop:20,
     flex: 0.8,
     paddingHorizontal:20,
    //backgroundColor: 'red',

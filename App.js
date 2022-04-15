@@ -37,11 +37,11 @@ const App = props => {
       {/* <Navigation {...props}/> */}
       {/* <Questionaireone/> */}
       {/* <Questionairetwo/> */}
-      {/* <Questionairethree/> */}
+      <Questionairethree/>
       {/* <Questionaireseven /> */}
       {/* <Questionairefour/> */}
       {/* <Questionairefive/> */}
-      <Questionairesix/>
+      {/* <Questionairesix/> */}
       
     </NativeBaseProvider>
   );
