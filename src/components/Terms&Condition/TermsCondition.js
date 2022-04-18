@@ -1,6 +1,6 @@
 import React from 'react'
 import { SafeAreaView, StyleSheet,ImageBackground,View,Image ,Text, ScrollView} from 'react-native';
-
+import {BACKGROUND_IMAGE,ARROW_ICON} from '../../constant/App_Constant';
 
 const TermsCondition = () => {
   

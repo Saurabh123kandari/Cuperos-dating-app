@@ -18,17 +18,18 @@ import {
   Image,
 } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
+import {BACKGROUND_IMAGE} from '../../constant/App_Constant';
 
 const ForgotPassword = () => {
-  const image = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg_pattern.png',
-  };
+  // const image = {
+  //   uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg_pattern.png',
+  // };
   const logo = {
     uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/logo.png',
   };
   return (
     <SafeAreaView style={styles.MainContainer}>
-      <ImageBackground source={image} style={{width: '100%', height: '100%'}}>
+      <ImageBackground source={BACKGROUND_IMAGE} style={{width: '100%', height: '100%'}}>
         <View style={styles.View_One}></View>
         <View style={styles.View_Two}>
           <Image style={styles.logo} source={logo} alt="Alternate Text" />
