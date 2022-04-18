@@ -28,6 +28,7 @@ import Verification from './src/components/ForgotPassword/Verification';
 import ContactUs from './src/components/Contact_Us/ContactUs';
 import TermsCondition from './src/components/Terms&Condition/TermsCondition';
 // import Navigation from './src/Navigation';
+import Navigation from './src/Navigation';
 
 const App = props => {
   return (
@@ -38,7 +39,7 @@ const App = props => {
       {/* <Signupthree /> */}
       <ForgotPassword />
       {/* <Onboarding1/> */}
-      {/* <Navigation {...props}/> */}
+      <Navigation {...props}/>
       {/* <Questionaireone/> */}
       {/* <Questionairetwo/> */}
       {/* <Questionairethree/> */}
