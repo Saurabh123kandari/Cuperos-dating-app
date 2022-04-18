@@ -38,7 +38,7 @@ const Questionairefour = () => {
         <Text style={styles.innertext}>What type of hobbies do you have?</Text>
       </View>
       <View style={styles.view_two}>
-          {/* <View style={styles.anotherview}> */}
+          <View style={styles.anotherview}>
      
         <View style={[styles.inner_view_two,{backgroundColor:'#FF0000'}]}>
           <View style={[styles.inner_view,{backgroundColor:'#C70000'}]}>
@@ -49,12 +49,13 @@ const Questionairefour = () => {
           </View>
           <Text style={[styles.texttwo, {color: '#FFFFFF'}]}>Sports</Text>
         </View>
-
-        {/* <Image
+{/* <View style={{backgroundColor:'#ffffff',position:'absolute',display:'flex',alignSelf:'flex-end',marginTop:-10,marginRight:20,border}}> */}
+        <Image
               source={icons}
-              style={{width: 32, height: 32, color: '#9D9D9D'}}
+              style={{width: 34, height: 34, position:'absolute',display:'flex',alignSelf:'flex-end',marginTop:-10,borderColor:"#ffffff",borderWidth:5,borderRadius:50}}
               alt="Alternate Text"></Image>
-              </View> */}
+              </View>
+              {/* </View> */}
 
         <View style={styles.inner_view_two}>
           <View style={styles.inner_view}>
