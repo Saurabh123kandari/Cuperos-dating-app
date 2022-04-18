@@ -29,45 +29,43 @@ import * as Yup from 'yup';
    firstName: Yup.string()
     //  .min(2, 'Too Short!')
     //  .max(10, 'Too Long!')
-     .required('Required'),
+     .required('First Name is required'),
    lastName: Yup.string()
     //  .min(2, 'Too Short!')
     //  .max(50, 'Too Long!')
-     .required('Required'),
-   dob: Yup.string().required('Required'),
-
+     .required('Last Name is required'),
+   dob: Yup.string().required('Date of birth is required'),
+   gender: Yup.string().required('Gender is required'),
+   height: Yup.string().required('Height is required'),
  });
 const SignupOne = props => {
-  // let [service, setService] = React.useState('');
   const [gender, setGender] = React.useState('');
   const [height, setHeight] = React.useState('');
-  const image = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg_pattern.png',
-  };
+  const image = require('../../../assets/bg_pattern.png');
+  
   return (
     <Formik
       initialValues={{
         firstName: '',
         lastName: '',
         dob: '',
-        height: ''
+        height: '',
+        gender: ''
       }}
-      // validationSchema={SignupSchema}
+      validationSchema={SignupSchema}
       onSubmit={values => {
         let payload = {
           firstName: values.firstName,
           lastName: values.lastName,
           dob: values.dob,
-          gender: gender,
-          height: height
+          gender: values.gender,
+          height: values.height,
         };
         props.navigation.navigate('signuptwo', {
           payload,
         })
       }}>
       {({handleChange, handleBlur, handleSubmit, values, errors}) => (
-        // <form onSubmit={handleSubmit}>
-        // {console.log(Formik.values,"")}
         <SafeAreaView style={styles.MainContainer}>
           <ImageBackground
             source={image}
@@ -173,6 +171,7 @@ const SignupOne = props => {
                       <Select
                         py="3.5"
                         px="4"
+                        name='gender'
                         borderRadius="10"
                         backgroundColor="#F8F8F8"
                         borderColor="#C4C4C4"
@@ -186,12 +185,22 @@ const SignupOne = props => {
                           bg: '#F8F8F8',
                           endIcon: <CheckIcon size="5" />,
                         }}
-                        onValueChange={itemValue => setGender(itemValue)}>
+                        // onValueChange={itemValue => setGender(itemValue)}
+                        onValueChange={selectedOption => {
+                          setGender(selectedOption)
+                          handleChange("gender")(selectedOption);
+                        }}
+                        >
                         <Select.Item label="Male" value="Male" />
                         <Select.Item label="Female" value="Female" />
                         <Select.Item label="Other" value="Other" />
                       </Select>
                     </Box>
+                    {errors.gender && (
+                      <Text style={{fontSize: 15, color: 'red'}}>
+                        {errors.gender}
+                      </Text>
+                    )}
                   </FormControl>
                   <FormControl mt="4">
                     <FormControl.Label>
@@ -199,6 +208,7 @@ const SignupOne = props => {
                     </FormControl.Label>
                     <Box>
                       <Select
+                        name="height"
                         backgroundColor="#F8F8F8"
                         borderRadius="10"
                         borderColor="#C4C4C4"
@@ -206,6 +216,7 @@ const SignupOne = props => {
                         fontWeight="400"
                         py="3.5"
                         selectedValue={height}
+                        // value={height}
                         minWidth="200"
                         accessibilityLabel="Choose Service"
                         placeholder="Select your height"
@@ -213,7 +224,13 @@ const SignupOne = props => {
                           bg: 'red',
                           endIcon: <CheckIcon size="5" />,
                         }}
-                        onValueChange={itemValue => setHeight(itemValue)}>
+                        // onValueChange={itemValue => setHeight(itemValue)}
+                        onValueChange={selectedOption => {
+                          setHeight(selectedOption)
+                          handleChange("height")(selectedOption);
+                        }}
+                        >
+
                         <Select.Item label="4'4" value="4'4" />
                         <Select.Item label="4'5" value="4'5" />
                         <Select.Item label="4'6" value="4'6" />
@@ -222,6 +239,11 @@ const SignupOne = props => {
                         <Select.Item label="4'9" value="4'9" />
                       </Select>
                     </Box>
+                    {errors.height && (
+                      <Text style={{fontSize: 15, color: 'red'}}>
+                        {errors.height}
+                      </Text>
+                    )}
                   </FormControl>
                   {/* <TouchableOpacity
                   onPress={() => {
