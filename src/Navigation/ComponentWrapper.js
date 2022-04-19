@@ -8,12 +8,10 @@ import { useSelector } from 'react-redux';
 export const ComponentWrapper = (props) => {
     const {edges} =props.children.props
   return (
-    <SafeAreaView
-    edges={edges}
-      style={{ flex: 1, backgroundColor: 'White' }}>
+   <>
       <StatusBar barStyle='dark-content' />
       {props.children}
-    </SafeAreaView>
+   </>
   );
 };
 ComponentWrapper.propTypes = {

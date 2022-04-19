@@ -83,6 +83,18 @@ const Onboarding1 = (props) => {
               height: '100%',
               alignSelf: 'center',
               resizeMode: 'contain',
+            }}>
+             
+            </Image>
+            <Image  source={item.innerimage}
+            style={{
+              width: '80%',
+              height: '80%',
+              alignSelf: 'center',
+              resizeMode: 'contain',
+              position:'absolute',
+              marginTop:30
+              
             }}></Image>
         </View>
         <View style={styles.viewthree}>
@@ -229,6 +241,7 @@ const slides = [
     text: 'Find your soulmate',
     title: 'Swipe Right To Like  Someone or Swipe Left To Pass',
     image: require('../../assets/bgpattern1.png'),
+    innerimage:require('../../assets/img_1.png'),
     bottomimage: require('../../assets/heart_pattern.png'),
   },
   {
@@ -236,7 +249,8 @@ const slides = [
     logo: LOGO,
     text: 'Create a connection',
     title: 'Cheers! If they also swipe right,it’s a Match!',
-    image: require('../../assets/bgpattern1.png'),
+    image: require('../../assets/Group11.png'),
+    innerimage:require('../../assets/img_2.png'),
     bottomimage: require('../../assets/heart_pattern.png'),
   },
   {
@@ -244,8 +258,9 @@ const slides = [
     logo: LOGO,
     text: 'Let’s do a conversation',
     title: 'Now, You can do message, call & video call with your connection',
-    image: require('../../assets/bgpattern1.png'),
+    image: require('../../assets/pattern3.png'),
     bottomimage: require('../../assets/heart_pattern.png'),
+    
   },
   {
     key: 's4',
@@ -254,5 +269,6 @@ const slides = [
     title: 'Discover new and interesting people nearby you',
     image: require('../../assets/bgpattern1.png'),
     bottomimage: require('../../assets/heart_pattern.png'),
+    innerimage:require('../../assets/Map.png')
   },
 ];
