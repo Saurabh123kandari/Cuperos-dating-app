@@ -21,7 +21,7 @@ import {
 } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 
-const Questionairethree = () => {
+const Questionairethree = (props) => {
     const icon = require('../../assets/Vector.png');
     const mainicon = require('../../assets/Vectors.png');
   return (
@@ -107,8 +107,7 @@ const Questionairethree = () => {
                 style={styles.linearGradient}>
                   <TouchableOpacity
                   onPress={() => {
-                    // console.log(props.navigation, 'e..');
-                    props.navigation.navigate('signupthree');
+                    props.navigation.navigate('questionariesfour');
                   }}>
                 <Text style={styles.buttonText}>Next</Text>
                 </TouchableOpacity>

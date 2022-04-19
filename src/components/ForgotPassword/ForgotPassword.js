@@ -24,9 +24,7 @@ const ForgotPassword = () => {
   // const image = {
   //   uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg_pattern.png',
   // };
-  const logo = {
-    uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/logo.png',
-  };
+  const logo = require('../../assets/logo.png')
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ImageBackground source={BACKGROUND_IMAGE} style={{width: '100%', height: '100%'}}>

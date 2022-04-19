@@ -114,7 +114,11 @@ const Signin = props => {
                 marginTop: 20,
               }}>
               <Checkbox value="one">Stay Signin</Checkbox>
+              <TouchableOpacity onPress={()=>{
+                props.navigation.navigate('forgotpassword')
+              }} >
               <Link>Forgot Password</Link>
+              </TouchableOpacity>
             </View>
             <LinearGradient
               colors={['#D72D79', '#9264F2']}
