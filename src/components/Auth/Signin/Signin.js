@@ -48,9 +48,9 @@ const Signin = props => {
           email: values.email,
           password: values.password,
         };
-        props.navigation.navigate('signuptwo', {
-          payload,
-        });
+        // props.navigation.navigate('signuptwo', {
+        //   payload,
+        // });
       }}>
       {({handleChange, handleBlur, handleSubmit, values, errors}) => (
         <SafeAreaView style={styles.MainContainer}>
