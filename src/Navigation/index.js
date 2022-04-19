@@ -14,12 +14,12 @@ const Navigation = (props) => {
   //   },[userProfile])
 
   return (
-    <View style={{flex: 1, backgroundColor: '#fff'}}>
+   
       <NavigationContainer >
         {/* {isAuth ? <PrivateRoute  /> : <PublicRoute />} */}
         <PublicRoute {...props} />
       </NavigationContainer>
-    </View>
+   
   );
 };
 export default Navigation;

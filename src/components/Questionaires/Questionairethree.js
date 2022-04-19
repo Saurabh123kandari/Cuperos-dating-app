@@ -120,7 +120,7 @@ const Questionairethree = (props) => {
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
-   // backgroundColor: 'yellow',
+    backgroundColor:'#FFFFFF'
     
   },
   icon_view_one: {
