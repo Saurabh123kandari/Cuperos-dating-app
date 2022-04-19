@@ -10,6 +10,7 @@ import React from 'react';
 
 import {SafeAreaView, ScrollView, StyleSheet, View,Text} from 'react-native';
 import {NativeBaseProvider} from 'native-base';
+import Signin from './src/components/Auth/Signin/Signin';
 import SignupOne from './src/components/Auth/Signup/SignupOne';
 import Signuptwo from './src/components/Auth/Signup/Signuptwo';
 import Signupthree from './src/components/Auth/Signup/Signuptwo';
@@ -29,6 +30,7 @@ import ContactUs from './src/components/Contact_Us/ContactUs';
 import TermsCondition from './src/components/Terms&Condition/TermsCondition';
 // import Navigation from './src/Navigation';
 import Navigation from './src/Navigation';
+import Onboarding from './src/components/Onboarding/Onboarding1';
 
 const App = props => {
   return (
@@ -37,9 +39,10 @@ const App = props => {
       {/* <SignupOne /> */}
       {/* <Signuptwo /> */}
       {/* <Signupthree /> */}
-      <ForgotPassword />
+      {/* <ForgotPassword /> */}
       {/* <Onboarding1/> */}
       <Navigation {...props}/>
+       {/* <Signin /> */}
       {/* <Questionaireone/> */}
       {/* <Questionairetwo/> */}
       {/* <Questionairethree/> */}
@@ -51,6 +54,7 @@ const App = props => {
       {/* <Verification/> */}
       {/* <ContactUs/> */}
       {/* <TermsCondition/> */}
+      {/* <Onboarding/> */}
       
     </NativeBaseProvider>
   );
