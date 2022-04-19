@@ -4,7 +4,7 @@ import {ChevronLeftIcon, Progress, ScrollView} from 'native-base';
 
 import LinearGradient from 'react-native-linear-gradient';
 
-const Questionairefour = () => {
+const Questionairefour = (props) => {
   
     const iconone = require('../../assets/Group1.png');
     const icontwo = require('../../assets/Group2.png');
@@ -110,7 +110,7 @@ const Questionairefour = () => {
                   <TouchableOpacity
                   onPress={() => {
                     // console.log(props.navigation, 'e..');
-                    props.navigation.navigate('signupthree');
+                    props.navigation.navigate('questionariesfive');
                   }}>
                 <Text style={styles.buttonText}>Next</Text>
                 </TouchableOpacity>

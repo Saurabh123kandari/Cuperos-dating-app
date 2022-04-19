@@ -16,12 +16,14 @@ import Onboarding1 from '../components/Onboarding/Onboarding1'
 import Signin from '../components/Auth/Signin/Signin';
 import SignupTwo from '../components/Auth/Signup/Signuptwo';
 import SignupOne from '../components/Auth/Signup/SignupOne';
-// import Questionaireone from '../components/Questionaires/Questionaireone'
-// import Questionairetwo from '../components/Questionaires/Questionairetwo'
-// import Questionairethree from '../components/Questionaires/Questionairethree'
-// import Questionairefour from '../components/Questionaires/Questionairefour'
-// import Questionairefive from '../components/Questionaires/Questionairefive'
-// import Questionairesix from '../components/Questionaires/Questionairesix'
+import ForgotPassword from '../components/ForgotPassword/ForgotPassword';
+import Questionaireone from '../components/Questionaires/Questionaireone'
+import Questionairetwo from '../components/Questionaires/Questionairetwo'
+import Questionairethree from '../components/Questionaires/Questionairethree'
+import Questionairefour from '../components/Questionaires/Questionairefour'
+import Questionairefive from '../components/Questionaires/Questionairefive'
+import Questionairesix from '../components/Questionaires/Questionairesix'
+import Questionaireseven from '../components/Questionaires/Questionaireseven'
 
 
 // import {View} from 'native-base';
@@ -78,78 +80,102 @@ const stackArray = [
       showBack: false,
     },
   },
-  // {
-  //   name: 'questionariesone',
-  //   component: props => (
-  //     <ComponentWrapper>
-  //       <Questionaireone {...props}/>
-  //     </ComponentWrapper  >
-  //   ),
-  //   headerProps: {
-  //     title: 'pro',
-  //     showBack: false,
-  //   },
-  // },
-  // {
-  //   name: 'questionariestwo',
-  //   component: props => (
-  //     <ComponentWrapper>
-  //       <Questionairetwo {...props}/>
-  //     </ComponentWrapper  >
-  //   ),
-  //   headerProps: {
-  //     title: 'pro',
-  //     showBack: false,
-  //   },
-  // },
-  // {
-  //   name: 'questionariesthree',
-  //   component: props => (
-  //     <ComponentWrapper>
-  //       <Questionairethree {...props}/>
-  //     </ComponentWrapper  >
-  //   ),
-  //   headerProps: {
-  //     title: 'pro',
-  //     showBack: false,
-  //   },
-  // },
-  // {
-  //   name: 'questionariesfour',
-  //   component: props => (
-  //     <ComponentWrapper>
-  //       <Questionairefour {...props}/>
-  //     </ComponentWrapper  >
-  //   ),
-  //   headerProps: {
-  //     title: 'pro',
-  //     showBack: false,
-  //   },
-  // },
-  // {
-  //   name: 'questionariesfive',
-  //   component: props => (
-  //     <ComponentWrapper>
-  //       <Questionairefive {...props}/>
-  //     </ComponentWrapper  >
-  //   ),
-  //   headerProps: {
-  //     title: 'pro',
-  //     showBack: false,
-  //   },
-  // },
-  // {
-  //   name: 'questionariessix',
-  //   component: props => (
-  //     <ComponentWrapper>
-  //       <Questionairesix {...props}/>
-  //     </ComponentWrapper  >
-  //   ),
-  //   headerProps: {
-  //     title: 'pro',
-  //     showBack: false,
-  //   },
-  // },
+  {
+    name: 'forgotpassword',
+    component: props => (
+      <ComponentWrapper>
+        <ForgotPassword {...props} />
+      </ComponentWrapper>
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'questionariesone',
+    component: props => (
+      <ComponentWrapper>
+        <Questionaireone {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'questionariestwo',
+    component: props => (
+      <ComponentWrapper>
+        <Questionairetwo {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'questionariesthree',
+    component: props => (
+      <ComponentWrapper>
+        <Questionairethree {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'questionariesfour',
+    component: props => (
+      <ComponentWrapper>
+        <Questionairefour {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'questionariesfive',
+    component: props => (
+      <ComponentWrapper>
+        <Questionairefive {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'questionariessix',
+    component: props => (
+      <ComponentWrapper>
+        <Questionairesix {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'questionariesseven',
+    component: props => (
+      <ComponentWrapper>
+        <Questionaireseven {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
 ];
 // function LogoTitle() {
 //   return (
