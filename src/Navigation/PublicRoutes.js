@@ -201,7 +201,6 @@ export const PublicRoute = props => {
           //   component={SignupOne}
           //   options={{ title: 'My home' }}
           // />
-
           <Stack.Screen
             style={styles.header}
             key={index}
@@ -230,13 +229,14 @@ export const PublicRoute = props => {
                 // },
 
                 header: p => {
+                  console.log(p,"prooooo")
                   return (
-                    <TouchableOpacity
-                       //style={styles.backBtnStyle}
-                      onPress={() => navigation.goBack()}>
-                      <ChevronLeftIcon iconName="chevron-left" size="8" />
-                      {/* <Text>Back</Text> */}
-                    </TouchableOpacity>
+                    p?.route?.name ===  'signupone' || p?.route?.name ===  'signuptwo'   ? 
+                   
+                      <ChevronLeftIcon onPress={() => navigation.goBack()} iconName="chevron-left" size="8" />
+                    
+                    :
+                    null
                   );
                 },
               };
