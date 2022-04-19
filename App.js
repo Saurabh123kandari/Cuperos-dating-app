@@ -25,10 +25,11 @@ import Questionairefive from './src/components/Questionaires/Questionairefive';
 import Questionairesix from './src/components/Questionaires/Questionairesix';
  import ResetPassword from './src/components/ForgotPassword/ResetPassword';
 import Verification from './src/components/ForgotPassword/Verification';
-import ContactUs from './src/components/Contact_Us/ContactUs';
+import ContactUs from './src/components/FAQ/FAQ';
 import TermsCondition from './src/components/Terms&Condition/TermsCondition';
 // import Navigation from './src/Navigation';
 import Navigation from './src/Navigation';
+import FAQ from './src/components/FAQ/FAQ';
 
 const App = props => {
   return (
@@ -37,9 +38,9 @@ const App = props => {
       {/* <SignupOne /> */}
       {/* <Signuptwo /> */}
       {/* <Signupthree /> */}
-      <ForgotPassword />
-      {/* <Onboarding1/> */}
-      <Navigation {...props}/>
+      {/* <ForgotPassword /> */}
+      <Onboarding1/>
+      {/* <Navigation {...props}/> */}
       {/* <Questionaireone/> */}
       {/* <Questionairetwo/> */}
       {/* <Questionairethree/> */}
@@ -51,6 +52,7 @@ const App = props => {
       {/* <Verification/> */}
       {/* <ContactUs/> */}
       {/* <TermsCondition/> */}
+      {/* <FAQ/> */}
       
     </NativeBaseProvider>
   );

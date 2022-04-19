@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {ARROW_ICON, ARROW_RIGHT} from '../../constant/App_Constant';
 
-const ContactUs = () => {
+const FAQ = () => {
   const data = [
     {
       id: 1,
@@ -59,7 +59,7 @@ const ContactUs = () => {
   ];
   return (
     <SafeAreaView style={styles.Main_Container}>
-      <ScrollView>
+      {/* <ScrollView> */}
         <View style={{flex: 0.06}}></View>
 
         <View style={styles.firstview}>
@@ -79,7 +79,7 @@ const ContactUs = () => {
             );
           })}
         </View>
-      </ScrollView>
+      {/* </ScrollView> */}
     </SafeAreaView>
   );
 };
@@ -113,8 +113,8 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: '#FFFFFF',
     borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#A4A4A4',
+    //borderWidth: 1,
+    //borderColor: '#A4A4A4',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -126,4 +126,4 @@ const styles = StyleSheet.create({
     color: '#383838',
   },
 });
-export default ContactUs;
+export default FAQ;
