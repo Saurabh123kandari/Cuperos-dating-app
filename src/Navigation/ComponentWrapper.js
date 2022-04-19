@@ -8,10 +8,10 @@ import { useSelector } from 'react-redux';
 export const ComponentWrapper = (props) => {
     const {edges} =props.children.props
   return (
-   <>
+    <>
       <StatusBar barStyle='dark-content' />
       {props.children}
-   </>
+    </>
   );
 };
 ComponentWrapper.propTypes = {

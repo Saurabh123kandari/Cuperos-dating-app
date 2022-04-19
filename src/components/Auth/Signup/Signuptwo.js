@@ -91,7 +91,7 @@ const Signuptwo = (props) => {
             style={{width: '100%', height: '100%'}}>
             <ScrollView>
               <View style={styles.icon_view_one}>
-                <ChevronLeftIcon iconName="chevron-left" size="7" mx={3} />
+                {/* <ChevronLeftIcon iconName="chevron-left" size="7" mx={3} /> */}
                 <Progress
                   mx="10"
                   mt="4"
