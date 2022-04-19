@@ -222,52 +222,34 @@ const styles = StyleSheet.create({
 const slides = [
   {
     key: 's1',
-
     logo: LOGO,
     text: 'Find your soulmate',
     title: 'Swipe Right To Like  Someone or Swipe Left To Pass',
-    image: {
-      uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bgpattern1.png',
-    },
-    bottomimage: {
-      uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/heart_pattern.png',
-    },
+    image: require('../../assets/bgpattern1.png'),
+    bottomimage: require('../../assets/heart_pattern.png'),
   },
   {
     key: 's2',
     logo: LOGO,
     text: 'Create a connection',
     title: 'Cheers! If they also swipe right,it’s a Match!',
-    image: {
-      uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bgpattern1.png',
-    },
-    bottomimage: {
-      uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/heart_pattern.png',
-    },
-    //backgroundColor: '#febe29',
+    image: require('../../assets/bgpattern1.png'),
+    bottomimage: require('../../assets/heart_pattern.png'),
   },
   {
     key: 's3',
     logo: LOGO,
     text: 'Let’s do a conversation',
     title: 'Now, You can do message, call & video call with your connection',
-    image: {
-      uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bgpattern1.png',
-    },
-    bottomimage: {
-      uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/heart_pattern.png',
-    },
+    image: require('../../assets/bgpattern1.png'),
+    bottomimage: require('../../assets/heart_pattern.png'),
   },
   {
     key: 's4',
     logo: LOGO,
     text: 'Discover Nearby People',
     title: 'Discover new and interesting people nearby you',
-    image: {
-      uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bgpattern1.png',
-    },
-    bottomimage: {
-      uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/heart_pattern.png',
-    },
+    image: require('../../assets/bgpattern1.png'),
+    bottomimage: require('../../assets/heart_pattern.png'),
   },
 ];
