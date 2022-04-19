@@ -21,7 +21,7 @@ import {
 } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 
-const Questionairetwo = () => {
+const Questionairetwo = (props) => {
     const icon = require('../../assets/Vector.png');
   const mainicon = require('../../assets/Vectors.png');
  
@@ -131,7 +131,7 @@ relationship? (Choose up to 5)
                   <TouchableOpacity
                   onPress={() => {
                     // console.log(props.navigation, 'e..');
-                    props.navigation.navigate('signupthree');
+                    props.navigation.navigate('questionariesthree');
                   }}>
                 <Text style={styles.buttonText}>Next</Text>
                 </TouchableOpacity>

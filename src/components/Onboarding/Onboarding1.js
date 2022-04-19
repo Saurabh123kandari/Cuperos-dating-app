@@ -8,13 +8,17 @@ import {
   Text,
   ImageBackground,
   Button,
+  TouchableOpacity,
 } from 'react-native';
 import {Image} from 'native-base';
 
 //import AppIntroSlider to use it
 import AppIntroSlider from 'react-native-app-intro-slider';
+import {LOGO, BGPATTERN} from '../../constant/App_Constant';
+import LinearGradient from 'react-native-linear-gradient';
+import Signin from '../Auth/Signin/Signin'
 
-const Onboarding1 = () => {
+const Onboarding1 = (props) => {
   const [showRealApp, setShowRealApp] = useState(false);
 
   const onDone = () => {
@@ -24,15 +28,42 @@ const Onboarding1 = () => {
   const onSkip = () => {
     setShowRealApp(true);
   };
-
+  const renderSkipButton = () => {
+    return (
+      <Text
+        style={{
+          fontSize: 18,
+          fontWeight: '600',
+          color: '#000000',
+          position: 'relative',
+          textAlign: 'center',
+          marginBottom: 100,
+        }}>
+        Skip
+      </Text>
+    );
+  };
+  const renderDoneButton = () => {
+    return (
+      <View style={{paddingHorizontal: 60}}>
+        <LinearGradient
+          colors={['#D72D79', '#9264F2']}
+          start={{x: 0, y: 0}}
+          end={{x: 0, y: 1}}
+          style={styles.linearGradient}>
+          <TouchableOpacity>
+            <Text style={styles.buttonText}>Get Started</Text>
+          </TouchableOpacity>
+        </LinearGradient>
+      </View>
+    );
+  };
   const RenderItem = ({item}) => {
     return (
       <View
         style={{
           flex: 1,
-          backgroundColor: item.backgroundColor,
-          //justifyContent: 'center',
-          //alignItems: 'center',
+          backgroundColor:'#fff'
         }}>
         <View style={{flex: 0.1}}></View>
 
@@ -44,16 +75,23 @@ const Onboarding1 = () => {
         <View style={styles.viewtwo}>
           <Image
             source={item.image}
-            style={{marginTop:20,width: '72%', height: '70%',alignSelf:"center"}}></Image>
+            style={{
+              width: '100%',
+              height: '100%',
+              alignSelf: 'center',
+              resizeMode: 'contain',
+            }}></Image>
         </View>
         <View style={styles.viewthree}>
-        <Image
+          <Image
             source={item.bottomimage}
-            style={{width: '100%', height: '80%',marginTop:33}}></Image>
+            style={{
+              width: '100%',
+              height: '100%',
+              resizeMode: 'contain',
+              marginTop: 50,
+            }}></Image>
         </View>
-
-        {/* <Image style={styles.introImageStyle} source={item.image} />
-        <Text style={styles.introTextStyle}>{item.text}</Text> */}
       </View>
     );
   };
@@ -61,29 +99,29 @@ const Onboarding1 = () => {
   return (
     <>
       {showRealApp ? (
-        <SafeAreaView style={styles.container}>
-          <View style={styles.container}>
-            <Text style={styles.titleStyle}>
-              React Native App Intro Slider using AppIntroSlider
-            </Text>
-            <Text style={styles.paragraphStyle}>
-              This will be your screen when you click Skip from any slide or
-              Done button at last
-            </Text>
-            <Button
-              title="Show Intro Slider again"
-              onPress={() => setShowRealApp(false)}
-            />
-          </View>
-        </SafeAreaView>
+        <Signin {...props} />
       ) : (
         <AppIntroSlider
-        
           data={slides}
           renderItem={RenderItem}
           onDone={onDone}
           showSkipButton={true}
           onSkip={onSkip}
+          renderDoneButton={renderDoneButton}
+          //skipLabel={{color:'red'}}
+          //bottomButton={true}
+          // skipLabel={{color:'black'}}
+          bottomButton={true}
+          showNextButton={false}
+          dotStyle={{backgroundColor: '#C4C4C4', marginBottom: 40}}
+          activeDotStyle={{
+            backgroundColor: 'red',
+            paddingHorizontal: 13,
+            paddingVertical: 6,
+            marginBottom: 40,
+          }}
+          renderSkipButton={renderSkipButton}
+          //style={{marginBottom:20}}
         />
       )}
     </>
@@ -95,7 +133,6 @@ export default Onboarding1;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     padding: 10,
     justifyContent: 'center',
@@ -125,28 +162,24 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: '#000000',
     textAlign: 'center',
-    marginTop: 25,
+    marginTop: 20,
     fontWeight: '500',
   },
   logo: {
-    //marginTop:80,
     alignSelf: 'center',
     width: '45%',
-    height: 40,
+
+    resizeMode: 'contain',
   },
   viewone: {
-    flex: 0.2,
-    //backgroundColor: 'yellow',
+    flex: 0.25,
   },
   viewtwo: {
-    flex: 0.5,
-    //backgroundColor: 'pink',
-    //alignItems:'center'
+    flex: 0.35,
   },
   viewthree: {
-    flex: 0.2,
-   
-    //backgroundColor: 'green',
+    flex: 0.3,
+    position: 'relative',
   },
   TitleStyle: {
     marginTop: 10,
@@ -157,64 +190,66 @@ const styles = StyleSheet.create({
     maxWidth: 250,
     alignSelf: 'center',
   },
+  buttonCircle: {
+    width: 40,
+    height: 40,
+    backgroundColor: 'red',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  linearGradient: {
+    width: '100%',
+
+    //marginTop: 20,
+    marginBottom: 80,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 30,
+    paddingVertical: 5,
+  },
+  buttonText: {
+    fontSize: 18,
+    //fontFamily: 'Gill Sans',
+    textAlign: 'center',
+    margin: 10,
+    color: '#ffffff',
+    fontWeight: '600',
+    // backgroundColor: 'transparent',
+  },
 });
 
 const slides = [
   {
     key: 's1',
-    logo: {
-      uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/logo.png',
-    },
+    logo: LOGO,
     text: 'Find your soulmate',
     title: 'Swipe Right To Like  Someone or Swipe Left To Pass',
-    image: {
-      uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg pattern1.png',
-    },
-    bottomimage: {
-        uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/heart_pattern.png',
-      },
+    image: require('../../assets/bgpattern1.png'),
+    bottomimage: require('../../assets/heart_pattern.png'),
   },
   {
     key: 's2',
-    logo: {
-        uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/logo.png',
-      },
-      text: 'Create a connection',
-      title: 'Cheers! If they also swipe right,it’s a Match!',
-      image: {
-        uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg pattern1.png',
-      },
-      bottomimage: {
-          uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/heart_pattern.png',
-        },
-    //backgroundColor: '#febe29',
+    logo: LOGO,
+    text: 'Create a connection',
+    title: 'Cheers! If they also swipe right,it’s a Match!',
+    image: require('../../assets/bgpattern1.png'),
+    bottomimage: require('../../assets/heart_pattern.png'),
   },
   {
     key: 's3',
-    logo: {
-        uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/logo.png',
-      },
-      text: 'Let’s do a conversation',
-      title: 'Now, You can do message, call & video call with your connection',
-      image: {
-        uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg pattern1.png',
-      },
-      bottomimage: {
-          uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/heart_pattern.png',
-        },
+    logo: LOGO,
+    text: 'Let’s do a conversation',
+    title: 'Now, You can do message, call & video call with your connection',
+    image: require('../../assets/bgpattern1.png'),
+    bottomimage: require('../../assets/heart_pattern.png'),
   },
   {
     key: 's4',
-    logo: {
-        uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/logo.png',
-      },
-      text: 'Discover Nearby People',
-      title: 'Discover new and interesting people nearby you',
-      image: {
-        uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg pattern1.png',
-      },
-      bottomimage: {
-          uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/heart_pattern.png',
-        },
+    logo: LOGO,
+    text: 'Discover Nearby People',
+    title: 'Discover new and interesting people nearby you',
+    image: require('../../assets/bgpattern1.png'),
+    bottomimage: require('../../assets/heart_pattern.png'),
   },
 ];

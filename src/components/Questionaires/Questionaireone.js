@@ -23,7 +23,7 @@ import {
 } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 
-const Questionaireone = () => {
+const Questionaireone = (props) => {
   const icon = require('../../assets/Vector.png');
   const mainicons = require('../../assets/Vector_3.png');
   const mainicon = require('../../assets/Vectors.png');
@@ -31,157 +31,162 @@ const Questionaireone = () => {
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ScrollView>
-      <View style={styles.icon_view_one}>
-      <ChevronLeftIcon iconName="chevron-left" size="7" mx={3}/>
-        <Progress
-          mx="10"
-          mt="6"
-          mb="6"
-          colorScheme="red"
-          value={35}
-          height="1.5"
-          background="#D0D0D0"
-        />
-        <Text style={styles.innertext}>
-          Why do you want to be in a relationship?
-        </Text>
-      </View>
-      <View style={styles.view_two}>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Intimacy and communication</Text>
-          <View style={styles.anotherview}>
-            <Image
-              source={mainicon}
-              style={{width: 34, height: 34}}
-              alt="Alternate Text"
-            />
-            <Image
-              source={icon}
-              style={{
-                height: 18,  resizeMode: 'contain',
-                paddingLeft: 32,
-                position: 'absolute',
-                marginTop: 10,
-              }}
-              alt="Alternate Text"
-            />
-          </View>
+        <View style={styles.icon_view_one}>
+          <ChevronLeftIcon iconName="chevron-left" size="7" mx={3} />
+          <Progress
+            mx="10"
+            mt="6"
+            mb="6"
+            colorScheme="red"
+            value={35}
+            height="1.5"
+            background="#D0D0D0"
+          />
+          <Text style={styles.innertext}>
+            Why do you want to be in a relationship?
+          </Text>
         </View>
-        <View style={[styles.inner_view_two,{borderColor:'#FF0000'}]}>
-          <Text style={styles.text_two}>Love</Text>
-          <View style={[styles.anotherview]}>
-            <Image
-              source={mainicons}
-              style={{width: 35, height: 35,paddingHorizontal:15}}
-              alt="Alternate Text"
-            />
-            <Image
-              source={icon}
-              style={{
-              
-                height: 18,  resizeMode: 'contain',
-                paddingLeft: 32,
-                position: 'absolute',
-                marginTop: 10,
-              }}
-              alt="Alternate Text"
-            />
+        <View style={styles.view_two}>
+          <View style={styles.inner_view_two}>
+            <Text style={styles.text_two}>Intimacy and communication</Text>
+            <View style={styles.anotherview}>
+              <Image
+                source={mainicon}
+                style={{width: 34, height: 34}}
+                alt="Alternate Text"
+              />
+              <Image
+                source={icon}
+                style={{
+                  height: 18,
+                  resizeMode: 'contain',
+                  paddingLeft: 32,
+                  position: 'absolute',
+                  marginTop: 10,
+                }}
+                alt="Alternate Text"
+              />
+            </View>
           </View>
-        </View>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Romance</Text>
-          <View style={styles.anotherview}>
-            <Image
-              source={mainicon}
-              style={{width: 34, height: 34}}
-              alt="Alternate Text"
-            />
-            <Image
-              source={icon}
-              style={{
-                height: 18,  resizeMode: 'contain',
-                paddingLeft: 32,
-                position: 'absolute',
-                marginTop: 10,
-              }}
-              alt="Alternate Text"
-            />
+          <View style={[styles.inner_view_two, {borderColor: '#FF0000'}]}>
+            <Text style={styles.text_two}>Love</Text>
+            <View style={[styles.anotherview]}>
+              <Image
+                source={mainicons}
+                style={{width: 35, height: 35, paddingHorizontal: 15}}
+                alt="Alternate Text"
+              />
+              <Image
+                source={icon}
+                style={{
+                  height: 18,
+                  resizeMode: 'contain',
+                  paddingLeft: 32,
+                  position: 'absolute',
+                  marginTop: 10,
+                }}
+                alt="Alternate Text"
+              />
+            </View>
           </View>
-        </View>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>I don’t want to be alone</Text>
-          <View style={styles.anotherview}>
-            <Image
-              source={mainicon}
-              style={{width: 34, height: 34}}
-              alt="Alternate Text"
-            />
-            <Image
-              source={icon}
-              style={{
-                height: 18,  resizeMode: 'contain',
-                paddingLeft: 32,
-                position: 'absolute',
-                marginTop: 10,
-              }}
-              alt="Alternate Text"
-            />
+          <View style={styles.inner_view_two}>
+            <Text style={styles.text_two}>Romance</Text>
+            <View style={styles.anotherview}>
+              <Image
+                source={mainicon}
+                style={{width: 34, height: 34}}
+                alt="Alternate Text"
+              />
+              <Image
+                source={icon}
+                style={{
+                  height: 18,
+                  resizeMode: 'contain',
+                  paddingLeft: 32,
+                  position: 'absolute',
+                  marginTop: 10,
+                }}
+                alt="Alternate Text"
+              />
+            </View>
           </View>
-        </View>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Safety</Text>
-          <View style={styles.anotherview}>
-            <Image
-              source={mainicon}
-              style={{width: 34, height: 34}}
-              alt="Alternate Text"
-            />
-            <Image
-              source={icon}
-              style={{
-                height: 18,  resizeMode: 'contain',
-                paddingLeft: 32,
-                position: 'absolute',
-                marginTop: 10,
-              }}
-              alt="Alternate Text"
-            />
+          <View style={styles.inner_view_two}>
+            <Text style={styles.text_two}>I don’t want to be alone</Text>
+            <View style={styles.anotherview}>
+              <Image
+                source={mainicon}
+                style={{width: 34, height: 34}}
+                alt="Alternate Text"
+              />
+              <Image
+                source={icon}
+                style={{
+                  height: 18,
+                  resizeMode: 'contain',
+                  paddingLeft: 32,
+                  position: 'absolute',
+                  marginTop: 10,
+                }}
+                alt="Alternate Text"
+              />
+            </View>
           </View>
-        </View>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Emotional security</Text>
-          <View style={styles.anotherview}>
-            <Image
-              source={mainicon}
-              style={{width: 34, height: 34}}
-              alt="Alternate Text"
-            />
-            <Image
-              source={icon}
-              style={{
-                height: 18,  resizeMode: 'contain',
-                paddingLeft: 32,
-                position: 'absolute',
-                marginTop: 10,
-              }}
-              alt="Alternate Text"
-            />
+          <View style={styles.inner_view_two}>
+            <Text style={styles.text_two}>Safety</Text>
+            <View style={styles.anotherview}>
+              <Image
+                source={mainicon}
+                style={{width: 34, height: 34}}
+                alt="Alternate Text"
+              />
+              <Image
+                source={icon}
+                style={{
+                  height: 18,
+                  resizeMode: 'contain',
+                  paddingLeft: 32,
+                  position: 'absolute',
+                  marginTop: 10,
+                }}
+                alt="Alternate Text"
+              />
+            </View>
           </View>
+          <View style={styles.inner_view_two}>
+            <Text style={styles.text_two}>Emotional security</Text>
+            <View style={styles.anotherview}>
+              <Image
+                source={mainicon}
+                style={{width: 34, height: 34}}
+                alt="Alternate Text"
+              />
+              <Image
+                source={icon}
+                style={{
+                  height: 18,
+                  resizeMode: 'contain',
+                  paddingLeft: 32,
+                  position: 'absolute',
+                  marginTop: 10,
+                }}
+                alt="Alternate Text"
+              />
+            </View>
+          </View>
+          <LinearGradient
+            colors={['#D72D79', '#9264F2']}
+            start={{x: 0, y: 0}}
+            end={{x: 0, y: 1}}
+            style={styles.linearGradient}>
+            <TouchableOpacity
+              onPress={() => {
+                // console.log(props.navigation, 'e..');
+                props.navigation.navigate('questionariestwo');
+              }}>
+              <Text style={styles.buttonText}>Next</Text>
+            </TouchableOpacity>
+          </LinearGradient>
         </View>
-        <LinearGradient
-                colors={['#D72D79', '#9264F2']}
-                start={{x: 0, y: 0}}
-                end={{x: 0, y: 1}}
-                style={styles.linearGradient}>
-                  <TouchableOpacity
-                  onPress={() => {
-                    // console.log(props.navigation, 'e..');
-                    props.navigation.navigate('signupthree');
-                  }}>
-                <Text style={styles.buttonText}>Next</Text>
-                </TouchableOpacity>
-              </LinearGradient>
-      </View>
       </ScrollView>
     </SafeAreaView>
   );
