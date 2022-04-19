@@ -51,7 +51,10 @@ const Onboarding1 = (props) => {
           start={{x: 0, y: 0}}
           end={{x: 0, y: 1}}
           style={styles.linearGradient}>
-          <TouchableOpacity>
+           <TouchableOpacity
+                  onPress={() => {
+                    props.navigation.navigate('signin');
+                  }}>
             <Text style={styles.buttonText}>Get Started</Text>
           </TouchableOpacity>
         </LinearGradient>
