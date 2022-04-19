@@ -63,7 +63,7 @@ const Onboarding1 = (props) => {
       <View
         style={{
           flex: 1,
-          // backgroundColor:'green'
+          backgroundColor:'#fff'
         }}>
         <View style={{flex: 0.1}}></View>
 
