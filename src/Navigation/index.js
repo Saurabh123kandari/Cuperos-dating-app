@@ -6,7 +6,7 @@ import {PublicRoute} from './PublicRoutes';
 //import {navigationRef} from '../services';
 import {useSelector, useDispatch} from 'react-redux';
 
-const Navigation = () => {
+const Navigation = (props) => {
   // const userProfile = useSelector(state => state.userProfile);
   //   const [isAuth, setIsAuth] = useState(userProfile.isAuth);
   //   useEffect(()=>{
@@ -17,7 +17,7 @@ const Navigation = () => {
     <View style={{flex: 1, backgroundColor: '#fff'}}>
       <NavigationContainer >
         {/* {isAuth ? <PrivateRoute  /> : <PublicRoute />} */}
-        <PublicRoute />
+        <PublicRoute {...props} />
       </NavigationContainer>
     </View>
   );
