@@ -52,7 +52,7 @@ const SignupOne = props => {
         height: '',
         gender: ''
       }}
-      validationSchema={SignupSchema}
+      // validationSchema={SignupSchema}
       onSubmit={values => {
         let payload = {
           firstName: values.firstName,

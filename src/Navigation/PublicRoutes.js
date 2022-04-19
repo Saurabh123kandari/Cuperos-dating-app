@@ -12,16 +12,48 @@ import {
 // import {styles} from '@navigation/styles';ChevronLeftIcon,
 import {ChevronLeftIcon} from 'native-base';
 import {ComponentWrapper} from './ComponentWrapper';
-
-// import SignupThree from '../components/Auth/Signup/Signupthree';
+import Onboarding1 from '../components/Onboarding/Onboarding1'
+import Signin from '../components/Auth/Signin/Signin';
 import SignupTwo from '../components/Auth/Signup/Signuptwo';
 import SignupOne from '../components/Auth/Signup/SignupOne';
+// import Questionaireone from '../components/Questionaires/Questionaireone'
+// import Questionairetwo from '../components/Questionaires/Questionairetwo'
+// import Questionairethree from '../components/Questionaires/Questionairethree'
+// import Questionairefour from '../components/Questionaires/Questionairefour'
+// import Questionairefive from '../components/Questionaires/Questionairefive'
+// import Questionairesix from '../components/Questionaires/Questionairesix'
+
+
 // import {View} from 'native-base';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 // import {useSafeAreaInsets} from 'react-native-safe-area-context';
 const Stack = createNativeStackNavigator();
 // const DrawerStack = createDrawerNavigator();
 const stackArray = [
+  {
+    name: 'onboarding',
+    component: props => (
+      <ComponentWrapper>
+     <Onboarding1 {...props}/>
+      </ComponentWrapper>
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'signin',
+    component: props => (
+      <ComponentWrapper>
+     <Signin {...props}/>
+      </ComponentWrapper>
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
   {
     name: 'signupone',
     component: props => (
@@ -46,7 +78,78 @@ const stackArray = [
       showBack: false,
     },
   },
-
+  // {
+  //   name: 'questionariesone',
+  //   component: props => (
+  //     <ComponentWrapper>
+  //       <Questionaireone {...props}/>
+  //     </ComponentWrapper  >
+  //   ),
+  //   headerProps: {
+  //     title: 'pro',
+  //     showBack: false,
+  //   },
+  // },
+  // {
+  //   name: 'questionariestwo',
+  //   component: props => (
+  //     <ComponentWrapper>
+  //       <Questionairetwo {...props}/>
+  //     </ComponentWrapper  >
+  //   ),
+  //   headerProps: {
+  //     title: 'pro',
+  //     showBack: false,
+  //   },
+  // },
+  // {
+  //   name: 'questionariesthree',
+  //   component: props => (
+  //     <ComponentWrapper>
+  //       <Questionairethree {...props}/>
+  //     </ComponentWrapper  >
+  //   ),
+  //   headerProps: {
+  //     title: 'pro',
+  //     showBack: false,
+  //   },
+  // },
+  // {
+  //   name: 'questionariesfour',
+  //   component: props => (
+  //     <ComponentWrapper>
+  //       <Questionairefour {...props}/>
+  //     </ComponentWrapper  >
+  //   ),
+  //   headerProps: {
+  //     title: 'pro',
+  //     showBack: false,
+  //   },
+  // },
+  // {
+  //   name: 'questionariesfive',
+  //   component: props => (
+  //     <ComponentWrapper>
+  //       <Questionairefive {...props}/>
+  //     </ComponentWrapper  >
+  //   ),
+  //   headerProps: {
+  //     title: 'pro',
+  //     showBack: false,
+  //   },
+  // },
+  // {
+  //   name: 'questionariessix',
+  //   component: props => (
+  //     <ComponentWrapper>
+  //       <Questionairesix {...props}/>
+  //     </ComponentWrapper  >
+  //   ),
+  //   headerProps: {
+  //     title: 'pro',
+  //     showBack: false,
+  //   },
+  // },
 ];
 // function LogoTitle() {
 //   return (
@@ -63,7 +166,7 @@ export const PublicRoute = props => {
     shadowColor: 'transparent',
   };
   return (
-    <Stack.Navigator initialRouteName="signupone">
+    <Stack.Navigator initialRouteName="onboarding">
       {stackArray.map((item, index) => {
         const isHeader = true;
         return (

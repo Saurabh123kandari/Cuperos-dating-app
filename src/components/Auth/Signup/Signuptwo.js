@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -23,6 +23,8 @@ import {Select, CheckIcon, ChevronLeftIcon, Progress} from 'native-base';
 import ButtonGrad from './ButtonGrad';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { useSelector, useDispatch } from 'react-redux'
+import { setAuth } from '../../../store/user/userActions';
 
 const SignupSchema = Yup.object().shape({
   religion: Yup.string().required('Religion is required'),
@@ -42,10 +44,15 @@ const Signuptwo = (props) => {
   const [maritalStatus, setMaritalStatus] = React.useState('');
   const [qualification, setQualification] = React.useState('');
   const [country, setCountry] = React.useState('');
- 
+  const authUser = useSelector(state => state.user) 
+  const dispatch = useDispatch();
   const image = require('../../../assets/bg_pattern.png');
   const iconn = require('../../../assets/Group6.png');
   const prevPayload = props.route.params?.payload;  
+  //  useEffect(() => {
+  //   alert(JSON.stringify(authUser?.isAuth))
+  // }, [authUser])
+  console.log(authUser, 'authUser')
   return (
     <Formik
       initialValues={{
@@ -59,7 +66,7 @@ const Signuptwo = (props) => {
         confirmPassword: '',
         contactNumber: '',
       }}
-      validationSchema={SignupSchema}
+      // validationSchema={SignupSchema}
       onSubmit={values => {
         console.log(values, 'val');
         let payload = {
@@ -74,6 +81,8 @@ const Signuptwo = (props) => {
           contactNumber: values.contactNumber,
         };
         console.log(payload, 'payyy');
+        dispatch(setAuth(true))
+        props.navigation.navigate('questionariesone')
       }}>
       {({handleChange, handleBlur, handleSubmit, values, errors}) => (
         <SafeAreaView style={styles.MainContainer}>
