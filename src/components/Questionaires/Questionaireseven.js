@@ -205,7 +205,7 @@ const QuestionaireSeven = props => {
             <TouchableOpacity
               onPress={() => {
                 // console.log(props.navigation, 'e..');
-                props.navigation.navigate('signuptwo');
+                props.navigation.navigate('home');
               }}>
               <Text style={styles.buttonText}>Next</Text>
             </TouchableOpacity>
