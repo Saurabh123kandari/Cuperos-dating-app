@@ -207,7 +207,7 @@ const QuestionaireSeven = props => {
                 // console.log(props.navigation, 'e..');
                 props.navigation.navigate('home');
               }}>
-              <Text style={styles.buttonText}>Next</Text>
+              <Text style={styles.buttonText}>Finish</Text>
             </TouchableOpacity>
           </LinearGradient>
         </VStack>
