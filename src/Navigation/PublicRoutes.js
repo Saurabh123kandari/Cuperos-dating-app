@@ -25,6 +25,7 @@ import Questionairefive from '../components/Questionaires/Questionairefive'
 import Questionairesix from '../components/Questionaires/Questionairesix'
 import Questionaireseven from '../components/Questionaires/Questionaireseven'
 import Home from '../components/Home/Home';
+import Filter from '../components/Filter/Filter';
 
 
 // import {View} from 'native-base';
@@ -189,6 +190,18 @@ const stackArray = [
       showBack: false,
     },
   },
+  {
+    name: 'filter',
+    component: props => (
+      <ComponentWrapper>
+        <Filter {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
 ];
 // function LogoTitle() {
 //   return (
@@ -205,7 +218,7 @@ export const PublicRoute = props => {
     shadowColor: 'transparent',
   };
   return (
-    <Stack.Navigator initialRouteName="onboarding">
+    <Stack.Navigator initialRouteName="filter">
       {stackArray.map((item, index) => {
         const isHeader = true;
         return (

@@ -61,7 +61,7 @@ const FAQ = () => {
     <SafeAreaView style={styles.Main_Container}>
       {/* <ScrollView> */}
         <View style={{flex: 0.06}}></View>
-
+        
         <View style={styles.firstview}>
           <Image source={ARROW_ICON} style={{}} alt="Alternate Text"></Image>
           <Text style={styles.faqtext}>FAQ</Text>

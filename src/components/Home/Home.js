@@ -44,7 +44,11 @@ const Home = props => {
           <Image source={location} />
           <Text>California, USA</Text>
         </View>
-        <Image source={filter} />
+      <TouchableOpacity onPress={()=>{
+          props.navigation.navigate('filter')
+      }}>
+      <Image source={filter} />
+      </TouchableOpacity>
       </View>
       <View style={styles.heading}>
         <Text style={styles.heading_one}>
