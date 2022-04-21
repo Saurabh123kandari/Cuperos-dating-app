@@ -218,7 +218,7 @@ export const PublicRoute = props => {
     shadowColor: 'transparent',
   };
   return (
-    <Stack.Navigator initialRouteName="filter">
+    <Stack.Navigator initialRouteName="onboarding">
       {stackArray.map((item, index) => {
         const isHeader = true;
         return (
