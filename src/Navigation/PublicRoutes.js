@@ -24,6 +24,7 @@ import Questionairefour from '../components/Questionaires/Questionairefour'
 import Questionairefive from '../components/Questionaires/Questionairefive'
 import Questionairesix from '../components/Questionaires/Questionairesix'
 import Questionaireseven from '../components/Questionaires/Questionaireseven'
+import Home from '../components/Home/Home';
 
 
 // import {View} from 'native-base';
@@ -176,7 +177,18 @@ const stackArray = [
       showBack: false,
     },
   },
-
+  {
+    name: 'home',
+    component: props => (
+      <ComponentWrapper>
+        <Home {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
 ];
 // function LogoTitle() {
 //   return (
