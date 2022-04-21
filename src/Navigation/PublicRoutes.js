@@ -176,6 +176,7 @@ const stackArray = [
       showBack: false,
     },
   },
+
 ];
 // function LogoTitle() {
 //   return (

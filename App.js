@@ -32,6 +32,8 @@ import TermsCondition from './src/components/Terms&Condition/TermsCondition';
 import Navigation from './src/Navigation';
 import FAQ from './src/components/FAQ/FAQ';
 import Onboarding from './src/components/Onboarding/Onboarding1';
+import Thankyou from './src/components/Thankyou/Thankyou';
+import SubscriptionPlan from './src/components/Subscription/SubscriptionPlan';
 
 const App = props => {
   return (
@@ -57,6 +59,8 @@ const App = props => {
       {/* <TermsCondition/> */}
       {/* <FAQ/> */}
       {/* <Onboarding/> */}
+      {/* <Thankyou/> */}
+    {/* <SubscriptionPlan/> */}
       
     </NativeBaseProvider>
   );
