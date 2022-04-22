@@ -231,22 +231,22 @@ export const PublicRoute = props => {
                   marginLeft: 12,
                 },
 
-                // headerLeft: props => {
-                //   return (
-                //     <TouchableOpacity
-                //       style={styles.backBtnStyle}
-                //       onPress={() => navigation.goBack()}>
-                //       <Text>Header</Text>
-                //     </TouchableOpacity>
-                //   );
-                // },
+                headerLeft: props => {
+                  return (
+                    <TouchableOpacity
+                      style={styles.backBtnStyle}
+                      onPress={() => navigation.goBack()}>
+                      <Text>Header</Text>
+                    </TouchableOpacity>
+                  );
+                },
 
                 header: p => {
                   console.log(p,"prooooo")
                   return (
                     p?.route?.name ===  'signupone' || p?.route?.name ===  'signuptwo'   ? 
                    
-                      <ChevronLeftIcon onPress={() => navigation.goBack()} iconName="chevron-left" size="8" />
+                      <ChevronLeftIcon onPress={() => navigation.goBack()} iconName="chevron-left" size="8" mt={8} />
                     
                     :
                     null

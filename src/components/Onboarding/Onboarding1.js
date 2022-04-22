@@ -63,17 +63,17 @@ const Onboarding1 = (props) => {
   };
   const RenderItem = ({item}) => {
     return (
-      <View
+      <SafeAreaView
         style={{
           flex: 1,
           backgroundColor:'#fff'
         }}>
-        <View style={{flex: 0.1}}></View>
+        <View style={{flex: 0.05}}></View>
 
         <View style={styles.viewone}>
           <Image style={styles.logo} source={item.logo} alt="Alternate Text" />
           <Text style={styles.introTitleStyle}>{item.text}</Text>
-          <Text style={styles.TitleStyle}>{item.title}</Text>
+          <Text style={[styles.TitleStyle,{maxWidth:item.width}]}>{item.title}</Text>
         </View>
         <View style={styles.viewtwo}>
           <Image
@@ -93,7 +93,8 @@ const Onboarding1 = (props) => {
               alignSelf: 'center',
               resizeMode: 'contain',
               position:'absolute',
-              marginTop:30
+              marginTop:25,
+              
               
             }}></Image>
         </View>
@@ -105,9 +106,11 @@ const Onboarding1 = (props) => {
               height: '100%',
               resizeMode: 'contain',
               marginTop: 50,
+             
+
             }}></Image>
         </View>
-      </View>
+      </SafeAreaView>
     );
   };
 
@@ -190,7 +193,7 @@ const styles = StyleSheet.create({
     flex: 0.25,
   },
   viewtwo: {
-    flex: 0.35,
+    flex: 0.4,
   },
   viewthree: {
     flex: 0.3,
@@ -202,7 +205,7 @@ const styles = StyleSheet.create({
     color: '#5E5E5E',
     textAlign: 'center',
     fontWeight: '400',
-    maxWidth: 250,
+  
     alignSelf: 'center',
   },
   buttonCircle: {
@@ -243,15 +246,17 @@ const slides = [
     image: require('../../assets/bgpattern1.png'),
     innerimage:require('../../assets/img_1.png'),
     bottomimage: require('../../assets/heart_pattern.png'),
+    width:250,
   },
   {
     key: 's2',
     logo: LOGO,
     text: 'Create a connection',
-    title: 'Cheers! If they also swipe right,it’s a Match!',
+    title: 'Cheers! If they also swipe right, it’s a Match!',
     image: require('../../assets/Group11.png'),
     innerimage:require('../../assets/img_2.png'),
     bottomimage: require('../../assets/heart_pattern.png'),
+    width:275,
   },
   {
     key: 's3',
@@ -260,6 +265,7 @@ const slides = [
     title: 'Now, You can do message, call & video call with your connection',
     image: require('../../assets/pattern3.png'),
     bottomimage: require('../../assets/heart_pattern.png'),
+    width:275,
     
   },
   {
@@ -269,6 +275,7 @@ const slides = [
     title: 'Discover new and interesting people nearby you',
     image: require('../../assets/bgpattern1.png'),
     bottomimage: require('../../assets/heart_pattern.png'),
-    innerimage:require('../../assets/Map.png')
+    innerimage:require('../../assets/Map.png'),
+    width:275,
   },
 ];

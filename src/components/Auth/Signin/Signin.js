@@ -34,8 +34,8 @@ const Signin = props => {
   const [gender, setGender] = React.useState('');
   const [height, setHeight] = React.useState('');
   const image = require('../../../assets/logo.png');
-  const imageRed = require('../../../assets/Rectanglered.png');
-  const imageBlue = require('../../../assets/Rectangleblue.png');
+  const googleimg = require('../../../assets/g+.png');
+  const fbimg = require('../../../assets/fb.png');
   return (
     <Formik
       initialValues={{
@@ -78,7 +78,7 @@ const Signin = props => {
                 backgroundColor="#F8F8F8"
                 py="3.5"
                 borderRadius="10"
-                borderColor="#FF0000"
+                borderColor="#C4C4C4"
                 fontSize="16"
                 fontWeight="400"
               />
@@ -113,11 +113,11 @@ const Signin = props => {
                 justifyContent: 'space-between',
                 marginTop: 20,
               }}>
-              <Checkbox value="one">Stay Signin</Checkbox>
+              <Checkbox value="one" colorScheme="red">Stay Signin</Checkbox>
               <TouchableOpacity onPress={()=>{
                 props.navigation.navigate('forgotpassword')
               }} >
-              <Link>Forgot Password</Link>
+              <Text style={{color:'#1A0566',fontSize:16,fontWeight:'400'}}>Forgot Password</Text>
               </TouchableOpacity>
             </View>
             <LinearGradient
@@ -132,10 +132,10 @@ const Signin = props => {
           </View>
           {/* </Box> */}
           <View style={{flex: 0.1, alignItems: 'center'}}>
-            <Text style={{color: '#000000', margin: 10}}>Or Signup with</Text>
+            <Text style={{color: '#000000', margin: 10}}>Or Signin with</Text>
             <View style={{flexDirection: 'row'}}>
-              <Image style={styles.tinyLogo} source={imageRed} />
-              <Image style={styles.tinyLogo} source={imageBlue} />
+              <Image style={styles.tinyLogo} source={googleimg} />
+              <Image style={styles.tinyLogo} source={fbimg} />
             </View>
             <View
               style={{
@@ -153,7 +153,7 @@ const Signin = props => {
                 onPress={props.navigation.navigate('signuptwo', {
                   payload,
                 })}> */}
-                <Text style={{color: '#FF0000', fontWeight: 'bold'}}>
+                <Text style={{color: '#FF0000', fontWeight: '400',fontSize:16}}>
                   Signup now
                 </Text>
               </TouchableOpacity>
