@@ -36,7 +36,7 @@ const SubscriptionPlan = () => {
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ScrollView>
-        <View style={{flex: 0.1,marginVertical:20,paddingHorizontal:20}}>
+        <View style={{flex: 0.1,marginVertical:20,paddingHorizontal:20,}}>
           
           <Image  source={arrowicon}></Image>
         </View>
@@ -192,6 +192,7 @@ const SubscriptionPlan = () => {
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
+    backgroundColor:'#ffffff'
   },
   viewone: {
     flex: 0.3,

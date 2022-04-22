@@ -264,6 +264,7 @@ const slides = [
     text: 'Let’s do a conversation',
     title: 'Now, You can do message, call & video call with your connection',
     image: require('../../assets/pattern3.png'),
+    innerimage:require('../../assets/conversation.png'),
     bottomimage: require('../../assets/heart_pattern.png'),
     width:275,
     

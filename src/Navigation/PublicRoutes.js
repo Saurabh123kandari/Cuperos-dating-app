@@ -26,6 +26,7 @@ import Questionairesix from '../components/Questionaires/Questionairesix'
 import Questionaireseven from '../components/Questionaires/Questionaireseven'
 import Home from '../components/Home/Home';
 import Filter from '../components/Filter/Filter';
+import Tabview from './Tabview';
 
 
 // import {View} from 'native-base';
@@ -195,6 +196,18 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
         <Filter {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'tabview',
+    component: props => (
+      <ComponentWrapper>
+        <Tabview {...props}/>
       </ComponentWrapper  >
     ),
     headerProps: {
