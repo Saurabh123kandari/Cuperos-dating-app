@@ -34,6 +34,7 @@ import FAQ from './src/components/FAQ/FAQ';
 import Onboarding from './src/components/Onboarding/Onboarding1';
 import Thankyou from './src/components/Thankyou/Thankyou';
 import SubscriptionPlan from './src/components/Subscription/SubscriptionPlan';
+import Tabview from './src/Navigation/Tabview';
 
 const App = props => {
   return (
@@ -61,6 +62,7 @@ const App = props => {
       {/* <Onboarding/> */}
       {/* <Thankyou/> */}
     {/* <SubscriptionPlan/> */}
+    {/* <Tabview/> */}
       
     </NativeBaseProvider>
   );

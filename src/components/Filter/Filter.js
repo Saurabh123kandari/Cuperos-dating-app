@@ -76,11 +76,11 @@ const Filter = props => {
                     onChangeText={handleChange('firstName')}
                     onBlur={handleBlur('firstName')}
                     value={values.firstName}
-                    placeholder="First Name"
+                    
                     backgroundColor="#F8F8F8"
                     py="3.5"
                     borderRadius="10"
-                    borderColor="#FF0000"
+                    borderColor="#C4C4C4"
                     fontSize="16"
                     fontWeight="400"
                   />
@@ -99,7 +99,7 @@ const Filter = props => {
                       maxValue={100}
                       accessibilityLabel="hello world"
                       step={10}>
-                      <Slider.Track>
+                      <Slider.Track background="#C4C4C4">
                         <Slider.FilledTrack />
                       </Slider.Track>
                       <Slider.Thumb />
@@ -121,21 +121,21 @@ const Filter = props => {
                         styles.option_button,
                         {backgroundColor: '#FF0000'},
                       ]}>
-                      <Text>Men</Text>
+                      <Text style={{color:'#ffffff',fontWeight:'500',fontSize:16}}>Men</Text>
                     </View>
                     <View
                       style={[
                         styles.option_button,
                         {backgroundColor: '#FFDFDF'},
                       ]}>
-                      <Text>Women</Text>
+                      <Text style={{color:'#000000',fontWeight:'500',fontSize:16}}>Women</Text>
                     </View>
                     <View
                       style={[
                         styles.option_button,
                         {backgroundColor: '#FFDFDF'},
                       ]}>
-                      <Text>Both</Text>
+                      <Text style={{color:'#000000',fontWeight:'500',fontSize:16}}>Both</Text>
                     </View>
                   </View>
                 </FormControl>
@@ -153,7 +153,7 @@ const Filter = props => {
                       maxValue={100}
                       accessibilityLabel="hello world"
                       step={10}>
-                      <Slider.Track>
+                      <Slider.Track background="#C4C4C4" >
                         <Slider.FilledTrack />
                       </Slider.Track>
                       <Slider.Thumb />
@@ -270,14 +270,14 @@ const Filter = props => {
                         styles.option_button,
                         {backgroundColor: '#FF0000'},
                       ]}>
-                      <Text>Smoker</Text>
+                      <Text style={{color:'#ffffff',fontWeight:'500',fontSize:16}}>Smoker</Text>
                     </View>
                     <View
                       style={[
                         styles.option_button,
                         {backgroundColor: '#FFDFDF', marginHorizontal: 10},
                       ]}>
-                      <Text>Non Smoker</Text>
+                      <Text style={{color:'#000000',fontWeight:'500',fontSize:16}}>Non Smoker</Text>
                     </View>
                   </View>
                 </FormControl>
@@ -370,7 +370,7 @@ const styles = StyleSheet.create({
   MainContainer: {
     // flex: 1,
     fontFamily: 'Poppins',
-    //backgroundColor: 'red',
+    backgroundColor: '#ffffff',
     //paddingHorizontal: 20,
   },
 
@@ -396,7 +396,7 @@ const styles = StyleSheet.create({
   anotherview: {
     flex: 0.9,
     padding: 15,
-    // paddingHorizontal:10,
+     paddingHorizontal:20,
 
     //backgroundColor:'pink',
   },
