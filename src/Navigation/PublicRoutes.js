@@ -26,8 +26,11 @@ import Questionairesix from '../components/Questionaires/Questionairesix'
 import Questionaireseven from '../components/Questionaires/Questionaireseven'
 import Home from '../components/Home/Home';
 import Filter from '../components/Filter/Filter';
-
-
+import UserProfile from '../components/UserProfile/UserProfile'
+import ChatDetails from '../components/Chat/ChatDetails'
+import Thankyou from '../components/Thankyou/Thankyou'
+import ChatList from '../components/Chat/ChatList'
+import MatchesList from '../components/Matches/MatchesList'
 // import {View} from 'native-base';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 // import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -202,6 +205,54 @@ const stackArray = [
       showBack: false,
     },
   },
+  {
+    name: 'userprofile',
+    component: props => (
+      <ComponentWrapper>
+        <UserProfile {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'thankyou',
+    component: props => (
+      <ComponentWrapper>
+        <Thankyou {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'chatlist',
+    component: props => (
+      <ComponentWrapper>
+        <ChatList {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  // {
+  //   name: 'userprofile',
+  //   component: props => (
+  //     <ComponentWrapper>
+  //       <UserProfile {...props}/>
+  //     </ComponentWrapper  >
+  //   ),
+  //   headerProps: {
+  //     title: 'pro',
+  //     showBack: false,
+  //   },
+  // },
 ];
 // function LogoTitle() {
 //   return (

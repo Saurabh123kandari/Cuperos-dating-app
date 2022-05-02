@@ -11,7 +11,7 @@ const Questionairefour = (props) => {
     
     const iconthree = require('../../assets/Group.png');
      
-    const iconfour = require('../../assets/Frame.png');
+    const iconfour = require('../../assets/Photo.png');
     
     const iconfive =require('../../assets/Vector4.png');
      

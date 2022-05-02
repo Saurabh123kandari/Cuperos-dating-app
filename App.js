@@ -5,7 +5,8 @@
  * @format
  * @flow strict-local
  */
- console.disableYellowBox = true;
+//  console.disableYellowBox = true;
+ 
 import React from 'react';
 
 import {SafeAreaView, ScrollView, StyleSheet, View,Text} from 'react-native';
@@ -34,6 +35,14 @@ import FAQ from './src/components/FAQ/FAQ';
 import Onboarding from './src/components/Onboarding/Onboarding1';
 import Thankyou from './src/components/Thankyou/Thankyou';
 import SubscriptionPlan from './src/components/Subscription/SubscriptionPlan';
+import EditProfile from './src/components/UserProfile/EditProfile';
+import MyProfile from './src/components/UserProfile/MyProfile';
+import NewMatches from './src/components/NewMatches/NewMatches'
+import LikedBy from './src/components/LikedBy/LikedBy'
+import ChatList from './src/components/Chat/ChatList';
+import ChatDetails from './src/components/Chat/ChatDetails';
+import MatchesTabView from './src/components/Matches/MatchesTabView';
+import MatchesList from './src/components/Matches/MatchesList';
 
 const App = props => {
   return (
@@ -61,6 +70,15 @@ const App = props => {
       {/* <Onboarding/> */}
       {/* <Thankyou/> */}
     {/* <SubscriptionPlan/> */}
+    {/* <EditProfile/> */}
+  {/* <MyProfile/> */}
+    {/* <NewMatches/> */}
+    {/* <LikedBy/> */}
+    {/* <ChatList/> */}
+    {/* <ChatDetails/> */}
+{/* <MatchesTabView/> */}
+{/* <MatchesList/> */}
+{/* <LikedBy/> */}
       
     </NativeBaseProvider>
   );
