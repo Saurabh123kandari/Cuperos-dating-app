@@ -43,6 +43,7 @@ import ChatList from './src/components/Chat/ChatList';
 import ChatDetails from './src/components/Chat/ChatDetails';
 import MatchesTabView from './src/components/Matches/MatchesTabView';
 import MatchesList from './src/components/Matches/MatchesList';
+import Tabview from './src/Navigation/Tabview';
 
 const App = props => {
   return (
@@ -79,6 +80,7 @@ const App = props => {
 {/* <MatchesTabView/> */}
 {/* <MatchesList/> */}
 {/* <LikedBy/> */}
+    {/* <Tabview/> */}
       
     </NativeBaseProvider>
   );

@@ -22,6 +22,7 @@ import {
   
 } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
+import {CHECK, ANOTHERCHECK} from '../../constant/App_Constant'
 
 const Questionaireone = (props) => {
   const icon = require('../../assets/Vector.png');
@@ -51,126 +52,66 @@ const Questionaireone = (props) => {
             <Text style={styles.text_two}>Intimacy and communication</Text>
             <View style={styles.anotherview}>
               <Image
-                source={mainicon}
+                source={CHECK}
                 style={{width: 34, height: 34}}
                 alt="Alternate Text"
               />
-              <Image
-                source={icon}
-                style={{
-                  height: 18,
-                  resizeMode: 'contain',
-                  paddingLeft: 32,
-                  position: 'absolute',
-                  marginTop: 10,
-                }}
-                alt="Alternate Text"
-              />
+             
             </View>
           </View>
           <View style={[styles.inner_view_two, {borderColor: '#FF0000'}]}>
             <Text style={styles.text_two}>Love</Text>
             <View style={[styles.anotherview]}>
               <Image
-                source={mainicons}
+                source={ANOTHERCHECK}
                 style={{width: 35, height: 35, paddingHorizontal: 15}}
                 alt="Alternate Text"
               />
-              <Image
-                source={icon}
-                style={{
-                  height: 18,
-                  resizeMode: 'contain',
-                  paddingLeft: 32,
-                  position: 'absolute',
-                  marginTop: 10,
-                }}
-                alt="Alternate Text"
-              />
+           
             </View>
           </View>
           <View style={styles.inner_view_two}>
             <Text style={styles.text_two}>Romance</Text>
             <View style={styles.anotherview}>
               <Image
-                source={mainicon}
+                source={CHECK}
                 style={{width: 34, height: 34}}
                 alt="Alternate Text"
               />
-              <Image
-                source={icon}
-                style={{
-                  height: 18,
-                  resizeMode: 'contain',
-                  paddingLeft: 32,
-                  position: 'absolute',
-                  marginTop: 10,
-                }}
-                alt="Alternate Text"
-              />
+             
             </View>
           </View>
           <View style={styles.inner_view_two}>
             <Text style={styles.text_two}>I don’t want to be alone</Text>
             <View style={styles.anotherview}>
               <Image
-                source={mainicon}
+               source={CHECK}
                 style={{width: 34, height: 34}}
                 alt="Alternate Text"
               />
-              <Image
-                source={icon}
-                style={{
-                  height: 18,
-                  resizeMode: 'contain',
-                  paddingLeft: 32,
-                  position: 'absolute',
-                  marginTop: 10,
-                }}
-                alt="Alternate Text"
-              />
+             
             </View>
           </View>
           <View style={styles.inner_view_two}>
             <Text style={styles.text_two}>Safety</Text>
             <View style={styles.anotherview}>
               <Image
-                source={mainicon}
+                source={CHECK}
                 style={{width: 34, height: 34}}
                 alt="Alternate Text"
               />
-              <Image
-                source={icon}
-                style={{
-                  height: 18,
-                  resizeMode: 'contain',
-                  paddingLeft: 32,
-                  position: 'absolute',
-                  marginTop: 10,
-                }}
-                alt="Alternate Text"
-              />
+             
             </View>
           </View>
           <View style={styles.inner_view_two}>
             <Text style={styles.text_two}>Emotional security</Text>
             <View style={styles.anotherview}>
               <Image
-                source={mainicon}
+                 source={CHECK}
                 style={{width: 34, height: 34}}
                 alt="Alternate Text"
               />
-              <Image
-                source={icon}
-                style={{
-                  height: 18,
-                  resizeMode: 'contain',
-                  paddingLeft: 32,
-                  position: 'absolute',
-                  marginTop: 10,
-                }}
-                alt="Alternate Text"
-              />
+             
             </View>
           </View>
           <LinearGradient

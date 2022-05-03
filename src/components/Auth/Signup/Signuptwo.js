@@ -82,7 +82,7 @@ const Signuptwo = (props) => {
         };
         console.log(payload, 'payyy');
         dispatch(setAuth(true))
-        props.navigation.navigate('questionariesone')
+        props.navigation.navigate('thankyou')
       }}>
       {({handleChange, handleBlur, handleSubmit, values, errors}) => (
         <SafeAreaView style={styles.MainContainer}>

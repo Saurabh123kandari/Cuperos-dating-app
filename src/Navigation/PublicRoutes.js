@@ -26,11 +26,16 @@ import Questionairesix from '../components/Questionaires/Questionairesix'
 import Questionaireseven from '../components/Questionaires/Questionaireseven'
 import Home from '../components/Home/Home';
 import Filter from '../components/Filter/Filter';
-import UserProfile from '../components/UserProfile/UserProfile'
+import Tabview from '../Navigation/Tabview'
 import ChatDetails from '../components/Chat/ChatDetails'
 import Thankyou from '../components/Thankyou/Thankyou'
 import ChatList from '../components/Chat/ChatList'
 import MatchesList from '../components/Matches/MatchesList'
+// import Tabview from './Tabview';
+import SubscriptionPlan from '../components/Subscription/SubscriptionPlan'
+import MyProfile from '../components/UserProfile/MyProfile';
+
+
 // import {View} from 'native-base';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 // import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -206,10 +211,10 @@ const stackArray = [
     },
   },
   {
-    name: 'userprofile',
+    name: 'tabview',
     component: props => (
       <ComponentWrapper>
-        <UserProfile {...props}/>
+        <Tabview {...props}/>
       </ComponentWrapper  >
     ),
     headerProps: {
@@ -241,18 +246,30 @@ const stackArray = [
       showBack: false,
     },
   },
-  // {
-  //   name: 'userprofile',
-  //   component: props => (
-  //     <ComponentWrapper>
-  //       <UserProfile {...props}/>
-  //     </ComponentWrapper  >
-  //   ),
-  //   headerProps: {
-  //     title: 'pro',
-  //     showBack: false,
-  //   },
-  // },
+  {
+    name: 'subscription',
+    component: props => (
+      <ComponentWrapper>
+       <SubscriptionPlan/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'MyProfile',
+    component: props => (
+      <ComponentWrapper>
+       <MyProfile/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
 ];
 // function LogoTitle() {
 //   return (
@@ -295,22 +312,22 @@ export const PublicRoute = props => {
                   marginLeft: 12,
                 },
 
-                // headerLeft: props => {
-                //   return (
-                //     <TouchableOpacity
-                //       style={styles.backBtnStyle}
-                //       onPress={() => navigation.goBack()}>
-                //       <Text>Header</Text>
-                //     </TouchableOpacity>
-                //   );
-                // },
+                headerLeft: props => {
+                  return (
+                    <TouchableOpacity
+                      style={styles.backBtnStyle}
+                      onPress={() => navigation.goBack()}>
+                      <Text>Header</Text>
+                    </TouchableOpacity>
+                  );
+                },
 
                 header: p => {
                   console.log(p,"prooooo")
                   return (
                     p?.route?.name ===  'signupone' || p?.route?.name ===  'signuptwo'   ? 
                    
-                      <ChevronLeftIcon onPress={() => navigation.goBack()} iconName="chevron-left" size="8" />
+                      <ChevronLeftIcon onPress={() => navigation.goBack()} iconName="chevron-left" size="8" mt={8} />
                     
                     :
                     null

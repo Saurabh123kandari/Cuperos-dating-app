@@ -2,7 +2,7 @@ import React from 'react'
 import { ImageBackground, SafeAreaView, StyleSheet,View ,Text,TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-const Thankyou = () => {
+const Thankyou = (props) => {
     const image=require('../../assets/Pattern.png')
   return (
     <View style={styles.MainContainer}>
@@ -33,7 +33,10 @@ const Thankyou = () => {
             start={{x: 0, y: 0}}
             end={{x: 0, y: 1}}
             style={styles.linearGradient}>
-            <TouchableOpacity>
+            <TouchableOpacity  onPress={() => {
+                    // console.log(props.navigation, 'e..');
+                    props.navigation.navigate('questionariesone');
+                  }}>
               <Text style={styles.buttonText}>Lets’s Start</Text>
             </TouchableOpacity>
           </LinearGradient>
