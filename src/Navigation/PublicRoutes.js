@@ -26,7 +26,14 @@ import Questionairesix from '../components/Questionaires/Questionairesix'
 import Questionaireseven from '../components/Questionaires/Questionaireseven'
 import Home from '../components/Home/Home';
 import Filter from '../components/Filter/Filter';
-import Tabview from './Tabview';
+import Tabview from '../Navigation/Tabview'
+import ChatDetails from '../components/Chat/ChatDetails'
+import Thankyou from '../components/Thankyou/Thankyou'
+import ChatList from '../components/Chat/ChatList'
+import MatchesList from '../components/Matches/MatchesList'
+// import Tabview from './Tabview';
+import SubscriptionPlan from '../components/Subscription/SubscriptionPlan'
+import MyProfile from '../components/UserProfile/MyProfile';
 
 
 // import {View} from 'native-base';
@@ -208,6 +215,54 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
         <Tabview {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'thankyou',
+    component: props => (
+      <ComponentWrapper>
+        <Thankyou {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'chatlist',
+    component: props => (
+      <ComponentWrapper>
+        <ChatList {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'subscription',
+    component: props => (
+      <ComponentWrapper>
+       <SubscriptionPlan/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'MyProfile',
+    component: props => (
+      <ComponentWrapper>
+       <MyProfile/>
       </ComponentWrapper  >
     ),
     headerProps: {

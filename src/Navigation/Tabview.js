@@ -7,6 +7,9 @@ import Home from '../components/Home/Home';
 import ForgotPassword from '../components/ForgotPassword/ForgotPassword';
 import ResetPassword from '../components/ForgotPassword/ResetPassword';
 import SubscriptionPlan from '../components/Subscription/SubscriptionPlan';
+import MatchesList from '../components/Matches/MatchesList'
+import ChatList from '../components/Chat/ChatList';
+import Explore from '../components/Explore/Explore';
 
 
 
@@ -29,7 +32,7 @@ export default function Tabview() {
             ),
           }} />
         <Tab.Screen name="Second"
-        component={SubscriptionPlan}
+        component={Explore}
         options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
@@ -37,7 +40,7 @@ export default function Tabview() {
             ),
           }} />
        <Tab.Screen name="Third"
-        component={ForgotPassword}
+        component={MatchesList}
         options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
@@ -45,7 +48,7 @@ export default function Tabview() {
             ),
           }} />
        <Tab.Screen name="Fourth"
-        component={ResetPassword}
+        component={ChatList}
         options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (

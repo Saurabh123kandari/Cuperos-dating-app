@@ -39,7 +39,12 @@ const Home = props => {
   return (
     <SafeAreaView style={styles.MainContainer}>
       <View style={styles.header}>
+        <TouchableOpacity onPress={()=>{
+          props.navigation.navigate('MyProfile')
+      }}>
         <Image style={styles.image_header} source={roundImage} />
+        </TouchableOpacity>
+       
         <View style={{flexDirection: 'row',justifyContent:'space-between',width:110}}>
           <Image source={location} />
           <Text>California, USA</Text>
