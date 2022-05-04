@@ -34,6 +34,9 @@ import MatchesList from '../components/Matches/MatchesList'
 // import Tabview from './Tabview';
 import SubscriptionPlan from '../components/Subscription/SubscriptionPlan'
 import MyProfile from '../components/UserProfile/MyProfile';
+import ItsAMatch from '../components/ItsAMatch/ItsAMatch';
+import Settings from '../components/Settings/Settings.js';
+import Reward from '../components/Reward/Reward';
 
 
 // import {View} from 'native-base';
@@ -262,7 +265,43 @@ const stackArray = [
     name: 'MyProfile',
     component: props => (
       <ComponentWrapper>
-       <MyProfile/>
+       <MyProfile {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'ItsAMatch',
+    component: props => (
+      <ComponentWrapper>
+       <ItsAMatch {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'settings',
+    component: props => (
+      <ComponentWrapper>
+       <Settings {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'rewards',
+    component: props => (
+      <ComponentWrapper>
+       <Reward {...props}/>
       </ComponentWrapper  >
     ),
     headerProps: {

@@ -89,9 +89,11 @@ const Home = props => {
         </ImageBackground>
       </View>
       <View style={styles.bottom}>
-        <Image source={like} />
-        <Image style={{marginBottom:20}} source={heart} />
         <Image source={dislike} />
+        <Image style={{marginBottom:20}} source={heart} />
+        <TouchableOpacity onPress={()=>{props.navigation.navigate('ItsAMatch')}}>
+        <Image source={like} />
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
