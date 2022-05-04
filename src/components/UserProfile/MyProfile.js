@@ -1,10 +1,11 @@
 //import { ScrollView } from 'native-base';
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, Text, Image, ImageBackground,ScrollView} from 'react-native';
+import {SafeAreaView, StyleSheet, View, Text, Image, ImageBackground,ScrollView, TouchableOpacity} from 'react-native';
+
 import {ARROW_ICON, ARROW_RIGHT} from '../../constant/App_Constant';
 import GalleryView from './GalleryView';
 
-const MyProfile = () => {
+const MyProfile = (props) => {
     const backimg = require('../../assets/BackgroundIcon.png');
     const profilelogo = require('../../assets/ProfileIcon.png');
     const settinglogo = require('../../assets/cog.png');
@@ -32,7 +33,7 @@ const MyProfile = () => {
         */}
           <View style={styles.view_three}>
               <View>
-                  <Image source={supportlogo} ></Image>
+              <TouchableOpacity onPress={()=>{props.navigation.navigate('rewards')}}><Image source={supportlogo} ></Image></TouchableOpacity>
                   <Text style={styles.innertext}>Invite Friends</Text>
               </View>
               <View>
@@ -40,7 +41,7 @@ const MyProfile = () => {
                   <Text style={styles.innertext}>Contact Us</Text>
               </View>
               <View>
-                  <Image source={settinglogo} ></Image>
+                  <TouchableOpacity onPress={()=>{props.navigation.navigate('settings')}}><Image source={settinglogo} ></Image></TouchableOpacity>
                   <Text style={styles.innertext}>Settings</Text>
               </View>
 
