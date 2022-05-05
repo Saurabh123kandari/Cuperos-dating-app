@@ -33,11 +33,13 @@ const MyProfile = (props) => {
         */}
           <View style={styles.view_three}>
               <View>
-              <TouchableOpacity onPress={()=>{props.navigation.navigate('rewards')}}><Image source={supportlogo} ></Image></TouchableOpacity>
+              <TouchableOpacity onPress={()=>{props.navigation.navigate('rewards')}}><Image source={rewardlogo} ></Image></TouchableOpacity>
                   <Text style={styles.innertext}>Invite Friends</Text>
               </View>
               <View>
-                  <Image source={rewardlogo} ></Image>
+                <TouchableOpacity onPress={()=>{props.navigation.navigate('contactus')}}>
+                  <Image source={supportlogo} ></Image>
+                  </TouchableOpacity>
                   <Text style={styles.innertext}>Contact Us</Text>
               </View>
               <View>

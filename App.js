@@ -25,7 +25,7 @@ import Questionaireseven from './src/components/Questionaires/Questionaireseven'
 import Questionairefour from './src/components/Questionaires/Questionairefour';
 import Questionairefive from './src/components/Questionaires/Questionairefive';
 import Questionairesix from './src/components/Questionaires/Questionairesix';
- import ResetPassword from './src/components/ForgotPassword/ResetPassword';
+ import ChangePassword from './src/components/ForgotPassword/ChangePassword';
 import Verification from './src/components/ForgotPassword/Verification';
 import ContactUs from './src/components/FAQ/FAQ';
 import TermsCondition from './src/components/Terms&Condition/TermsCondition';
@@ -63,7 +63,7 @@ const App = props => {
       {/* <Questionairefour/> */}
       {/* <Questionairefive/> */}
       {/* <Questionairesix/> */}
-      {/* <ResetPassword/> */}
+      {/* <ChangePassword/> */}
       {/* <Verification/> */}
       {/* <ContactUs/> */}
       {/* <TermsCondition/> */}

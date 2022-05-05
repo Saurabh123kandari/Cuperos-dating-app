@@ -6,20 +6,24 @@ import {
   Image,
   Text,
   ScrollView,
+  TouchableOpacity
 } from 'react-native';
 import {ARROW_ICON, ARROW_RIGHT} from '../../constant/App_Constant';
 
-const FAQ = () => {
+const FAQ = (props) => {
   const data = [
     {
       id: 1,
       title: 'Terms & Conditions',
       ArrowRight: ARROW_RIGHT,
+      path: 'privacypolicy'
+
     },
     {
       id: 2,
       title: 'How it works',
       ArrowRight: ARROW_RIGHT,
+      path: 'changepassword'
     },
     {
       id: 3,
@@ -69,13 +73,13 @@ const FAQ = () => {
         <View style={styles.Inner_View}>
           {data.map(item => {
             return (
-              <View style={styles.view_two}>
+              <TouchableOpacity   onPress={()=>{props.navigation.navigate(item.path)}} style={styles.view_two}>
                 <Text style={styles.inner_text}>{item.title}</Text>
                 <Image
                   source={item.ArrowRight}
                   
                   alt="Alternate Text"></Image>
-              </View>
+              </TouchableOpacity>
             );
           })}
         </View>

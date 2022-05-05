@@ -37,6 +37,10 @@ import MyProfile from '../components/UserProfile/MyProfile';
 import ItsAMatch from '../components/ItsAMatch/ItsAMatch';
 import Settings from '../components/Settings/Settings.js';
 import Reward from '../components/Reward/Reward';
+import ContactUs from '../components/ContactUs/ContactUs';
+import PrivacyPolicy from '../components/PrivacyPolicy/PrivacyPolicy';
+import FAQ from '../components/FAQ/FAQ';
+import ChangePassword from '../components/ForgotPassword/ChangePassword';
 
 
 // import {View} from 'native-base';
@@ -302,6 +306,54 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <Reward {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'contactus',
+    component: props => (
+      <ComponentWrapper>
+       <ContactUs {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'privacypolicy',
+    component: props => (
+      <ComponentWrapper>
+       <PrivacyPolicy {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'faq',
+    component: props => (
+      <ComponentWrapper>
+       <FAQ {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'changepassword',
+    component: props => (
+      <ComponentWrapper>
+       <ChangePassword {...props}/>
       </ComponentWrapper  >
     ),
     headerProps: {

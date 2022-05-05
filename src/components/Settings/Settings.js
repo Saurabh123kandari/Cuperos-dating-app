@@ -83,7 +83,8 @@ const Settings = props => {
           </View>
           <View>
             <Text style={styles.heading}>FAQ</Text>
-            <View
+            <TouchableOpacity
+            onPress={()=>{props.navigation.navigate('faq')}}
               style={[
                 styles.innerview,
                 {justifyContent: 'space-between', paddingHorizontal: 20},
@@ -94,7 +95,7 @@ const Settings = props => {
                 size={50}
                 resizeMode="contain"
                 alt="Alternate Text"></Image>
-            </View>
+            </TouchableOpacity>
           </View>
           <View>
             <Text style={styles.heading}>Notifications</Text>

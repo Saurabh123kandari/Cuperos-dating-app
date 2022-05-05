@@ -1,11 +1,17 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, View, Text,ImageBackground} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  Text,
+  ImageBackground,
+} from 'react-native';
 import {Searchbar} from 'react-native-paper';
 import ChatTabView from './ChatTabView';
-import {Image, ScrollView} from 'native-base';
+import {Image, ScrollView, Input} from 'native-base';
 
 const ChatList = () => {
-    const bgimage = require('../../assets/bg_pattern.png');
+  const bgimage = require('../../assets/bg_pattern.png');
   const data = [
     {
       id: 1,
@@ -33,49 +39,52 @@ const ChatList = () => {
       text: 'Anita',
     },
 
-    {id: 6,
-    profileimage: require('../../assets/ProfileIcon.png'),
-    text: 'Anita',
-  },
-  {
-    id: 7,
-    profileimage: require('../../assets/ProfileIcon.png'),
-    text: 'Anita',
-  },
-  {
-    id: 8,
-    profileimage: require('../../assets/ProfileIcon.png'),
-    text: 'Anita',
-  },
+    {
+      id: 6,
+      profileimage: require('../../assets/ProfileIcon.png'),
+      text: 'Anita',
+    },
+    {
+      id: 7,
+      profileimage: require('../../assets/ProfileIcon.png'),
+      text: 'Anita',
+    },
+    {
+      id: 8,
+      profileimage: require('../../assets/ProfileIcon.png'),
+      text: 'Anita',
+    },
   ];
 
   const profileimage = require('../../assets/ProfileIcon.png');
-  const [searchQuery, setSearchQuery] = React.useState('');
-
-  const onChangeSearch = query => setSearchQuery(query);
+  const searchimage = require('../../assets/ChatSearch.png');
+  
   return (
     <View style={styles.MainContainer}>
       <View style={styles.view_one}>
         <Text style={styles.text_one}>Chat</Text>
       </View>
       <View style={styles.view_two}>
-        <Searchbar
+        <Input
           placeholder="Search by Name"
-          onChangeText={onChangeSearch}
-          value={searchQuery}
-        />
+          backgroundColor="#F8F8F8"
+          p={4}
+          leftElement={
+            <Image
+              source={searchimage}
+              style={{marginHorizontal: 20}}
+              size={5}
+              resizeMode="contain"></Image>
+          }></Input>
       </View>
-  
+
       <View style={styles.view_three}>
-          <Text style={styles.text_two}>Matches</Text>
-          {/* <ImageBackground source={bgimage} style={{width: '100%', height: '100%'}}> */}
-      <ScrollView horizontal >
-        
-
-        {data.map(item => {
-          return (
-            <>
-
+        <Text style={styles.text_two}>Matches</Text>
+       
+        <ScrollView horizontal>
+          {data.map(item => {
+            return (
+              <>
                 <View style={{marginTop: 20, padding: 10}}>
                   <Image
                     size={50}
@@ -88,17 +97,15 @@ const ChatList = () => {
 
                   {/* <Image  source={item.profileimage} style={{borderRadius:100,}}></Image> */}
                 </View>
-             
-            </>
-          );
-        })}
-         </ScrollView>
-         
+              </>
+            );
+          })}
+        </ScrollView>
+      
       </View>
       <View style={styles.view_four}>
         <ChatTabView />
       </View>
-     
     </View>
   );
 };

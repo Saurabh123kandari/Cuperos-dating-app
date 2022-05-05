@@ -33,9 +33,10 @@ const crossimage = require('../../assets/cross.png');
 const plusimage = require('../../assets/plus.png');
 
 const FirstRoute = () => (
-  <Center flex={1} my="4">
-    This is Tab 1
-  </Center>
+  <View style={styles.firstview}>
+    <Text style={styles.first_text}>Hello! I am Aarianna and I am a product designer at one of the biggest non-profits in the USA. I am a passionate person, customer-obsessed, and enjoy always helping people design new products/
+experiences for their customers!</Text>
+  </View>
 );
 
 const SecondRoute = () => (
@@ -528,5 +529,11 @@ paddingHorizontal:10
         fontWeight: '400',
         fontFamily: 'Poppins',
       },
+      first_text:{
+        color:'#686868'
+      },
+      firstview:{
+        paddingHorizontal:30 
+      }
 })
 export default GalleryView;

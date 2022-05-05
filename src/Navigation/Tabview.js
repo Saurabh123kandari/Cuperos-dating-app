@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../components/Home/Home';
 import ForgotPassword from '../components/ForgotPassword/ForgotPassword';
-import ResetPassword from '../components/ForgotPassword/ResetPassword';
+import ResetPassword from '../components/ForgotPassword/ChangePassword';
 import SubscriptionPlan from '../components/Subscription/SubscriptionPlan';
 import MatchesList from '../components/Matches/MatchesList'
 import ChatList from '../components/Chat/ChatList';

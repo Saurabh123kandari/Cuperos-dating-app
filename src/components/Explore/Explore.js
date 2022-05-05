@@ -3,12 +3,15 @@ import {
   View,
   TouchableOpacity,
   ScrollView,
-  Image,
+
   StyleSheet,
   SafeAreaView,
+  ImageBackground
 } from 'react-native';
+import {Image } from 'native-base'
 // import {TabView, SceneMap} from 'react-native-tab-view';
 import {Box, Text, Center, useColorModeValue} from 'native-base';
+const bgpattern=require('../../assets/bg_pattern.png')
 const image = require('../../assets/Man.png');
 const imageone = require('../../assets/Manone.png');
 const imagetwo = require('../../assets/Mantwo.png');
@@ -20,15 +23,20 @@ const imagesix = require('../../assets/image6.png');
 const imageseven = require('../../assets/image7.png');
 const crossimage = require('../../assets/cross.png');
 const plusimage = require('../../assets/plus.png');
+const searchimage = require('../../assets/Search.png');
+const filterimage = require('../../assets/filter.png');
 
 const Explore = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.MainContainer}>
       <ScrollView>  
         <View style={styles.header}>
+          <Image source={searchimage} size={7} style={{marginTop:10}} resizeMode="contain"></Image>
           <Text style={styles.main_header}>Explore</Text>
-          {/* <Text style={styles.sub_header}>Today</Text> */}
+          <Image source={filterimage} size={10}  resizeMode="contain"></Image>
+        
         </View>
+        <ImageBackground source={bgpattern} style={{height:'100%',width:'100%'}}>
         <View style={styles.view}>
           <View style={styles.maincard}>
             <Image source={image} style={styles.image} />
@@ -142,23 +150,35 @@ const Explore = () => {
             </View>
           </View>
         </View>
+        </ImageBackground>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  MainContainer:{
+flex:1,
+ backgroundColor:'#FFFFFF'
+  },
   header: {
-    flex: 0.3,
-    flexDirection: 'column',
-    alignItems: 'center',
+    flex: 0.1,
+    flexDirection: 'row',
+    justifyContent:'space-between',
+    // backgroundColor:'yellow',
+    // margin:20
+    // alignItems: 'center',
+    padding:20
+   
+    
   },
   main_header: {
     fontSize: 24,
     fontWeight: '500',
     fontFamily: 'Poppins',
-    margin: 22,
-    color:'#FF0000'
+    // margin: 22,
+    color:'#FF0000',
+  paddingTop:15
   },
   sub_header: {
     fontSize: 18,
@@ -167,7 +187,7 @@ const styles = StyleSheet.create({
     color: '#A4A4A4',
   },
   view: {
-    flex: 0.7,
+    flex: 0.9,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',

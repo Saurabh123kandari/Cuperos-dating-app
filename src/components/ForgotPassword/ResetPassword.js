@@ -1,3 +1,6 @@
+
+
+
 import { ScrollView,VStack, FormControl, Input, Button } from 'native-base'
 import React from 'react'
 import { SafeAreaView,StyleSheet,ImageBackground ,View,Image,Text,TouchableOpacity} from 'react-native';
@@ -16,22 +19,10 @@ const ResetPassword = () => {
               source={ArrowIcon}
               style={{width: 16, height: 16, color: '#9D9D9D'}}
               alt="Alternate Text"></Image>
-        <Text style={[styles.text,{marginLeft:80}]}>Update Password</Text>
-
+        <Text style={[styles.text,{marginLeft:80}]}>Reset Password</Text>
     </View>
-
-
-
-
     <View style={styles.viewtwo}>
     <VStack space={3} >
-          <FormControl >
-            <FormControl.Label>
-                <Text style={styles.inlinetext}>Old Password</Text>
-
-                </FormControl.Label>
-            <Input background="#F8F8F8" py="4"/>
-          </FormControl>
           <FormControl mt={2}>
             <FormControl.Label>
                 <Text style={styles.inlinetext}>New Password</Text>

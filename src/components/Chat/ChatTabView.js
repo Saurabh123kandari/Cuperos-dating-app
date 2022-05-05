@@ -16,38 +16,38 @@ const data = [
   {
     id: 1,
     name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    description: '20 March, 5:18 p.m',
+    profileimage: require('../../assets/Video.png'),
   },
   {
     id: 2,
     name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    description: '20 March, 5:18 p.m',
+    profileimage: require('../../assets/Call.png'),
   },
   {
     id: 3,
     name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    description: '20 March, 5:18 p.m',
+    profileimage: require('../../assets/Video.png'),
   },
   {
     id: 4,
     name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    description: '20 March, 5:18 p.m',
+    profileimage: require('../../assets/Call.png'),
   },
   {
     id: 5,
     name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    description: '20 March, 5:18 p.m',
+    profileimage: require('../../assets/Call.png'),
   },
   {
     id: 6,
     name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    description: '20 March, 5:18 p.m',
+    profileimage: require('../../assets/Video.png'),
   },
 ];
 
@@ -129,7 +129,7 @@ const FirstRoute = () => (
     </View>
     <View style={{display: 'flex', flexDirection: 'row', marginVertical: 10}}>
       <Image
-        size={50}
+        size={5}
         resizeMode={'contain'}
         borderRadius={100}
         source={profileimage}
@@ -195,9 +195,55 @@ const FirstRoute = () => (
 );
 
 const SecondRoute = () => (
-  <View>
-    <Text>This is Tab 2</Text>
-  </View>
+  <ScrollView style={{flex:1,paddingHorizontal:20}}>
+    {data.map(item=>{
+      return(
+        <>
+         <View
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent:'space-between',
+        marginBottom: 10,
+        marginTop: 20,
+      }}>
+        <View style={{display:'flex',flexDirection:'row'}}>
+        <Image
+        size={50}
+        style={{marginTop:-5}}
+        resizeMode={'contain'}
+        borderRadius={100}
+        source={profileimage}
+        alt="Alternate Text"
+      />
+
+      <View style={{display: 'flex', flexDirection: 'column', marginLeft: 20}}>
+        <Text style={{fontWeight: '500', fontSize: 18}}>Mary Burgess</Text>
+        <Text style={{fontWeight: '500', fontSize: 14, color: '#1A0566'}}>
+          {item.description}
+        </Text>
+      </View>
+        </View>
+     
+     <Image
+     style={{marginTop:-5}}
+        size={7}
+        resizeMode="contain"
+        // borderRadius={100}
+        source={item.profileimage}
+        alt="Alternate Text"
+      />
+    </View>
+        </>
+
+      )
+
+
+    })}
+  
+
+  
+  </ScrollView>
 );
 
 const initialLayout = {
