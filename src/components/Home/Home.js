@@ -46,7 +46,7 @@ const Home = props => {
         </TouchableOpacity>
        
         <View style={{flexDirection: 'row',justifyContent:'space-between',width:110}}>
-          <Image source={location} />
+          {/* <Image source={location} /> */}
           <Text>California, USA</Text>
         </View>
       <TouchableOpacity onPress={()=>{

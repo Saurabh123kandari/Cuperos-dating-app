@@ -129,7 +129,7 @@ const FirstRoute = () => (
     </View>
     <View style={{display: 'flex', flexDirection: 'row', marginVertical: 10}}>
       <Image
-        size={5}
+        size={50}
         resizeMode={'contain'}
         borderRadius={100}
         source={profileimage}
