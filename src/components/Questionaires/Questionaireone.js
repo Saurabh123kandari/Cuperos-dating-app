@@ -91,7 +91,7 @@ const handleClick = (item) =>{
         <View style={styles.view_two}>
           {questionaire?.map((item) => {
             return (
-              <View style={styles.inner_view_two}>
+              <View style={item.check ? [styles.inner_view_two, {borderColor: '#FF0000'}] : styles.inner_view_two}>
                 <Text style={styles.text_two}>{item.question}</Text>
                 <View style={styles.anotherview}>
                   <TouchableOpacity
