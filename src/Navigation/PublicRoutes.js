@@ -406,7 +406,7 @@ export const PublicRoute = props => {
             options={optionProps => {
               const {navigation} = optionProps;
               return {
-                 headerShown: true,
+                 headerShown: false,
                 // title: '',
                 headerTintColor: 'yellow',
                 headerBackTitle: '',
@@ -426,17 +426,17 @@ export const PublicRoute = props => {
                   );
                 },
 
-                header: p => {
-                  console.log(p,"prooooo")
-                  return (
-                    p?.route?.name ===  'signupone' || p?.route?.name ===  'signuptwo'   ? 
+                // header: p => {
+                //   console.log(p,"prooooo")
+                //   return (
+                //     p?.route?.name ===  'signupone' || p?.route?.name ===  'signuptwo'   ? 
                    
-                      <ChevronLeftIcon onPress={() => navigation.goBack()} iconName="chevron-left" size="8" mt={8} />
+                //       <ChevronLeftIcon onPress={() => navigation.goBack()} iconName="chevron-left" size="8" mt={8} />
                     
-                    :
-                    null
-                  );
-                },
+                //     :
+                //     null
+                //   );
+                // },
               };
             }}>
             {p => <item.component {...p} {...props} />}

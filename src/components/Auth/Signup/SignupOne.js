@@ -6,7 +6,8 @@ import {
   View,
   ImageBackground,
   TouchableOpacity,
-  Image
+  Image,
+  ScrollView,
 } from 'react-native';
 import {
   Box,
@@ -17,14 +18,14 @@ import {
   Button,
   Progress,
   ChevronLeftIcon,
-  ScrollView,
+  
 } from 'native-base';
 import {Select, CheckIcon} from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import ButtonGrad from './ButtonGrad';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
- 
+
  const SignupSchema = Yup.object().shape({
    firstName: Yup.string()
     //  .min(2, 'Too Short!')
@@ -41,9 +42,12 @@ import * as Yup from 'yup';
 const SignupOne = props => {
   const [gender, setGender] = React.useState('');
   const [height, setHeight] = React.useState('');
+ 
   const image = require('../../../assets/bg_pattern.png');
   
   return (
+    <SafeAreaView style={styles.MainContainer}>
+      
     <Formik
       initialValues={{
         firstName: '',
@@ -66,35 +70,37 @@ const SignupOne = props => {
         })
       }}>
       {({handleChange, handleBlur, handleSubmit, values, errors}) => (
-        <SafeAreaView style={styles.MainContainer}>
+
+       
           <ImageBackground
             source={image}
-            style={{width: '100%', height: '100%'}}>
-            <ScrollView>
+            resizeMode="contain"
+            style={{width:'100%',height:'100%'}}
+           >
+            
               <View style={styles.icon_view_one}>
-                {/* <ChevronLeftIcon iconName="chevron-left" size="7" mx={3} /> */}
-                <Progress
-                  mx="10"
-                  mt="4"
+                <ChevronLeftIcon iconName="chevron-left" size="5" mx={3} my={7} />
+               
+              </View>
+             
+              <View style={styles.form_view}>
+              <Progress
+                  mx="5"
+                 
                   mb="4"
                   colorScheme="red"
                   value={15}
                   height="1.5"
                   background="#D0D0D0"
                 />
-              </View>
-              {/* <View style={styles.icon_view_two}>
-        <Text></Text>
-      </View> */}
-              <Box style={styles.form_view}>
                 <Heading style={styles.heading_one}>
                   Let’s know each other better!
                 </Heading>
                 <Heading style={styles.heading_two}>
                   Tell us a few things about yourself.
                 </Heading>
-                <VStack space={3} mt="5">
-                  <FormControl mt="5">
+                <VStack space={3} >
+                  <FormControl mt={7}>
                     <FormControl.Label>
                       <Text style={styles.text}> Name</Text>
                     </FormControl.Label>
@@ -106,7 +112,7 @@ const SignupOne = props => {
                       value={values.firstName}
                       placeholder="First Name"
                       backgroundColor="#F8F8F8"
-                      py="3.5"
+                      py="3"
                       borderRadius="10"
                       borderColor="#FF0000"
                       fontSize="16"
@@ -128,7 +134,7 @@ const SignupOne = props => {
                       borderColor="#C4C4C4"
                       fontSize="16"
                       fontWeight="400"
-                      py="3.5"
+                      py="3"
                       mt="4"
                       borderRadius="10"
                     />
@@ -138,11 +144,11 @@ const SignupOne = props => {
                       </Text>
                     )}
                      </FormControl>
-                  <FormControl mt="4">
+                  <FormControl mt="3">
                     <FormControl.Label>
                       <Text style={styles.text}>Date of Birth</Text>
                     </FormControl.Label>
-                    <Input
+                   <Input
                       type="dob"
                       name="dob"
                       onChangeText={handleChange('dob')}
@@ -153,7 +159,7 @@ const SignupOne = props => {
                       borderColor="#C4C4C4"
                       fontSize="16"
                       fontWeight="400"
-                      py="3.5"
+                      py="3"
                       borderRadius="10"
                     />
                    {errors.dob && (
@@ -162,14 +168,15 @@ const SignupOne = props => {
                       </Text>
                     )}
                     <Image></Image>
+                    
                   </FormControl>
-                  <FormControl mt="4">
+                  <FormControl mt="3">
                     <FormControl.Label>
                       <Text style={styles.text}>Gender</Text>
                     </FormControl.Label>
                     <Box>
                       <Select
-                        py="3.5"
+                        py="3"
                         px="4"
                         name='gender'
                         borderRadius="10"
@@ -202,7 +209,7 @@ const SignupOne = props => {
                       </Text>
                     )}
                   </FormControl>
-                  <FormControl mt="4">
+                  <FormControl mt="3">
                     <FormControl.Label>
                       <Text style={styles.text}>Height</Text>
                     </FormControl.Label>
@@ -214,7 +221,7 @@ const SignupOne = props => {
                         borderColor="#C4C4C4"
                         fontSize="16"
                         fontWeight="400"
-                        py="3.5"
+                        py="3"
                         selectedValue={height}
                         // value={height}
                         minWidth="200"
@@ -245,35 +252,33 @@ const SignupOne = props => {
                       </Text>
                     )}
                   </FormControl>
-                  {/* <TouchableOpacity
-                  onPress={() => {
-                    // console.log(props.navigation, 'e..');
-                    props.navigation.navigate('signuptwo');
-                  }}>
-                   <ButtonGrad title="Next"  />
-                </TouchableOpacity> */}
+                  
 
                   <LinearGradient
                     colors={['#D72D79', '#9264F2']}
                     start={{x: 0, y: 0}}
                     end={{x: 0, y: 1}}
                     style={styles.linearGradient}>
-                    {/* <TouchableOpacity
-                      onPress={() => {
-                        props.navigation.navigate('signuptwo');
-                      }}> */}
+                    
                     <TouchableOpacity onPress={handleSubmit}>
                       <Text style={styles.buttonText}>Next</Text>
                     </TouchableOpacity>
-                    {/* </TouchableOpacity> */}
+                    
                   </LinearGradient>
+                  
+                  
+                  
                 </VStack>
-              </Box>
-            </ScrollView>
+              </View>
+          
           </ImageBackground>
-        </SafeAreaView>
+         
+         
+    
       )}
     </Formik>
+    </SafeAreaView>
+    
   );
 };
 
@@ -281,18 +286,18 @@ const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
     fontFamily: 'Poppins',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#ffffff',
     //paddingHorizontal: 20,
   },
   icon_view_one: {
     flex: 0.1,
+    //  backgroundColor:'red'
   },
-  icon_view_two: {
-    flex: 0.1,
-  },
+  
   form_view: {
     flex: 0.9,
     paddingHorizontal: 20,
+    // backgroundColor:'yellow'
   },
   heading_one: {
     fontSize: 22,
@@ -323,7 +328,7 @@ const styles = StyleSheet.create({
   button_view: {
     borderRadius: 10,
 
-    marginTop: 20,
+    // marginTop: 20,
   },
   button_text: {
     color: '#FFFFFF',
@@ -331,10 +336,9 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   linearGradient: {
-    width: '100%',
+    
     marginTop: 20,
-    paddingLeft: 15,
-    paddingRight: 15,
+   
     paddingVertical: 4,
     borderRadius: 5,
   },

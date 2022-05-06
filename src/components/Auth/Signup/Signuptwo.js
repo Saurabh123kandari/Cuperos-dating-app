@@ -54,6 +54,7 @@ const Signuptwo = (props) => {
   // }, [authUser])
   console.log(authUser, 'authUser')
   return (
+    <SafeAreaView style={styles.MainContainer}>
     <Formik
       initialValues={{
         religion: '',
@@ -85,33 +86,34 @@ const Signuptwo = (props) => {
         props.navigation.navigate('thankyou')
       }}>
       {({handleChange, handleBlur, handleSubmit, values, errors}) => (
-        <SafeAreaView style={styles.MainContainer}>
+       
           <ImageBackground
             source={image}
             style={{width: '100%', height: '100%'}}>
             <ScrollView>
               <View style={styles.icon_view_one}>
-                {/* <ChevronLeftIcon iconName="chevron-left" size="7" mx={3} /> */}
-                <Progress
-                  mx="10"
-                  mt="4"
+                <ChevronLeftIcon iconName="chevron-left" size="5" mx={3} my={5} />
+                
+              </View>
+              <View style={styles.form_view}>
+              <Progress
+                  mx="5"
+                  
                   mb="4"
                   colorScheme="red"
                   background="#D0D0D0"
-                  value={15}
+                  value={25}
                   height="1.5"
                 />
-              </View>
-              <Box style={styles.form_view}>
                 <VStack space={3}>
-                  <FormControl mt="3">
+                  <FormControl >
                     <FormControl.Label>
                       <Text style={styles.text}>Spirituality/Religion</Text>
                     </FormControl.Label>
                     <Box>
                       <Select
                         name="religion"
-                        py="3.5"
+                        py="3"
                         borderRadius="10"
                         borderColor="#C4C4C4"
                         backgroundColor="#F8F8F8"
@@ -142,14 +144,14 @@ const Signuptwo = (props) => {
                       </Text>
                     )}
                   </FormControl>
-                  <FormControl mt="4">
+                  <FormControl mt="3">
                     <FormControl.Label>
                       <Text style={styles.text}>Belong to</Text>
                     </FormControl.Label>
                     <Box>
                       <Select
                         name="belongTo"
-                        py="3.5"
+                        py="3"
                         borderColor="#C4C4C4"
                         borderRadius="10"
                         backgroundColor="#F8F8F8"
@@ -182,14 +184,14 @@ const Signuptwo = (props) => {
                       </Text>
                     )}
                   </FormControl>
-                  <FormControl mt="4">
+                  <FormControl mt="3">
                     <FormControl.Label>
                       <Text style={styles.text}>Maritial Status</Text>
                     </FormControl.Label>
                     <Box>
                       <Select
                         name="martialStatus"
-                        py="3.5"
+                        py="3"
                         borderColor="#C4C4C4"
                         fontSize="16"
                         fontWeight="400"
@@ -219,14 +221,14 @@ const Signuptwo = (props) => {
                       </Text>
                     )}
                   </FormControl>
-                  <FormControl mt="4">
+                  <FormControl mt="3">
                     <FormControl.Label>
                       <Text style={styles.text}>Qualification</Text>
                     </FormControl.Label>
                     <Box>
                       <Select
                         name="qualification"
-                        py="3.5"
+                        py="3"
                         fontSize="16"
                         fontWeight="400"
                         borderRadius="10"
@@ -258,7 +260,7 @@ const Signuptwo = (props) => {
                       </Text>
                     )}
                   </FormControl>
-                  <FormControl mt="4">
+                  <FormControl mt="3">
                     <FormControl.Label>
                       <Text style={styles.text}>Where do you live</Text>
                       <Image
@@ -271,7 +273,7 @@ const Signuptwo = (props) => {
                         borderColor="#C4C4C4"
                         backgroundColor="#F8F8F8"
                         borderRadius="10"
-                        py="3.5"
+                        py="3"
                         selectedValue={country}
                         minWidth="200"
                         accessibilityLabel="Choose Service"
@@ -309,7 +311,7 @@ const Signuptwo = (props) => {
                     borderColor="#C4C4C4"
                     placeholder="Postal/Zipcode"
                     backgroundColor="#F8F8F8"
-                    py="3.5"
+                    py="3"
                     borderRadius="10"
                     fontSize="16"
                     fontWeight="400"
@@ -319,7 +321,7 @@ const Signuptwo = (props) => {
                       {errors.postal}
                     </Text>
                   )}
-                  <FormControl mt="4">
+                  <FormControl mt="3">
                     <FormControl.Label>
                       <Text style={styles.text}>Password</Text>
                     </FormControl.Label>
@@ -352,7 +354,7 @@ const Signuptwo = (props) => {
                       borderColor="#C4C4C4"
                       placeholder="Confirm Password"
                       backgroundColor="#F8F8F8"
-                      py="3.5"
+                      py="3"
                       borderRadius="10"
                       fontSize="16"
                       fontWeight="400"
@@ -363,7 +365,7 @@ const Signuptwo = (props) => {
                       </Text>
                     )}
                   </FormControl>
-                  <FormControl mt="4">
+                  <FormControl mt="3">
                     <FormControl.Label>
                       <Text style={styles.text}>Contact Number</Text>
                     </FormControl.Label>
@@ -399,13 +401,7 @@ const Signuptwo = (props) => {
                       the sign up page
                     </Text>
                   </View>
-                  {/* <LinearGradient
-              colors={['#D72D79', '#9264F2']}
-              start={{x: 0, y: 0}}
-              end={{x: 0, y: 1}}
-              style={styles.linearGradient}>
-              <Text style={styles.buttonText}>Signup</Text>
-            </LinearGradient> */}
+                  
                   <TouchableOpacity onPress={handleSubmit}>
                     <ButtonGrad title="Signup" />
                   </TouchableOpacity>
@@ -414,16 +410,19 @@ const Signuptwo = (props) => {
                   <Text style={styles.last_view_text}>
                     Already have an account?
                   </Text>
+                  <TouchableOpacity onPress={()=>{props.navigation.navigate('signin')}}>
                   <Text style={[styles.last_view_text, {color: 'red'}]}>
                     Signin Now
                   </Text>
+                  </TouchableOpacity>
                 </View>
-              </Box>
+              </View>
             </ScrollView>
           </ImageBackground>
-        </SafeAreaView>
+       
       )}
     </Formik>
+    </SafeAreaView>
   );
 };
 
@@ -435,9 +434,7 @@ const styles = StyleSheet.create({
   icon_view_one: {
     flex: 0.1,
   },
-  icon_view_two: {
-    flex: 0.1,
-  },
+  
   form_view: {
     flex: 0.9,
     paddingHorizontal: 20,
@@ -479,7 +476,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     paddingHorizontal: 10,
-    paddingTop: 30,
+    paddingVertical: 20,
     //position: 'absolute',
     //width: 339
   },
