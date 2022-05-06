@@ -39,8 +39,10 @@ const Verification = () => {
               </FormControl.Label>
             
               <View style={{marginTop:10}}>
-              <Input background="#F8F8F8" py="5"  borderRadius="10" style={{borderTopLeftRadius:10,position:'relative'}}/>
-              <TouchableOpacity  style={{backgroundColor:'#FF0000',paddingHorizontal:15,paddingVertical:19,borderRadius:6,position:'absolute',display:'flex',alignSelf:'flex-end'}}><Text style={{alignSelf:'center',color:'#FFFFFF',fontSize:15,fontWeight:'600'}}>Send OTP</Text></TouchableOpacity>
+              <Input  py="4" backgroundColor="#F8F8F8" borderRadius="10" style={{borderTopLeftRadius:10,}} rightElement={
+                <TouchableOpacity  style={{backgroundColor:'#FF0000',paddingHorizontal:15,paddingVertical:19,borderRadius:6,}}><Text style={{alignSelf:'center',color:'#FFFFFF',fontSize:15,fontWeight:'600'}}>Send OTP</Text></TouchableOpacity>
+              }/>
+              
           </View>
             </FormControl>
             
@@ -48,7 +50,7 @@ const Verification = () => {
               <FormControl.Label>
                 <Text style={styles.inlinetext}>OTP</Text>
               </FormControl.Label>
-              <Input background="#F8F8F8" py="5" mt={2} borderRadius="10" />
+              <Input backgroundColor="#F8F8F8" py="4" mt={2} borderRadius="10" />
             </FormControl>
           </VStack>
           <LinearGradient
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
     //paddingHorizontal:20,
-    //backgroundColor:'red'
+    backgroundColor:'#ffffff'
   },
   firstview: {
     flex: 0.1,

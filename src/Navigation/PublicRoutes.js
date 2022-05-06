@@ -41,6 +41,7 @@ import ContactUs from '../components/ContactUs/ContactUs';
 import PrivacyPolicy from '../components/PrivacyPolicy/PrivacyPolicy';
 import FAQ from '../components/FAQ/FAQ';
 import ChangePassword from '../components/ForgotPassword/ChangePassword';
+import Verification from '../components/ForgotPassword/Verification';
 
 
 // import {View} from 'native-base';
@@ -354,6 +355,18 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <ChangePassword {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'verification',
+    component: props => (
+      <ComponentWrapper>
+       <Verification {...props}/>
       </ComponentWrapper  >
     ),
     headerProps: {
