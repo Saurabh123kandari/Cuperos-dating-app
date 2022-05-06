@@ -369,36 +369,26 @@ const Signuptwo = (props) => {
                     <FormControl.Label>
                       <Text style={styles.text}>Contact Number</Text>
                     </FormControl.Label>
-                    <Box>
-                      <Select
-                        py="3"
-                        fontSize="16"
-                        fontWeight="400"
-                        borderRadius="10"
-                        backgroundColor="#F8F8F8"
-                        borderColor="#C4C4C4"
-                        selectedValue={service}
-                        minWidth="200"
-                        accessibilityLabel="Choose Service"
-                        placeholder=""
-                        _selectedItem={{
-                          bg: '#F8F8F8',
-                          endIcon: <CheckIcon size="5" />,
-                        }}
-                        onValueChange={itemValue => setService(itemValue)}>
-                        <Select.Item label="UX Research" value="ux" />
-                        <Select.Item label="Web Development" value="web" />
-                        <Select.Item
-                          label="Cross Platform Development"
-                          value="cross"
-                        />
-                        <Select.Item label="UI Designing" value="ui" />
-                        <Select.Item
-                          label="Backend Development"
-                          value="backend"
-                        />
-                      </Select>
-                    </Box>
+                    <Input
+                      type="contactNumber"
+                      name="contactNumber"
+                      onChangeText={handleChange('contactNumber')}
+                      onBlur={handleBlur('contactNumber')}
+                      value={values.contactNumber}
+                      mt="4"
+                      borderColor="#C4C4C4"
+                      placeholder="Contact Number"
+                      backgroundColor="#F8F8F8"
+                      py="3.5"
+                      borderRadius="10"
+                      fontSize="16"
+                      fontWeight="400"
+                    />
+                    {errors.contactNumber && (
+                      <Text style={{fontSize: 15, color: 'red'}}>
+                        {errors.contactNumber}
+                      </Text>
+                    )}
                   </FormControl>
 
                   <View style={styles.outerview}>
