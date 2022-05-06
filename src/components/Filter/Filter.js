@@ -49,7 +49,7 @@ const Filter = props => {
           gender: values.gender,
           height: values.height,
         };
-        props.navigation.navigate('signuptwo', {
+        props.navigation.navigate('tabview', {
           payload,
         });
       }}>
@@ -116,27 +116,27 @@ const Filter = props => {
                       flexDirection: 'row',
                       justifyContent: 'space-between',
                     }}>
-                    <View
+                    <TouchableOpacity
                       style={[
                         styles.option_button,
                         {backgroundColor: '#FF0000'},
                       ]}>
                       <Text style={{color:'#ffffff',fontWeight:'500',fontSize:16}}>Men</Text>
-                    </View>
-                    <View
+                    </TouchableOpacity>
+                    <TouchableOpacity
                       style={[
                         styles.option_button,
                         {backgroundColor: '#FFDFDF'},
                       ]}>
                       <Text style={{color:'#000000',fontWeight:'500',fontSize:16}}>Women</Text>
-                    </View>
-                    <View
+                    </TouchableOpacity>
+                    <TouchableOpacity
                       style={[
                         styles.option_button,
                         {backgroundColor: '#FFDFDF'},
                       ]}>
                       <Text style={{color:'#000000',fontWeight:'500',fontSize:16}}>Both</Text>
-                    </View>
+                    </TouchableOpacity>
                   </View>
                 </FormControl>
                 <FormControl mt="4">
