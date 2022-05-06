@@ -47,7 +47,7 @@ const SignupOne = props => {
   
   return (
     <SafeAreaView style={styles.MainContainer}>
-      
+      <ScrollView>
     <Formik
       initialValues={{
         firstName: '',
@@ -277,6 +277,7 @@ const SignupOne = props => {
     
       )}
     </Formik>
+    </ScrollView>
     </SafeAreaView>
     
   );
