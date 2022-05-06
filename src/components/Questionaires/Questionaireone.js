@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -6,7 +6,7 @@ import {
   View,
   ImageBackground,
   TouchableOpacity,
-  
+  Image,
 } from 'react-native';
 import {
   Box,
@@ -18,17 +18,58 @@ import {
   Progress,
   ChevronLeftIcon,
   ScrollView,
-  Image,
   
+  Checkbox,
+  CheckIcon
 } from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import {CHECK, ANOTHERCHECK} from '../../constant/App_Constant'
 
 const Questionaireone = (props) => {
+   const [CheckIcon, setCheckIcon] = useState(false)
   const icon = require('../../assets/Vector.png');
   const mainicons = require('../../assets/Vector_3.png');
   const mainicon = require('../../assets/Vectors.png');
- 
+  const [check, setCheck] = useState(false)
+const data = [
+  {
+    id: 1,
+    question: 'Intimacy and communication',
+  },
+  {
+    id: 2,
+    question: 'Love',
+  },
+  {
+    id: 3,
+    question: 'Romance',
+  },
+  {
+    id: 4,
+    question: 'I don’t want to be alone'
+  },
+  {
+    id: 5,
+    question: 'Safety',
+  },
+  {
+    id: 6,
+    question: 'Emotional security',
+  },
+
+];
+const [questionaire, SetQuestionaire] = useState([]);
+useEffect( () => {
+  SetQuestionaire(data);
+}, []);
+
+const handleClick = (item) =>{
+  const updatedQuestionaire = questionaire.map((content)=>{
+    if(item?.id === content?.id) return {...content, check: !item?.check};
+    else return content;
+  })
+  SetQuestionaire(updatedQuestionaire)
+}
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ScrollView>
@@ -48,18 +89,25 @@ const Questionaireone = (props) => {
           </Text>
         </View>
         <View style={styles.view_two}>
-          <View style={styles.inner_view_two}>
-            <Text style={styles.text_two}>Intimacy and communication</Text>
-            <View style={styles.anotherview}>
-              <Image
-                source={CHECK}
-                style={{width: 34, height: 34}}
-                alt="Alternate Text"
-              />
-             
-            </View>
-          </View>
-          <View style={[styles.inner_view_two, {borderColor: '#FF0000'}]}>
+          {questionaire?.map((item) => {
+            return (
+              <View style={styles.inner_view_two}>
+                <Text style={styles.text_two}>{item.question}</Text>
+                <View style={styles.anotherview}>
+                  <TouchableOpacity
+                    onPress={() => handleClick(item)}>
+                     <Image
+                        source={item.check ? ANOTHERCHECK : CHECK}
+                        style={{width: 34, height: 34}}
+                        alt="Alternate Text"
+                      />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            );
+          })}
+
+          {/* <View style={[styles.inner_view_two, {borderColor: '#FF0000'}]}>
             <Text style={styles.text_two}>Love</Text>
             <View style={[styles.anotherview]}>
               <Image
@@ -69,8 +117,8 @@ const Questionaireone = (props) => {
               />
            
             </View>
-          </View>
-          <View style={styles.inner_view_two}>
+          </View> */}
+          {/* <View style={styles.inner_view_two}>
             <Text style={styles.text_two}>Romance</Text>
             <View style={styles.anotherview}>
               <Image
@@ -80,8 +128,8 @@ const Questionaireone = (props) => {
               />
              
             </View>
-          </View>
-          <View style={styles.inner_view_two}>
+          </View> */}
+          {/* <View style={styles.inner_view_two}>
             <Text style={styles.text_two}>I don’t want to be alone</Text>
             <View style={styles.anotherview}>
               <Image
@@ -113,7 +161,7 @@ const Questionaireone = (props) => {
               />
              
             </View>
-          </View>
+          </View> */}
           <LinearGradient
             colors={['#D72D79', '#9264F2']}
             start={{x: 0, y: 0}}

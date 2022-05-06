@@ -48,42 +48,39 @@ const Thankyou = (props) => {
 }
 
 
-const styles=StyleSheet.create({
-MainContainer:{
-    flex:1,
-    backgroundColor:'#F27272',
-    
+const styles = StyleSheet.create({
+  MainContainer: {
+    flex: 1,
+    backgroundColor: '#ef7272',
+
     // (239,114,114)
 
-    opacity:1
-    
-
-},
-view_one:{
+    opacity: 1,
+  },
+  view_one: {
     //flex:0.7,
     //backgroundColor:'red',
-
-},
-view_two:{
-    flex:0.3,
+  },
+  view_two: {
+    flex: 0.3,
     //backgroundColor:'#888',
-    borderTopLeftRadius:38,
-    borderTopRightRadius:38,
-    paddingHorizontal:20,
-    paddingTop:40,
-    backgroundColor:'#FFFFFF',
-},
-inner_text:{
-   fontSize:21,
-   fontWeight:'400',
-   textAlign:'center' ,
-   maxWidth:270,
-   alignSelf:'center',
-   color:'#000000'
-   //display:'flex',
-   //justifyContent:'center'
-},
-linearGradient: {
+    borderTopLeftRadius: 38,
+    borderTopRightRadius: 38,
+    paddingHorizontal: 20,
+    paddingTop: 40,
+    backgroundColor: '#FFFFFF',
+  },
+  inner_text: {
+    fontSize: 21,
+    fontWeight: '400',
+    textAlign: 'center',
+    maxWidth: 270,
+    alignSelf: 'center',
+    color: '#000000',
+    //display:'flex',
+    //justifyContent:'center'
+  },
+  linearGradient: {
     width: '100%',
     marginTop: 50,
     paddingLeft: 15,
@@ -97,32 +94,27 @@ linearGradient: {
     textAlign: 'center',
     margin: 10,
     color: '#ffffff',
-    fontWeight:'600'
+    fontWeight: '600',
     // backgroundColor: 'transparent',
   },
-  inner_view:{
-    flex:0.23,
-    backgroundColor:'rgba(255, 255, 255, 0.6)',
-    marginHorizontal:40,
-    borderRadius:38,
-   
-    
-    
+  inner_view: {
+    flex: 0.23,
+    // backgroundColor: 'rgba(255, 255, 255, 0.6)',
+    backgroundColor:'#FFFFFF',
+    opacity: 0.8,
+    marginHorizontal: 40,
+    borderRadius: 38,
   },
-  
 
-inline_text:{
-fontSize:28,
-fontWeight:'500',
-textAlign:'center',
-maxWidth:200,
-alignSelf:'center',
-marginTop:50
-}
-
-
-
-
-})
+  inline_text: {
+    color:'black',
+    fontSize: 28,
+    fontWeight: '500',
+    textAlign: 'center',
+    maxWidth: 200,
+    alignSelf: 'center',
+    marginTop: 50,
+  },
+});
 
 export default Thankyou;
