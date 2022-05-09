@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -24,6 +24,56 @@ import LinearGradient from 'react-native-linear-gradient';
 const Questionairethree = (props) => {
     const icon = require('../../assets/Vector.png');
     const mainicon = require('../../assets/Vectors.png');
+    const [data, setData] = useState([
+      {
+        id: 1,
+        title: 'Meditation',
+      },
+      {
+        id: 2,
+        title: 'Physical exercise',
+      },
+      {
+        id: 3,
+        title: 'Reading and podcasts',
+      },
+      {
+        id: 4,
+        title: 'Vacations',
+      },
+      {
+        id: 5,
+        title: 'Classes',
+      },
+      {
+        id: 6,
+        title: 'Time with family and friends',
+      },
+      {
+        id: 7,
+        title: 'Creative pursuits',
+      },
+      {
+        id: 8,
+        title: 'Volunteering',
+      },
+      {
+        id: 9,
+        title: 'Watching TV',
+      },
+      {
+        id: 10,
+        title: 'Sleeping',
+      },
+    ]);
+    const handleClick = (item) =>{
+      const updateValues = data.map((content)=>{
+       if (item?.id === content?.id)
+       return {...content, check: !item?.check}
+       else return content;
+      })
+      setData(updateValues)
+     }
   return (
     <SafeAreaView style={styles.MainContainer}>
         <ScrollView>
@@ -43,63 +93,17 @@ const Questionairethree = (props) => {
         </Text>
       </View>
       <View style={styles.view_two}>
-          <View style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly'}}>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Meditation</Text>
-          
-        </View>
-        <View style={[styles.inner_view_two,{backgroundColor:'#FF0000',borderColor:'#FFFFFF'}]}>
-          <Text style={[styles.text_two,{color:'#FFFFFF'}]}>Physical exercise</Text>
-          
-        </View>
-        </View>
-        <View style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly'}}>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Reading and podcasts</Text>
-          
-        </View>
-      
-        </View>
-        <View style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly'}}>
-        <View style={[styles.inner_view_two,{backgroundColor:'#FF0000',borderColor:'#FFFFFF'}]}>
-          <Text style={[styles.text_two,{color:'#FFFFFF'}]}>Vacations</Text>
-          
-        </View>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Classes</Text>
-          
-        </View>
-        </View>
-        <View style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly'}}>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Time with family and friends</Text>
-          
-        </View>
+          {/* <View style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly'}}> */}     
+          {data.map(item => {
+            return (
+              <TouchableOpacity onPress={() => handleClick(item)}>
+                 <View style={item.check ? [styles.inner_view_two,{backgroundColor:'#FF0000',borderColor:'#FFFFFF'}] : styles.inner_view_two }>
+                  <Text style={item.check ?  [styles.text_two,{color:'#ffff'}]:styles.text_two}>{item.title}</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
         
-        </View>
-        <View style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly'}}>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Creative pursuits</Text>
-          
-        </View>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Volunteering</Text>
-          
-        </View>
-        </View>
-        <View style={{display:'flex',flexDirection:'row',justifyContent:'space-evenly'}}>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Watching TV</Text>
-          
-        </View>
-        <View style={styles.inner_view_two}>
-          <Text style={styles.text_two}>Sleeping</Text>
-          
-        </View>
-        </View>
-        
-       
-       
         <LinearGradient
                 colors={['#D72D79', '#9264F2']}
                 start={{x: 0, y: 0}}
@@ -137,23 +141,28 @@ const styles = StyleSheet.create({
     
   },
   view_two: {
-      marginTop:20,
-    flex: 0.7,
+    marginTop:20,
+    flex: 0.8,
     paddingHorizontal:20,
-   //backgroundColor: 'red',
+    display:'flex',
+    flexDirection:'row',
+    flexWrap:'wrap',
+    //  alignItems:'center',
+justifyContent:'center'
   },
   inner_view_two: {
     //backgroundColor: '#F8F8F8',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
     padding: 15,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#C4C4C4',
-    alignItems: 'center',
-    marginVertical:10,
-    paddingHorizontal:25,
+    // alignItems: 'center',
+    marginVertical:8,
+    paddingHorizontal:20,
+    marginHorizontal:5,
   },
   anotherview: {
     // backgroundColor:'pink',
