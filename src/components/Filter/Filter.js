@@ -32,6 +32,14 @@ const Filter = props => {
   const [height, setHeight] = React.useState('');
   const [religion, setReligion] = React.useState('');
   const [ethnicity, setEthnicity] = React.useState('');
+  const [iLike, setILike] = React.useState('');
+  const [interestedIn, setInterestedIn] = React.useState('');
+  const handleClick = (item) =>{
+    setInterestedIn(item)
+   }
+   const handleILike = (item) =>{
+    setILike(item)
+   }
   return (
     <Formik
       initialValues={{
@@ -117,25 +125,19 @@ const Filter = props => {
                       justifyContent: 'space-between',
                     }}>
                     <TouchableOpacity
-                      style={[
-                        styles.option_button,
-                        {backgroundColor: '#FF0000'},
-                      ]}>
-                      <Text style={{color:'#ffffff',fontWeight:'500',fontSize:16}}>Men</Text>
+                      onPress={() => handleClick('Men')}
+                      style={ interestedIn === 'Men' ? [styles.option_button,{backgroundColor: '#FF0000'}] : styles.option_button }>
+                      <Text style={interestedIn === 'Men' ? [styles.interestedInStyle, {color:'#ffffff'}] : styles.interestedInStyle}>Men</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                      style={[
-                        styles.option_button,
-                        {backgroundColor: '#FFDFDF'},
-                      ]}>
-                      <Text style={{color:'#000000',fontWeight:'500',fontSize:16}}>Women</Text>
+                      onPress={() => handleClick('Women')}
+                      style={ interestedIn === 'Women' ? [styles.option_button,{backgroundColor: '#FF0000'}] : styles.option_button }>
+                      <Text style={interestedIn === 'Women' ? [styles.interestedInStyle, {color:'#ffffff'}] : styles.interestedInStyle}>Women</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                      style={[
-                        styles.option_button,
-                        {backgroundColor: '#FFDFDF'},
-                      ]}>
-                      <Text style={{color:'#000000',fontWeight:'500',fontSize:16}}>Both</Text>
+                      onPress={() => handleClick('Both')}
+                      style={ interestedIn === 'Both' ? [styles.option_button,{backgroundColor: '#FF0000'}] : styles.option_button }>
+                      <Text style={interestedIn === 'Both' ? [styles.interestedInStyle, {color:'#ffffff'}] : styles.interestedInStyle}>Both</Text>
                     </TouchableOpacity>
                   </View>
                 </FormControl>
@@ -265,20 +267,16 @@ const Filter = props => {
                     <Text style={styles.text}>I Like</Text>
                   </FormControl.Label>
                   <View style={styles.like_option}>
-                    <View
-                      style={[
-                        styles.option_button,
-                        {backgroundColor: '#FF0000'},
-                      ]}>
-                      <Text style={{color:'#ffffff',fontWeight:'500',fontSize:16}}>Smoker</Text>
-                    </View>
-                    <View
-                      style={[
-                        styles.option_button,
-                        {backgroundColor: '#FFDFDF', marginHorizontal: 10},
-                      ]}>
-                      <Text style={{color:'#000000',fontWeight:'500',fontSize:16}}>Non Smoker</Text>
-                    </View>
+                  <TouchableOpacity
+                      onPress={() => handleILike('Smoker')}
+                      style={ iLike === 'Smoker' ? [styles.option_button,{backgroundColor: '#FF0000'}] : styles.option_button }>
+                     <Text style={iLike === 'Smoker' ? [styles.interestedInStyle, {color:'#ffffff'}] : styles.interestedInStyle}>Smoker</Text>
+                      </TouchableOpacity>
+                 <TouchableOpacity
+                      onPress={() => handleILike('NonSmoker')}
+                      style={ iLike === 'NonSmoker' ? [styles.option_button,{backgroundColor: '#FF0000'}] : styles.option_button }>
+                    <Text style={iLike === 'NonSmoker' ? [styles.interestedInStyle, {color:'#ffffff'}] : styles.interestedInStyle}>Non Smoker</Text>
+                 </TouchableOpacity>
                   </View>
                 </FormControl>
                 <FormControl mt="4">
@@ -427,12 +425,18 @@ const styles = StyleSheet.create({
     borderColor: '#ffff',
     paddingVertical: 15,
     paddingHorizontal: 30,
+    backgroundColor: '#FFDFDF'
   },
   like_option: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
   },
+  interestedInStyle :{
+    color:'#000000',
+    fontWeight:'500',
+    fontSize:16
+  } 
 });
 
 export default Filter;

@@ -89,13 +89,21 @@ const Questionairetwo = (props) => {
   ]);
 
  const handleClick = (item) =>{
+  const findLength = data?.filter((item)=>item.check)
+  // if(findLength?.length >= 5) return null;
  const updateValues = data.map((content)=>{
-  if (item?.id === content?.id)
+  if (item?.id === content?.id) {
+
+    if(findLength?.length >= 5 && !item?.check) return content;
+    
   return {...content, check: !item?.check}
+  }
   else return content;
  })
- setData(updateValues)
+setData(updateValues)
 }
+
+
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ScrollView>

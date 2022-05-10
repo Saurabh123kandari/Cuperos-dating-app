@@ -67,9 +67,14 @@ const Questionairethree = (props) => {
       },
     ]);
     const handleClick = (item) =>{
+      const findLength = data?.filter((item)=>item.check)
       const updateValues = data.map((content)=>{
-       if (item?.id === content?.id)
+       if (item?.id === content?.id){
+
+        if(findLength?.length >= 3 && !item?.check) return content;
+
        return {...content, check: !item?.check}
+       }
        else return content;
       })
       setData(updateValues)

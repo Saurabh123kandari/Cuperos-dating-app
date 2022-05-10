@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -25,7 +25,11 @@ import LinearGradient from 'react-native-linear-gradient';
 //import ButtonGrad from './ButtonGrad';
 
 const QuestionaireSeven = props => {
-  let [service, setService] = React.useState('');
+  const [smokeOrNot, setSmokeOrNot] = useState('');
+  const [partnerSmokeOrNot, setPartnerSmokeOrNot] = useState('');
+  const [drinkOrNot, setDrinkOrNot] = useState('');
+  const [partnerDrinkOrNot, setPartnerDrinkOrNot] = useState('');
+  const [hearAboutUs, setHearAboutUs] = useState('')
   //   const image = {
   //     uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg_pattern.png',
   //   };
@@ -63,7 +67,7 @@ const QuestionaireSeven = props => {
                 backgroundColor="#F8F8F8"
                 fontSize="16"
                 fontWeight="400"
-                selectedValue={service}
+                selectedValue={smokeOrNot}
                 minWidth="200"
                 accessibilityLabel="Choose Service"
                 placeholder="Never"
@@ -71,7 +75,7 @@ const QuestionaireSeven = props => {
                   bg: '#F8F8F8',
                   endIcon: <CheckIcon size="5" />,
                 }}
-                onValueChange={itemValue => setService(itemValue)}>
+                onValueChange={itemValue => setSmokeOrNot(itemValue)}>
                 <Select.Item label="Yes " value="Yes" />
                 <Select.Item label="Occasional" value="Occasional" />
                 <Select.Item label="Never" value="Never" />
@@ -91,7 +95,7 @@ const QuestionaireSeven = props => {
                 backgroundColor="#F8F8F8"
                 fontSize="16"
                 fontWeight="400"
-                selectedValue={service}
+                selectedValue={partnerSmokeOrNot}
                 minWidth="200"
                 accessibilityLabel="Choose Service"
                 placeholder="Never"
@@ -99,7 +103,7 @@ const QuestionaireSeven = props => {
                   bg: '#F8F8F8',
                   endIcon: <CheckIcon size="5" />,
                 }}
-                onValueChange={itemValue => setService(itemValue)}>
+                onValueChange={itemValue => setPartnerSmokeOrNot(itemValue)}>
                 <Select.Item label="Yes " value="Yes" />
                 <Select.Item label="Occasional" value="Occasional" />
                 <Select.Item label="Never" value="Never" />
@@ -117,7 +121,7 @@ const QuestionaireSeven = props => {
                 backgroundColor="#F8F8F8"
                 fontSize="16"
                 fontWeight="400"
-                selectedValue={service}
+                selectedValue={drinkOrNot}
                 minWidth="200"
                 accessibilityLabel="Choose Service"
                 placeholder="Never"
@@ -125,7 +129,7 @@ const QuestionaireSeven = props => {
                   bg: '#F8F8F8',
                   endIcon: <CheckIcon size="5" />,
                 }}
-                onValueChange={itemValue => setService(itemValue)}>
+                onValueChange={itemValue => setDrinkOrNot(itemValue)}>
                 <Select.Item label="Yes " value="Yes" />
                 <Select.Item label="Occasional" value="Occasional" />
                 <Select.Item label="Never" value="Never" />
@@ -145,7 +149,7 @@ const QuestionaireSeven = props => {
                 backgroundColor="#F8F8F8"
                 fontSize="16"
                 fontWeight="400"
-                selectedValue={service}
+                selectedValue={partnerDrinkOrNot}
                 minWidth="200"
                 accessibilityLabel="Choose Service"
                 placeholder="Never"
@@ -153,7 +157,7 @@ const QuestionaireSeven = props => {
                   bg: '#F8F8F8',
                   endIcon: <CheckIcon size="5" />,
                 }}
-                onValueChange={itemValue => setService(itemValue)}>
+                onValueChange={itemValue => setPartnerDrinkOrNot(itemValue)}>
                 <Select.Item label="Yes " value="Yes" />
                 <Select.Item label="Occasional" value="Occasional" />
                 <Select.Item label="Never" value="Never" />
@@ -171,7 +175,7 @@ const QuestionaireSeven = props => {
                 backgroundColor="#F8F8F8"
                 fontSize="16"
                 fontWeight="400"
-                selectedValue={service}
+                selectedValue={hearAboutUs}
                 minWidth="200"
                 accessibilityLabel="Choose Service"
                 placeholder="Never"
@@ -179,7 +183,7 @@ const QuestionaireSeven = props => {
                   bg: '#F8F8F8',
                   endIcon: <CheckIcon size="5" />,
                 }}
-                onValueChange={itemValue => setService(itemValue)}>
+                onValueChange={itemValue => setHearAboutUs(itemValue)}>
                 <Select.Item
                   label="Radio Advertisement "
                   value="Radio Advertisement"
@@ -189,14 +193,7 @@ const QuestionaireSeven = props => {
               </Select>
             </Box>
           </FormControl>
-          {/* <TouchableOpacity
-                  onPress={() => {
-                    // console.log(props.navigation, 'e..');
-                    props.navigation.navigate('signuptwo');
-                  }}>
-                   <ButtonGrad title="Next"  />
-                </TouchableOpacity> */}
-
+          
           <LinearGradient
             colors={['#D72D79', '#9264F2']}
             start={{x: 0, y: 0}}
