@@ -11,8 +11,9 @@ import {
 } from 'react-native';
 import {Button} from 'native-base';
 import {style} from 'dom-helpers';
+import {ChevronLeftIcon} from 'native-base';
 
-const SubscriptionPlan = () => {
+const SubscriptionPlan = (props) => {
   const subsimage = require('../../assets/Rectangle142.png');
   const innerimage = require('../../assets/Maskgroup.png');
   const arrowicon = require('../../assets/Vector7.png');
@@ -32,13 +33,16 @@ const SubscriptionPlan = () => {
       heading: 'Ability to create profile and upload only 2 profile photos',
     },
   ];
-
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ScrollView>
-        <View style={{flex: 0.1,marginVertical:20,paddingHorizontal:20,}}>
-          
-          <Image  source={arrowicon}></Image>
+        <View style={{flex: 0.1, marginVertical: 20, paddingHorizontal: 20}}>
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.goBack();
+            }}>
+            <ChevronLeftIcon iconName="chevron-left" size="5" />
+          </TouchableOpacity>
         </View>
         <View style={styles.viewone}>
           <ImageBackground
@@ -51,16 +55,15 @@ const SubscriptionPlan = () => {
               </Text>
             </View>
             <Image
-            style={{
-              width: '100%',
-              //height:'100%',
-              resizeMode: 'contain',
-              //position: 'absolute',
-              bottom: -6,
-            }}
-            source={innerimage}></Image>
+              style={{
+                width: '100%',
+                //height:'100%',
+                resizeMode: 'contain',
+                //position: 'absolute',
+                bottom: -6,
+              }}
+              source={innerimage}></Image>
           </ImageBackground>
-         
         </View>
 
         <View style={styles.viewtwo}>
@@ -79,11 +82,18 @@ const SubscriptionPlan = () => {
               <Text style={{fontSize: 24, fontWeight: '600', color: '#000000'}}>
                 $ 0
               </Text>
-              <View style={{display:'flex',flexDirection:'row',width:70, justifyContent:'space-between'}}>
-              <Text style={{color: '#F14E53', fontSize: 14, fontWeight: '400'}}>
-                Details
-              </Text>
-              <Image style={{marginTop:4}} source={downarrow}></Image>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  width: 70,
+                  justifyContent: 'space-between',
+                }}>
+                <Text
+                  style={{color: '#F14E53', fontSize: 14, fontWeight: '400'}}>
+                  Details
+                </Text>
+                <Image style={{marginTop: 4}} source={downarrow}></Image>
               </View>
             </View>
           </View>
@@ -119,11 +129,18 @@ const SubscriptionPlan = () => {
               <Text style={{fontSize: 24, fontWeight: '600', color: '#FFFFFF'}}>
                 $ 15
               </Text>
-              <View style={{display:'flex',flexDirection:'row',width:70, justifyContent:'space-between'}}>
-              <Text style={{color: '#FFFFFF', fontSize: 14, fontWeight: '400'}}>
-                Details
-              </Text>
-              <Image style={{marginTop:4}} source={downarrows}></Image>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  width: 70,
+                  justifyContent: 'space-between',
+                }}>
+                <Text
+                  style={{color: '#FFFFFF', fontSize: 14, fontWeight: '400'}}>
+                  Details
+                </Text>
+                <Image style={{marginTop: 4}} source={downarrows}></Image>
               </View>
             </View>
             <Button background="#FFFFFF" my={7} p={3} borderRadius={10}>
@@ -171,11 +188,18 @@ const SubscriptionPlan = () => {
               <Text style={{fontSize: 24, fontWeight: '600', color: '#000000'}}>
                 $ 15
               </Text>
-              <View style={{display:'flex',flexDirection:'row',width:70, justifyContent:'space-between'}}>
-              <Text style={{color: '#F14E53', fontSize: 14, fontWeight: '400'}}>
-                Details
-              </Text>
-              <Image style={{marginTop:4}} source={downarrow}></Image>
+              <View
+                style={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  width: 70,
+                  justifyContent: 'space-between',
+                }}>
+                <Text
+                  style={{color: '#F14E53', fontSize: 14, fontWeight: '400'}}>
+                  Details
+                </Text>
+                <Image style={{marginTop: 4}} source={downarrow}></Image>
               </View>
             </View>
             <Button background="#F14E53" my={7} p={3}>

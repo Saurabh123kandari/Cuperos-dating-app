@@ -74,7 +74,9 @@ const handleClick = (item) =>{
     <SafeAreaView style={styles.MainContainer}>
       <ScrollView>
         <View style={styles.icon_view_one}>
-          <ChevronLeftIcon iconName="chevron-left" size="7" mx={3} />
+        <TouchableOpacity onPress={()=>{props.navigation.goBack()}}>
+          <ChevronLeftIcon iconName="chevron-left" size="6" mx={3} />
+          </TouchableOpacity>
           <Progress
             mx="10"
             mt="6"
@@ -85,7 +87,7 @@ const handleClick = (item) =>{
             background="#D0D0D0"
           />
           <Text style={styles.innertext}>
-            Why do you want to be in a relationship?
+            Why do you want to be in a relationship ?
           </Text>
         </View>
         <View style={styles.view_two}>

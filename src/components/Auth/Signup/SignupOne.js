@@ -70,23 +70,19 @@ const SignupOne = props => {
         })
       }}>
       {({handleChange, handleBlur, handleSubmit, values, errors}) => (
-
-       
           <ImageBackground
             source={image}
             resizeMode="contain"
             style={{width:'100%',height:'100%'}}
            >
-            
               <View style={styles.icon_view_one}>
-                <ChevronLeftIcon iconName="chevron-left" size="5" mx={3} my={7} />
-               
+                <TouchableOpacity onPress={()=>{props.navigation.goBack()}}>
+                 <ChevronLeftIcon iconName="chevron-left" size="5" mx={3} my={7} />
+                </TouchableOpacity>
               </View>
-             
               <View style={styles.form_view}>
               <Progress
                   mx="5"
-                 
                   mb="4"
                   colorScheme="red"
                   value={15}
@@ -263,18 +259,10 @@ const SignupOne = props => {
                     <TouchableOpacity onPress={handleSubmit}>
                       <Text style={styles.buttonText}>Next</Text>
                     </TouchableOpacity>
-                    
                   </LinearGradient>
-                  
-                  
-                  
                 </VStack>
               </View>
-          
           </ImageBackground>
-         
-         
-    
       )}
     </Formik>
     </ScrollView>
@@ -288,30 +276,25 @@ const styles = StyleSheet.create({
     flex: 1,
     fontFamily: 'Poppins',
     backgroundColor: '#ffffff',
-    //paddingHorizontal: 20,
   },
   icon_view_one: {
     flex: 0.1,
-    //  backgroundColor:'red'
   },
   
   form_view: {
     flex: 0.9,
     paddingHorizontal: 20,
-    // backgroundColor:'yellow'
   },
   heading_one: {
     fontSize: 22,
     fontWeight: '600',
     color: '#000000',
-    //textAlign: 'center',
   },
   heading_two: {
     fontSize: 16,
     fontWeight: '400',
     marginTop: 10,
     color: '#5E5E5E',
-    //textAlign: 'center',
   },
   text: {
     fontSize: 16,

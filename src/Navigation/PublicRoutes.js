@@ -258,7 +258,7 @@ const stackArray = [
     name: 'subscription',
     component: props => (
       <ComponentWrapper>
-       <SubscriptionPlan/>
+       <SubscriptionPlan {...props}/>
       </ComponentWrapper  >
     ),
     headerProps: {

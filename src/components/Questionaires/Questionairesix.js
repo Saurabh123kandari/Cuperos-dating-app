@@ -81,7 +81,9 @@ const Questionairesix = (props) => {
     <SafeAreaView style={styles.MainContainer}>
       <ScrollView>
         <View style={styles.icon_view_one}>
-          <ChevronLeftIcon iconName="chevron-left" size="7" mx={3} />
+        <TouchableOpacity onPress={()=>{props.navigation.goBack()}}>
+          <ChevronLeftIcon iconName="chevron-left" size="6" mx={3} />
+          </TouchableOpacity>
           <Progress
             mx="10"
             mt="6"
