@@ -26,6 +26,9 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import {ARROW_ICON} from '../../constant/App_Constant';
 const Filter = props => {
+  const [onChangeDistanceValue, setOnChangeDistanceValue] = React.useState(70);
+  const [onChangeAgeValue, setOnChangeAgeValue] = React.useState(20);
+  // const [onChangeEndValue, setOnChangeEndValue] = React.useState(70);
   const [education, setEducation] = React.useState('');
   const [gender, setGender] = React.useState('');
   const [showMe, setShowMe] = React.useState('');
@@ -84,7 +87,6 @@ const Filter = props => {
                     onChangeText={handleChange('firstName')}
                     onBlur={handleBlur('firstName')}
                     value={values.firstName}
-                    
                     backgroundColor="#F8F8F8"
                     py="3.5"
                     borderRadius="10"
@@ -97,7 +99,7 @@ const Filter = props => {
                   <FormControl.Label>
                     <Text style={styles.text}>Distance</Text>
                   </FormControl.Label>
-                  <View style={{}}>
+                  <View style={{marginTop:20}}>
                     <Slider
                       // w="3/4"
                       colorScheme="red"
@@ -106,11 +108,18 @@ const Filter = props => {
                       minValue={0}
                       maxValue={100}
                       accessibilityLabel="hello world"
-                      step={10}>
+                      step={10}
+                      onChange={v => {
+                        setOnChangeDistanceValue(Math.floor(v));
+                      }}>
                       <Slider.Track background="#C4C4C4">
                         <Slider.FilledTrack />
+                        {/* <View><Text>hii</Text></View> */}
                       </Slider.Track>
-                      <Slider.Thumb />
+                      <Slider.Thumb>
+                      <View style={{bottom:30}}><Text style={{color:'red'}}>{onChangeDistanceValue}</Text></View>
+                      </Slider.Thumb>
+                      
                     </Slider>
                   </View>
                 </FormControl>
@@ -145,7 +154,7 @@ const Filter = props => {
                   <FormControl.Label>
                     <Text style={styles.text}>Age Range</Text>
                   </FormControl.Label>
-                  <View style={{}}>
+                  <View style={{marginTop:20}}>
                     <Slider
                       // w="3/4"
                       colorScheme="red"
@@ -154,11 +163,16 @@ const Filter = props => {
                       minValue={0}
                       maxValue={100}
                       accessibilityLabel="hello world"
-                      step={10}>
+                      step={10}
+                      onChange={v => {
+                        setOnChangeAgeValue(Math.floor(v));
+                      }}>
                       <Slider.Track background="#C4C4C4" >
                         <Slider.FilledTrack />
                       </Slider.Track>
-                      <Slider.Thumb />
+                      <Slider.Thumb>
+                      <View style={{bottom:30}}><Text style={{color:'red'}}>{onChangeAgeValue}</Text></View>
+                      </Slider.Thumb>
                     </Slider>
                   </View>
                 </FormControl>
