@@ -92,13 +92,13 @@ const Signuptwo = (props) => {
             style={{width: '100%', height: '100%'}}>
             <ScrollView>
               <View style={styles.icon_view_one}>
+              <TouchableOpacity onPress={()=>{props.navigation.goBack()}}>
                 <ChevronLeftIcon iconName="chevron-left" size="5" mx={3} my={5} />
-                
+              </TouchableOpacity>
               </View>
               <View style={styles.form_view}>
               <Progress
                   mx="5"
-                  
                   mb="4"
                   colorScheme="red"
                   background="#D0D0D0"

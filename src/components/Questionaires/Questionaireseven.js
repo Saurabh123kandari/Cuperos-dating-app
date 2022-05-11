@@ -39,11 +39,13 @@ const QuestionaireSeven = props => {
       {/* <ImageBackground source={image} style={{width: '100%', height: '100%'}}> */}
       {/* <ScrollView> */}
       <View style={styles.icon_view_one}>
-        {/* <ChevronLeftIcon iconName="chevron-left" size="8" /> */}
+      <TouchableOpacity onPress={()=>{props.navigation.goBack()}}>
+        <ChevronLeftIcon iconName="chevron-left" size="6" mx={3} my={5}/>
+       </TouchableOpacity>
         <Progress
-          mx="10"
+          mx="5"
           mt="4"
-          mb="4"
+          mb="6"
           colorScheme="red"
           value={15}
           height="1.5"
@@ -54,6 +56,7 @@ const QuestionaireSeven = props => {
         <Text></Text>
       </View> */}
       <Box style={styles.form_view}>
+     
         <Heading style={styles.heading_one}>How often do you smoke?</Heading>
         {/* <Heading style={styles.heading_two}>
               Tell us a few things about yourself.
@@ -225,6 +228,7 @@ const styles = StyleSheet.create({
   },
   icon_view_one: {
     flex: 0.1,
+    
   },
   icon_view_two: {
     flex: 0.1,
