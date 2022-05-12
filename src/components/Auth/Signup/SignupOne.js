@@ -274,7 +274,7 @@ const SignupOne = props => {
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
-    fontFamily: 'Poppins',
+    
     backgroundColor: '#ffffff',
   },
   icon_view_one: {

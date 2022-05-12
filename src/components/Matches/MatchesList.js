@@ -15,7 +15,17 @@ const MatchesList = () => {
 
            </View>
            <View style={styles.view_two}>
-               <Input py={6}  placeInputRightElement={<Image  source={searchimage}  />} ></Input>
+           <Input
+          placeholder="Search by Name"
+          backgroundColor="#F8F8F8"
+          py={2}
+          leftElement={
+            <Image
+              source={searchimage}
+              style={{marginHorizontal: 20}}
+              size={5}
+              resizeMode="contain"></Image>
+          }></Input>
         {/* <Searchbar
        background="#C4C4C4"
           placeholder="Search by Name"
@@ -43,14 +53,15 @@ const styles=StyleSheet.create({
       
     },
     view_two:{
-        flex:0.05,
+        flex:0.03,
        
-        paddingHorizontal:30
+        paddingHorizontal:30,
+      
     },
     view_three:{
 
-flex:0.85,
-paddingHorizontal: 10,
+flex:0.92,
+
     }
 })
 

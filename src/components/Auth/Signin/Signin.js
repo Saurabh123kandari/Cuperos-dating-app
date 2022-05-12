@@ -170,7 +170,7 @@ const Signin = props => {
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
-    fontFamily: 'Poppins',
+   
     backgroundColor:'#FFFFFF'
   },
 
