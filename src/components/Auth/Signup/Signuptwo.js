@@ -408,11 +408,11 @@ const Signuptwo = (props) => {
                 </VStack>
                 <View style={styles.last_view}>
                   <Text style={styles.last_view_text}>
-                    Already have an account?
+                    Already have an account ? {''}
                   </Text>
                   <TouchableOpacity onPress={()=>{props.navigation.navigate('signin')}}>
                   <Text style={[styles.last_view_text, {color: 'red'}]}>
-                    Signin Now
+                     Signin Now
                   </Text>
                   </TouchableOpacity>
                 </View>
@@ -479,6 +479,8 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     //position: 'absolute',
     //width: 339
+    justifyContent:'center',
+    // backgroundColor:'red'
   },
   last_view_text: {
     fontSize: 16,
