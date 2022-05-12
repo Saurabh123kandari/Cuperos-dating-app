@@ -16,39 +16,68 @@ import {Box, Text, Center, useColorModeValue, Image} from 'native-base';
 const data = [
   {
     id: 1,
-    name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    profileimage: image,
+    textone: 'Lucasz Pl',
+    texttwo: 'Male, 28',
+    textthree: 'New York',
+    iconcolor: '#00FD19',
   },
   {
     id: 2,
-    name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    profileimage: imagefive,
+    textone: 'Lucasz Pl',
+    texttwo: 'Male, 28',
+    textthree: 'New York',
+    iconcolor: '#C4C4C4',
   },
   {
     id: 3,
-    name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    profileimage: imageseven,
+    textone: 'Lucasz Pl',
+    texttwo: 'Male, 28',
+    textthree: 'New York',
+    iconcolor: '#C4C4C4',
   },
   {
     id: 4,
-    name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    profileimage: imagesix,
+    textone: 'Lucasz Pl',
+    texttwo: 'Male, 28',
+    textthree: 'New York',
+    iconcolor: '#00FD19',
   },
   {
     id: 5,
-    name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    profileimage: imagetwo,
+    textone: 'Lucasz Pl',
+    texttwo: 'Male, 28',
+    textthree: 'New York',
+    iconcolor: '#00FD19',
   },
+
   {
     id: 6,
-    name: 'Mary Burgess',
-    description: 'Hello!, how are you?',
-    profileimage: require('../../assets/ProfileIcon.png'),
+    profileimage: imageeight,
+    textone: 'Lucasz Pl',
+    texttwo: 'Male, 28',
+    textthree: 'New York',
+    iconcolor: '#C4C4C4',
+  },
+  {
+    id: 7,
+    profileimage: image,
+    textone: 'Lucasz Pl',
+    texttwo: 'Male, 28',
+    textthree: 'New York',
+    iconcolor: '#00FD19',
+  },
+  {
+    id: 8,
+    profileimage: imagefive,
+    textone: 'Lucasz Pl',
+    texttwo: 'Male, 28',
+    textthree: 'New York',
+    iconcolor: '#C4C4C4',
   },
 ];
 
@@ -69,95 +98,50 @@ const like = require('../../assets/Likes.png');
 
 
 const FirstRoute = () => (
-  <ScrollView style={{flex: 1}}>
-    <View style={styles.view}>
-          <View style={styles.maincard}>
-            <Image source={image} style={styles.image} />
-            <View style={styles.card}>
-              <View style={[styles.shadowProp,{justifyContent:'center'}]}>
-                <Text style={styles.card_heading} >Lucasz Pl </Text>
-                <Text style={styles.card_subheading}>Male, 28</Text>
-                <Text style={styles.card_subheading}>New York</Text>
-              </View>
-              <View style={styles.percentbox}>
-                <Text style={{color:'#FF0000'}}>75%</Text>
-              </View>
-            </View>
+  <ScrollView style={{}}>
+     <View style={styles.matchesview}>
+            {data.map(item => {
+              return (
+                <>
+                  <View style={styles.main_card}>
+                    <Image
+                      source={item.profileimage}
+                      resizeMode="contain"
+                      style={styles.image}
+                    />
+                    <View style={styles.main_inner_view}>
+                      <View style={styles.innerview}>
+                        <Text style={styles.card_heading}>{item.textone} </Text>
+                        <View
+                          style={[
+                            styles.online_view,
+                            {backgroundColor: item.iconcolor},
+                          ]}></View>
+                        <View style={styles.percent}>
+                          <Text
+                            style={{
+                              textAlign: 'center',
+                              color: '#FF0000',
+                              fontSize: 11,
+                              fontWeight: '600',
+                            }}>
+                            75%
+                          </Text>
+                        </View>
+                      </View>
+
+                      <Text style={styles.card_subheading}>{item.texttwo}</Text>
+                      <Text style={styles.card_subheading}>
+                        {item.textthree}
+                      </Text>
+                    </View>
+                  </View>
+                </>
+              );
+            })}
           </View>
-          <View style={styles.maincard}>
-            <Image source={imagefive} style={styles.image}></Image>
-            <View
-              style={styles.card}>
-              <View style={{ justifyContent: 'center'}}>
-                <Text style={styles.card_heading} >Lucasz Pl </Text>
-                <Text style={styles.card_subheading}>Male, 28</Text>
-                <Text style={styles.card_subheading}>New York</Text>
-              </View>
-              <View style={styles.percentbox}>
-                <Text style={{color:'#FF0000'}}>75%</Text>
-              </View>
-            </View>
-          </View>
-          
-          <View style={styles.maincard}>
-            <Image source={imageseven} style={styles.image} />
-            <View style={styles.card}>
-              <View style={{ justifyContent: 'center'}}>
-                <Text style={styles.card_heading} >Alex  </Text>
-                <Text style={styles.card_subheading}>Male, 28</Text>
-                <Text style={styles.card_subheading}>New York</Text>
-              </View>
-              <View style={styles.percentbox}>
-                <Text style={{color:'#FF0000'}}>75%</Text>
-              </View>
-            </View>
-          </View>
-         
-          <View style={styles.maincard}>
-            <Image source={image} style={styles.image} />
-            <View style={styles.card}>
-              <View style={{ justifyContent: 'center'}}>
-                <Text style={styles.card_heading} >Jay Sean </Text>
-                <Text style={styles.card_subheading}>Male, 28</Text>
-                <Text style={styles.card_subheading}>New York</Text>
-              </View>
-              <View style={styles.percentbox}>
-                <Text style={{color:'#FF0000'}}>75%</Text>
-              </View>
-            </View>
-          </View>
-         
-          <View style={styles.maincard}>
-            <Image source={image} style={styles.image} />
-            <View style={styles.card}>
-              <View style={{ justifyContent: 'center'}}>
-                <Text style={styles.card_heading} >Lucasz Pl </Text>
-                <Text style={styles.card_subheading}>Male, 28</Text>
-                <Text style={styles.card_subheading}>New York</Text>
-              </View>
-              <View style={styles.percentbox}>
-                <Text style={{color:'#FF0000'}}>75%</Text>
-              </View>
-            </View>
-          </View>
-        
-          <View style={styles.maincard}>
-            <Image source={imagefive} style={styles.image} />
-            <View style={styles.card}>
-              <View style={{ justifyContent: 'center'}}>
-                <Text style={styles.card_heading} >Lucasz Pl </Text>
-                <Text style={styles.card_subheading}>Male, 28</Text>
-                <Text style={styles.card_subheading}>New York</Text>
-              </View>
-              <View style={styles.percentbox}>
-                <Text style={{color:'#FF0000'}}>75%</Text>
-              </View>
-            </View>
-          </View>
-         
-        
-          </View>
-   
+
+    
   </ScrollView>
 );
 
@@ -399,7 +383,7 @@ function MatchesTabView() {
   const renderTabBar = props => {
     const inputRange = props.navigationState.routes.map((x, i) => i);
     return (
-      <Box flexDirection="row">
+      <Box flexDirection="row" mx={3}>
         {props.navigationState.routes.map((route, i) => {
           const opacity = props.position.interpolate({
             inputRange,
@@ -472,16 +456,16 @@ padding:10
     flex: 0.7,
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
+  //  justifyContent: 'center',
+   flexWrap: 'wrap',
   },
   maincard:{
     elevation: 5,
-    alignItems: 'center', 
+    // alignItems: 'center', 
   },
   image: {
     zIndex: 99,
-    margin: 10,
+    // margin: 10,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
   },
@@ -503,18 +487,18 @@ padding:10
     borderColor: '#FF0000',
     paddingHorizontal: 10,
     margin:15,
-    left:15
+    // left:15
   },
   card_heading:{
     fontSize: 14,
     fontWeight: '500',
-    fontFamily: 'Poppins',
+   
     // margin: 20,
   },
   card_subheading:{
     fontSize: 12,
     fontWeight: '400',
-    fontFamily: 'Poppins',
+   
   },
   shadowProp: {
     shadowColor: '#171717',
@@ -522,5 +506,75 @@ padding:10
     shadowOpacity: 0.2,
     shadowRadius: 3,
   },
+  image: {
+    borderRadius: 20,
+  },
+
+  card_heading: {
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  card_subheading: {
+    fontSize: 12,
+    fontWeight: '400',
+  },
+
+  online_view: {
+    backgroundColor: '#00FD19',
+    width: 10,
+    height: 10,
+    borderRadius: 10,
+    marginLeft: 10,
+    marginTop: 6,
+  },
+
+  mainview: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+
+  main_card: {
+    position: 'relative',
+     marginHorizontal: 10,
+    marginVertical: 20,
+    shadowColor: '#000000',
+    shadowOffset: {width: -10, height: 20},
+    shadowOpacity: 0.9,
+    shadowRadius: 3,
+    elevation: 10,
+    borderRadius: 16,
+  },
+  main_inner_view: {
+    backgroundColor: '#FFFFFF',
+    position: 'absolute',
+    bottom: -20,
+    padding: 10,
+    borderRadius: 11,
+    width: '100%',
+    shadowColor: '#000000',
+    shadowOffset: {width: -10, height: 20},
+    shadowOpacity: 0.9,
+    shadowRadius: 3,
+    elevation: 10,
+  },
+  innerview: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  percent: {
+    borderWidth: 1,
+    borderColor: '#FF0000',
+    width: 40,
+    borderRadius: 12,
+    marginLeft: 15,
+  },
+  matchesview:{
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'row',
+
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+  }
 })
 export default  MatchesTabView;

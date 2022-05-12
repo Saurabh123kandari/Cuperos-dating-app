@@ -68,7 +68,7 @@ const ChatList = () => {
         <Input
           placeholder="Search by Name"
           backgroundColor="#F8F8F8"
-          p={4}
+          py={2}
           leftElement={
             <Image
               source={searchimage}
@@ -117,23 +117,23 @@ const styles = StyleSheet.create({
   },
   view_one: {
     flex: 0.1,
-    //backgroundColor:'yellow'
+  // backgroundColor:'green'
   },
   view_two: {
     flex: 0.1,
-    //backgroundColor:'green' ,
+    // backgroundColor:'orange' ,
     paddingHorizontal: 20,
   },
   view_three: {
-    flex: 0.15,
-    //backgroundColor: 'yellow',
+    flex: 0.2,
+    // backgroundColor: 'yellow',
     paddingHorizontal: 20,
     display: 'flex',
     //flexDirection: 'row',
   },
   view_four: {
-    flex: 0.65,
-    // backgroundColor:'pink' ,
+    flex: 0.6,
+  //  backgroundColor:'pink' ,
     paddingHorizontal: 20,
   },
   text_one: {
