@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -20,6 +20,8 @@ import {
   ChevronLeftIcon,
   
 } from 'native-base';
+import moment from 'moment'
+import DatePicker from 'react-native-date-picker'
 import {Select, CheckIcon} from 'native-base';
 import LinearGradient from 'react-native-linear-gradient';
 import ButtonGrad from './ButtonGrad';
@@ -42,42 +44,51 @@ import * as Yup from 'yup';
 const SignupOne = props => {
   const [gender, setGender] = React.useState('');
   const [height, setHeight] = React.useState('');
- 
+  const [date, setDate] = useState(new Date())
+  const [open, setOpen] = useState(false)
+  const selectedDate = moment(date).format('MMMM Do YYYY')
   const image = require('../../../assets/bg_pattern.png');
-  
+  const datePickerImg = require('../../../assets/datepicker.png');
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ScrollView>
-    <Formik
-      initialValues={{
-        firstName: '',
-        lastName: '',
-        dob: '',
-        height: '',
-        gender: ''
-      }}
-      // validationSchema={SignupSchema}
-      onSubmit={values => {
-        let payload = {
-          firstName: values.firstName,
-          lastName: values.lastName,
-          dob: values.dob,
-          gender: values.gender,
-          height: values.height,
-        };
-        props.navigation.navigate('signuptwo', {
-          payload,
-        })
-      }}>
-      {({handleChange, handleBlur, handleSubmit, values, errors}) => (
-          <ImageBackground
-            source={image}
-            resizeMode="contain"
-            style={{width:'100%',height:'100%'}}
-           >
+        <Formik
+          initialValues={{
+            firstName: '',
+            lastName: '',
+            dob: '',
+            height: '',
+            gender: '',
+          }}
+          // validationSchema={SignupSchema}
+          onSubmit={values => {
+            let payload = {
+              firstName: values.firstName,
+              lastName: values.lastName,
+              dob: values.dob,
+              gender: values.gender,
+              height: values.height,
+            };
+            props.navigation.navigate('signuptwo', {
+              payload,
+            });
+          }}>
+          {({handleChange, handleBlur, handleSubmit, values, errors}) => (
+            <ImageBackground
+              source={image}
+              resizeMode="contain"
+              style={{width: '100%', height: '100%'}}>
               <View style={styles.icon_view_one}>
-                <TouchableOpacity onPress={()=>{props.navigation.goBack()}}>
-                 <ChevronLeftIcon iconName="chevron-left" size="5" mx={3} my={7} />
+                <TouchableOpacity
+                  onPress={() => {
+                    props.navigation.goBack();
+                  }}>
+                  <ChevronLeftIcon
+                    iconName="chevron-left"
+                    size="5"
+                    mx={3}
+                    my={7}
+                  />
                 </TouchableOpacity>
               </View>
               <View style={styles.form_view}>
@@ -95,10 +106,10 @@ const SignupOne = props => {
                 <Heading style={styles.heading_two}>
                   Tell us a few things about yourself.
                 </Heading>
-                <VStack space={3} >
+                <VStack space={3}>
                   <FormControl mt={7}>
                     <FormControl.Label>
-                      <Text style={styles.text}> Name</Text>
+                      <Text style={styles.text}>Name</Text>
                     </FormControl.Label>
                     <Input
                       type="firstName"
@@ -134,17 +145,17 @@ const SignupOne = props => {
                       mt="4"
                       borderRadius="10"
                     />
-                     {errors.lastName && (
+                    {errors.lastName && (
                       <Text style={{fontSize: 15, color: 'red'}}>
                         {errors.lastName}
                       </Text>
                     )}
-                     </FormControl>
+                  </FormControl>
                   <FormControl mt="3">
                     <FormControl.Label>
                       <Text style={styles.text}>Date of Birth</Text>
                     </FormControl.Label>
-                   <Input
+                    {/* <Input
                       type="dob"
                       name="dob"
                       onChangeText={handleChange('dob')}
@@ -157,14 +168,36 @@ const SignupOne = props => {
                       fontWeight="400"
                       py="3"
                       borderRadius="10"
+                    /> */}
+                    <TouchableOpacity onPress={() => setOpen(true)}>
+                      <View style={styles.datePicker}>
+                        <Text>{selectedDate}</Text>
+                        <Image
+                          source={datePickerImg}
+                          resizeMode="contain"
+                          style={{width: 40, height: 40}}></Image>
+                      </View>
+                    </TouchableOpacity>
+                    <DatePicker
+                      modal
+                      mode="date"
+                      open={open}
+                      date={date}
+                      maximumDate={new Date('2022-01-01')}
+                      onConfirm={date => {
+                        setOpen(false);
+                        setDate(date);
+                      }}
+                      onCancel={() => {
+                        setOpen(false);
+                      }}
                     />
-                   {errors.dob && (
+                    {/* {errors.dob && (
                       <Text style={{fontSize: 15, color: 'red'}}>
                         {errors.dob}
                       </Text>
-                    )}
+                    )} */}
                     <Image></Image>
-                    
                   </FormControl>
                   <FormControl mt="3">
                     <FormControl.Label>
@@ -174,7 +207,7 @@ const SignupOne = props => {
                       <Select
                         py="3"
                         px="4"
-                        name='gender'
+                        name="gender"
                         borderRadius="10"
                         backgroundColor="#F8F8F8"
                         borderColor="#C4C4C4"
@@ -190,10 +223,9 @@ const SignupOne = props => {
                         }}
                         // onValueChange={itemValue => setGender(itemValue)}
                         onValueChange={selectedOption => {
-                          setGender(selectedOption)
-                          handleChange("gender")(selectedOption);
-                        }}
-                        >
+                          setGender(selectedOption);
+                          handleChange('gender')(selectedOption);
+                        }}>
                         <Select.Item label="Male" value="Male" />
                         <Select.Item label="Female" value="Female" />
                         <Select.Item label="Other" value="Other" />
@@ -229,11 +261,9 @@ const SignupOne = props => {
                         }}
                         // onValueChange={itemValue => setHeight(itemValue)}
                         onValueChange={selectedOption => {
-                          setHeight(selectedOption)
-                          handleChange("height")(selectedOption);
-                        }}
-                        >
-
+                          setHeight(selectedOption);
+                          handleChange('height')(selectedOption);
+                        }}>
                         <Select.Item label="4'4" value="4'4" />
                         <Select.Item label="4'5" value="4'5" />
                         <Select.Item label="4'6" value="4'6" />
@@ -248,26 +278,23 @@ const SignupOne = props => {
                       </Text>
                     )}
                   </FormControl>
-                  
 
                   <LinearGradient
                     colors={['#D72D79', '#9264F2']}
                     start={{x: 0, y: 0}}
                     end={{x: 0, y: 1}}
                     style={styles.linearGradient}>
-                    
                     <TouchableOpacity onPress={handleSubmit}>
                       <Text style={styles.buttonText}>Next</Text>
                     </TouchableOpacity>
                   </LinearGradient>
                 </VStack>
               </View>
-          </ImageBackground>
-      )}
-    </Formik>
-    </ScrollView>
+            </ImageBackground>
+          )}
+        </Formik>
+      </ScrollView>
     </SafeAreaView>
-    
   );
 };
 
@@ -280,7 +307,6 @@ const styles = StyleSheet.create({
   icon_view_one: {
     flex: 0.1,
   },
-  
   form_view: {
     flex: 0.9,
     paddingHorizontal: 20,
@@ -320,9 +346,8 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   linearGradient: {
-    
     marginTop: 20,
-   
+
     paddingVertical: 4,
     borderRadius: 5,
   },
@@ -333,6 +358,17 @@ const styles = StyleSheet.create({
     margin: 10,
     color: '#ffffff',
     // backgroundColor: 'transparent',
+  },
+  datePicker: {
+    display: 'flex',
+    backgroundColor: '#F8F8F8',
+    alignItems: 'center',
+    padding: 8,
+    borderRadius: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderWidth:1,
+    borderColor:'#C4C4C4'
   },
 });
 
