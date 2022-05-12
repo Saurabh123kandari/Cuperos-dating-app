@@ -326,7 +326,7 @@ function ChatTabView() {
       onIndexChange={setIndex}
       initialLayout={initialLayout}
       style={{
-        marginTop: StatusBar.currentHeight,
+        // marginTop: StatusBar.currentHeight,
       }}
     />
   );

@@ -156,13 +156,13 @@ const styles = StyleSheet.create({
   main_header: {
     fontSize: 24,
     fontWeight: '500',
-    fontFamily: 'Poppins',
+   
     margin: 20,
   },
   sub_header: {
     fontSize: 18,
     fontWeight: '400',
-    fontFamily: 'Poppins',
+  
     color: '#A4A4A4',
   },
   view: {
@@ -205,13 +205,13 @@ const styles = StyleSheet.create({
   card_heading:{
     fontSize: 14,
     fontWeight: '500',
-    fontFamily: 'Poppins',
+  
     // margin: 20,
   },
   card_subheading:{
     fontSize: 12,
     fontWeight: '400',
-    fontFamily: 'Poppins',
+    
   },
   //   linearGradient: {
   //     width: '100%',
