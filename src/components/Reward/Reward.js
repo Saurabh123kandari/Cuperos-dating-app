@@ -16,6 +16,7 @@ const Reward = () => {
   const MessageImage = require('../../assets/Message.png');
   return (
     <SafeAreaView style={styles.MainContainer}>
+      <ScrollView>
       <View style={styles.view_one}>
         <Text style={styles.heading}>Referral Reward</Text>
         <Text style={styles.innerheading}>
@@ -70,7 +71,7 @@ const Reward = () => {
         <View style={{marginTop: 10}}>
           <Input
             background="#FFFFFF"
-            py="4"
+            py="3"
             borderRadius="10"
             style={{borderTopLeftRadius: 10}}
             rightElement={
@@ -132,6 +133,7 @@ const Reward = () => {
           {/* </TouchableOpacity> */}
         </LinearGradient>
       </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -145,11 +147,13 @@ const styles = StyleSheet.create({
     flex: 0.21,
   },
   view_two: {
-    flex: 0.31,
+    flex: 0.35,
     backgroundColor: 'yellow',
     marginHorizontal: 30,
-    padding: 30,
+    paddingHorizontal: 20,
+    paddingVertical:20,
     borderRadius: 10,
+    marginVertical:15,
   },
   view_three: {
     flex: 0.48,
@@ -160,7 +164,7 @@ const styles = StyleSheet.create({
   radiotext: {
     fontSize: 18,
     fontWeight: '400',
-    marginLeft: 10,
+    marginLeft: 8,
     color: '#FFFFFF',
   },
   heading: {
