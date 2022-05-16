@@ -54,6 +54,7 @@ const Signin = props => {
       }}>
       {({handleChange, handleBlur, handleSubmit, values, errors}) => (
         <SafeAreaView style={styles.MainContainer}>
+          <ScrollView>
           <View style={{flex: 0.03}}></View>
           {/* <Box style={styles.form_view}> */}
           <View style={styles.viewone}>
@@ -159,7 +160,7 @@ const Signin = props => {
               </TouchableOpacity>
             </View>
           </View>
-
+          </ScrollView>
           {/* </ImageBackground> */}
         </SafeAreaView>
       )}

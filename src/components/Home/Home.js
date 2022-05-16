@@ -102,7 +102,6 @@ const Home = props => {
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
-    
     backgroundColor: '#FFFFFF',
   },
   header: {
@@ -134,9 +133,11 @@ const styles = StyleSheet.create({
     display:'flex',
     alignContent: 'flex-end',
     // backgroundColor:'yellow'
+    width:'100%'
   },
   image_card:{
         // flex: 0.65,
+        // width:'80%',
       backgroundColor:'#FFFFFFCC',
     position:'absolute',
      bottom:10,
