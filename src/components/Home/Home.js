@@ -6,7 +6,6 @@ import {
   View,
   ImageBackground,
   TouchableOpacity,
-  Image,
   Span
 } from 'react-native';
 import {
@@ -21,6 +20,7 @@ import {
   ScrollView,
   Checkbox,
   Link,
+  Image,
 } from 'native-base';
 // import LinearGradient from 'react-native-linear-gradient';
 // import ButtonGrad from './ButtonGrad';
@@ -35,7 +35,7 @@ const Home = props => {
   const dislike = require('../../assets/dislike.png');
   const userImage = require('../../assets/user_img.png');
   const mapImage = require('../../assets/VectorMap.png');
-  const heart = require('../../assets/Vector2.png'); 
+  const heart = require('../../assets/Cuperosheart.png'); 
   return (
     <SafeAreaView style={styles.MainContainer}>
       <View style={styles.header}>
@@ -90,7 +90,7 @@ const Home = props => {
       </View>
       <View style={styles.bottom}>
         <Image source={dislike} />
-        <Image style={{marginBottom:20}} source={heart} />
+        <Image style={{marginBottom:20,width:'50%',height:'80%'}}  resizeMode="contain" source={heart} />
         <TouchableOpacity onPress={()=>{props.navigation.navigate('ItsAMatch')}}>
         <Image source={like} />
         </TouchableOpacity>
@@ -102,7 +102,6 @@ const Home = props => {
 const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
-    
     backgroundColor: '#FFFFFF',
   },
   header: {
@@ -134,9 +133,11 @@ const styles = StyleSheet.create({
     display:'flex',
     alignContent: 'flex-end',
     // backgroundColor:'yellow'
+    width:'100%'
   },
   image_card:{
         // flex: 0.65,
+        // width:'80%',
       backgroundColor:'#FFFFFFCC',
     position:'absolute',
      bottom:10,
