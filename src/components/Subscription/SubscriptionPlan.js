@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -12,8 +12,12 @@ import {
 import {Button} from 'native-base';
 import {style} from 'dom-helpers';
 import {ChevronLeftIcon} from 'native-base';
+import Collapsible from 'react-native-collapsible';
 
 const SubscriptionPlan = (props) => {
+  const [isBasicDetails, setIsBasicDetails] = useState(true);
+  const [isStandardDetails, setIsStandardDetails] = useState(true);
+  const [isPremiumDetails, setIsPremiumDetails] = useState(true);
   const subsimage = require('../../assets/Rectangle142.png');
   const innerimage = require('../../assets/Maskgroup.png');
   const arrowicon = require('../../assets/Vector7.png');
@@ -89,13 +93,26 @@ const SubscriptionPlan = (props) => {
                   width: 70,
                   justifyContent: 'space-between',
                 }}>
-                <Text
-                  style={{color: '#F14E53', fontSize: 14, fontWeight: '400'}}>
-                  Details
-                </Text>
-                <Image style={{marginTop: 4}} source={downarrow}></Image>
+                <TouchableOpacity
+                  onPress={() => {
+                    setIsBasicDetails(!isBasicDetails);
+                  }}>
+                  <Text
+                    style={{color: '#F14E53', fontSize: 14, fontWeight: '400'}}>
+                    Details
+                  </Text>
+                  <Image style={{marginTop: 4}} source={downarrow}></Image>
+                </TouchableOpacity>
               </View>
             </View>
+            <Collapsible collapsed={isBasicDetails}>
+              <Text>
+                {' '}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Curabitur a mi elementum, fermentum dolor quis, rutrum nisi. Sed
+                posuere neque in mauris molestie.
+              </Text>
+            </Collapsible>
           </View>
 
           <View style={styles.inner_view_two}>
@@ -136,13 +153,26 @@ const SubscriptionPlan = (props) => {
                   width: 70,
                   justifyContent: 'space-between',
                 }}>
-                <Text
-                  style={{color: '#FFFFFF', fontSize: 14, fontWeight: '400'}}>
-                  Details
-                </Text>
-                <Image style={{marginTop: 4}} source={downarrows}></Image>
+                <TouchableOpacity
+                  onPress={() => {
+                    setIsStandardDetails(!isStandardDetails);
+                  }}>
+                  <Text
+                    style={{color: '#FFFFFF', fontSize: 14, fontWeight: '400'}}>
+                    Details
+                  </Text>
+                  <Image style={{marginTop: 4}} source={downarrows}></Image>
+                </TouchableOpacity>
               </View>
             </View>
+            <Collapsible collapsed={isStandardDetails}>
+              <Text style={{color:'#ffff'}}>
+                {' '}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Curabitur a mi elementum, fermentum dolor quis, rutrum nisi. Sed
+                posuere neque in mauris molestie.
+              </Text>
+            </Collapsible>
             <Button background="#FFFFFF" my={7} p={3} borderRadius={10}>
               <Text style={{color: '#F14E53', fontSize: 18, fontWeight: '600'}}>
                 Choose Plan
@@ -195,13 +225,26 @@ const SubscriptionPlan = (props) => {
                   width: 70,
                   justifyContent: 'space-between',
                 }}>
-                <Text
-                  style={{color: '#F14E53', fontSize: 14, fontWeight: '400'}}>
-                  Details
-                </Text>
-                <Image style={{marginTop: 4}} source={downarrow}></Image>
+                <TouchableOpacity
+                  onPress={() => {
+                    setIsPremiumDetails(!isPremiumDetails);
+                  }}>
+                  <Text
+                    style={{color: '#F14E53', fontSize: 14, fontWeight: '400'}}>
+                    Details
+                  </Text>
+                  <Image style={{marginTop: 4}} source={downarrow}></Image>
+                </TouchableOpacity>
               </View>
             </View>
+            <Collapsible collapsed={isPremiumDetails}>
+              <Text>
+                {' '}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Curabitur a mi elementum, fermentum dolor quis, rutrum nisi. Sed
+                posuere neque in mauris molestie.
+              </Text>
+            </Collapsible>
             <Button background="#F14E53" my={7} p={3}>
               <Text style={{color: '#FFFFFF', fontSize: 18, fontWeight: '600'}}>
                 Choose Plan
