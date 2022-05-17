@@ -61,19 +61,17 @@ const Home = props => {
         </Text>
       </View>
       <View style={styles.profile}>
-        <ImageBackground
+      <TouchableOpacity onPress={()=>{props.navigation.navigate('userprofile')}}>
+        <Image
           source={userImage}
           resizeMode="contain"
           style={{
             width: '100%', 
             height: '100%', 
-            display:'flex', 
-            alignSelf: 'flex-end', 
-            position: 'relative',
-        }}
-            >
-
-          <View style={styles.image_card}>
+        }}> 
+        </Image>
+        </TouchableOpacity>
+        <View style={styles.image_card}>
             <View style={{}}>
               <Text style={{fontSize:16,color:'#000000',fontWeight:'600', marginVertical:3}}>Aarianna Barnes, 26</Text>
               <Text style={{fontSize:14,color:'#000000',fontWeight:'500',marginVertical:3}}>Product Designer</Text>
@@ -86,7 +84,6 @@ const Home = props => {
                 <Text style={{color:'#FF0000',fontWeight:'700',fontSize:18}}>75%</Text>
             </View>
           </View>
-        </ImageBackground>
       </View>
       <View style={styles.bottom}>
         <Image source={dislike} />
@@ -110,15 +107,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginHorizontal: 15,
-    // backgroundColor:'red'
   },
   heading: {
     flex: 0.1,
-    // backgroundColor:'red'
   },
   heading_one: {
     maxWidth: 280,
-    // backgroundColor: 'yellow',
     fontSize: 24,
     fontWeight: '500',
     color: '#5E5E5E',
@@ -129,24 +123,25 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   profile: {
-    flex: 0.65,
-    display:'flex',
-    alignContent: 'flex-end',
-    // backgroundColor:'yellow'
-    width:'100%'
+    flex: 0.8,
+    // display:'flex',
+    // alignContent: 'flex-end',
+    
   },
   image_card:{
         // flex: 0.65,
-        // width:'80%',
+         width:'85%',
       backgroundColor:'#FFFFFFCC',
     position:'absolute',
-     bottom:10,
-     left: 10,
-     right: 10,
+       bottom:10,
+    //  left: 10,
+    //  right: 10,
      display:'flex',
-     flexDirection:'row',
-     justifyContent:'space-between',
-     padding: 15,
+    //  alignItems:'center',
+      flexDirection:'row',
+    //  justifyContent:'center',
+     alignSelf:'center',
+    padding: 15,
 
      alignItems:'center',
     //  paddingHorizontal:20,

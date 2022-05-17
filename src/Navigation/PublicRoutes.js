@@ -42,6 +42,7 @@ import PrivacyPolicy from '../components/PrivacyPolicy/PrivacyPolicy';
 import FAQ from '../components/FAQ/FAQ';
 import ChangePassword from '../components/ForgotPassword/ChangePassword';
 import Verification from '../components/ForgotPassword/Verification';
+import UserProfile from '../components/UserProfile/UserProfile'
 
 
 // import {View} from 'native-base';
@@ -367,6 +368,18 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <Verification {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'userprofile',
+    component: props => (
+      <ComponentWrapper>
+       <UserProfile {...props}/>
       </ComponentWrapper  >
     ),
     headerProps: {
