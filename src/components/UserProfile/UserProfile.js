@@ -8,10 +8,12 @@ import {
   View,
   Text,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import {Divider} from 'native-base';
+import { SliderBox } from "react-native-image-slider-box";
 
-const UserProfile = () => {
+const UserProfile = (props) => {
   const image = require('../../assets/bg_pattern.png');
   const userImage = require('../../assets/pexelsgodisablejacob.png');
   const mapImage = require('../../assets/VectorMap.png');
@@ -20,16 +22,18 @@ const UserProfile = () => {
   const like = require('../../assets/like.png');
   const dislike = require('../../assets/dislike.png');
   const tick = require('../../assets/Tick.png');
-
+  const backIconImage = require('../../assets/backiconimage.png');
+  const images =[require('../../assets/pexelsgodisablejacob.png'), require('../../assets/pexelsgodisablejacob.png'), require('../../assets/pexelsgodisablejacob.png') ]
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ScrollView>
         <ImageBackground
-          resizeMode="contain"
+          resizeMode="cover"
           source={image}
-          style={{width: '100%'}}>
-          <View>
-            <Image
+          style={{}}>
+          <View style={{flex:0.3,}} >
+
+            {/* <Image
               resizeMode="contain"
               source={userImage}
               style={{
@@ -37,11 +41,24 @@ const UserProfile = () => {
                 position: 'relative',
                 top: -40,
                 // backgroundColor: 'yellow',
-              }}></Image>
+              }}></Image> */}
 
             {/* <View style={{alignItems:'center'}}> */}
-
-            <View style={{alignItems: 'center'}}>
+            <Image source={backIconImage} style={{ position:'absolute'}} />  
+            <SliderBox 
+            dotColor={"red"}
+            dotStyle={{marginBottom:90, width:10,height:10}}
+              resizeMode="contain"
+              style={{
+                // backgroundColor:'red',
+               width: '100%',
+               marginTop: -37,
+                position: 'relative',
+                // top: -40,
+              }}
+             images={images} 
+             />
+            <View style={{alignItems: 'center', marginTop:30}}>
               <View style={styles.imagecard}>
                 <View >
                   <View style={{flexDirection:'row'}}>
@@ -91,7 +108,9 @@ const UserProfile = () => {
               </View>
               <View style={styles.bottom}>
                 <Image source={dislike} />
-                <Image source={like} />
+               <TouchableOpacity onPress={()=>{props.navigation.navigate('ItsAMatch')}}>
+               <Image source={like} />
+               </TouchableOpacity>
               </View>
             </View>
             {/* </View> */}
@@ -221,7 +240,9 @@ const styles = StyleSheet.create({
     color: '#000000',
     fontWeight: '500',
     fontSize: 22,
-    marginTop: 20,
+    // marginTop: 20,
+    marginVertical:10,
+    marginTop:20
   },
   innertext: {
     fontWeight: '400',
@@ -232,10 +253,11 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   InnerContainer: {
-    //flex:0.7,
-    //backgroundColor:'green',
-    paddingHorizontal: 20,
-    marginTop: -120,
+    alignSelf:'center',
+    flex:0.7,
+    paddingHorizontal: 17,
+    marginTop: -100,
+    // marginHorizontal:20
   },
   innerdiv: {
     marginTop: 10,
@@ -246,6 +268,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   textfour: {
+    marginVertical:7,
     color: '#000000',
     fontWeight: '600',
     fontSize: 16,
@@ -259,7 +282,6 @@ const styles = StyleSheet.create({
     // marginHorizontal:40,
     position: 'absolute',
     bottom: 230,
-    padding: 10,
     // paddingHorizontal: 20,
     padding:15,
     borderRadius: 14,

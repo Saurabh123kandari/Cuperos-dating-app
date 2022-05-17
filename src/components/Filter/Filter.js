@@ -102,6 +102,7 @@ const Filter = props => {
                   <View style={{marginTop:20}}>
                     <Slider
                       // w="3/4"
+                      size='sm'
                       colorScheme="red"
                       maxW="600"
                       defaultValue={45}
@@ -117,7 +118,7 @@ const Filter = props => {
                         {/* <View><Text>hii</Text></View> */}
                       </Slider.Track>
                       <Slider.Thumb>
-                      <View style={{bottom:30}}><Text style={{color:'red'}}>{onChangeDistanceValue}</Text></View>
+                      <View style={{bottom:30,}}><Text style={{color:'red'}}>{`${onChangeDistanceValue} mi`}</Text></View>
                       </Slider.Thumb>
                       
                     </Slider>
@@ -434,6 +435,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
   },
   option_button: {
+    marginHorizontal:2,
     borderWidth: 1,
     borderRadius: 10,
     borderColor: '#ffff',

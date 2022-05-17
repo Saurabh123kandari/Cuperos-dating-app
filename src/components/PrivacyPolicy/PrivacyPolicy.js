@@ -71,11 +71,12 @@ const styles = StyleSheet.create({
   },
   anotherview: {
     backgroundColor: '#F8F8F8',
-    flex: 0.6,
+    flex: 0.75,
     marginHorizontal: 20,
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 20,
+    paddingTop:20
   },
   conditiontext: {
     fontSize: 16,

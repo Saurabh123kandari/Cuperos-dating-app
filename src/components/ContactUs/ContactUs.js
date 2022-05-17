@@ -5,10 +5,11 @@ import {
   StyleSheet,
   View,
   Text,
+  TouchableOpacity
 } from 'react-native';
-import {Image} from 'native-base';
+import {Image, ChevronLeftIcon,} from 'native-base';
 
-const ContactUs = () => {
+const ContactUs = (props) => {
   const bgpattern = require('../../assets/bg_pattern.png');
   const rightarrow = require('../../assets/RightArrow.png');
   return (
@@ -17,13 +18,9 @@ const ContactUs = () => {
         source={bgpattern}
         style={{height: '100%', width: '100%'}}>
         <View style={styles.view_one}>
-          <Image
-            size={5}
-            resizeMode={'contain'}
-            //   borderRadius={100}
-            source={rightarrow}
-            alt="Alternate Text"
-          />
+        <TouchableOpacity onPress={()=>{props.navigation.goBack()}}>
+          <ChevronLeftIcon iconName="chevron-left" size="7" mx={1} />
+          </TouchableOpacity>
           <Text style={styles.inner_text}>Contact Us</Text>
         </View>
         <View style={styles.view_two}>
@@ -32,8 +29,8 @@ const ContactUs = () => {
             {'\n'}
             {'\n'}
             For any issues regarding the Cuperos, or {'\n'}if you have comments
-            or suggestions on {'\n'}how to improve it, please email us at {'\n'}
-            <Text style={{color: '#F48327'}}>support@cuperos.com</Text>
+            or suggestions on how to improve it, please email us at {'\n'}
+            <Text style={{color: '#F48327', fontWeight:'bold'}}>support@cuperos.com</Text>
             {'\n'}
             {'\n'}
             {'\n'}
@@ -72,17 +69,20 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
   },
   inner_text: {
+    fontWeight:'bold',
+    color: '#000000',
     textAlign: 'center',
     marginTop: -20,
-    fontWeight: '600',
+    // fontWeight: '600',
     fontSize: 24,
   },
   view_two: {
-    flex: 0.67,
+    flex: 0.8,
     backgroundColor: '#F8F8F8',
     marginHorizontal: 20,
+    marginTop:25,
     paddingVertical: 20,
-    paddingHorizontal: 30,
+    paddingHorizontal: 15,
     borderRadius: 10,
   },
   text_one: {
