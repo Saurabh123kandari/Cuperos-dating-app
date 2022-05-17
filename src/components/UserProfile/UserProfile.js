@@ -44,7 +44,10 @@ const UserProfile = (props) => {
               }}></Image> */}
 
             {/* <View style={{alignItems:'center'}}> */}
-            <Image source={backIconImage} style={{ position:'absolute'}} />  
+            <TouchableOpacity onPress={()=>{props.navigation.goBack()}} style={{position:'absolute', top:20, left:20, zIndex:10}}>
+            <Image source={backIconImage} style={{ }} />
+            </TouchableOpacity>
+             
             <SliderBox 
             dotColor={"red"}
             dotStyle={{marginBottom:90, width:10,height:10}}
@@ -53,7 +56,7 @@ const UserProfile = (props) => {
                 // backgroundColor:'red',
                width: '100%',
                marginTop: -37,
-                position: 'relative',
+               position: 'relative',
                 // top: -40,
               }}
              images={images} 
