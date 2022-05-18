@@ -76,6 +76,13 @@ const handleClick = (item) =>{
   })
   setData(updateValues)
  }
+ const handleCheckButton=()=>{
+  const finalData = data.filter((ques)=>{
+    if(ques?.check){
+      return ques
+    }
+  })
+}
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ScrollView>
@@ -119,6 +126,7 @@ const handleClick = (item) =>{
             style={styles.linearGradient}>
             <TouchableOpacity
               onPress={() => {
+                handleCheckButton()
                 // console.log(props.navigation, 'e..');
                 props.navigation.navigate('questionariessix');
               }}>
