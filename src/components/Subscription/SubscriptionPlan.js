@@ -71,6 +71,7 @@ const SubscriptionPlan = (props) => {
         </View>
 
         <View style={styles.viewtwo}>
+        <TouchableOpacity onPress={()=>{props.navigation.navigate('tabview')}}>
           <View style={styles.inner_view_one}>
             <Text style={styles.textone}>Free Basic Plan</Text>
             <Text style={styles.texttwo}>
@@ -114,7 +115,7 @@ const SubscriptionPlan = (props) => {
               </Text>
             </Collapsible>
           </View>
-
+          </TouchableOpacity>
           <View style={styles.inner_view_two}>
             <View
               style={{

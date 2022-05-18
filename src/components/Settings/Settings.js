@@ -1,11 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
   Text,
   View,
   Image,
-  
   TouchableOpacity,
 } from 'react-native';
 import {ARROW_ICON, ARROW_RIGHT} from '../../constant/App_Constant';
@@ -14,18 +13,15 @@ import LinearGradient from 'react-native-linear-gradient';
 import ToggleSwitch from 'toggle-switch-react-native';
 
 const Settings = props => {
+  const [autoRenew, setAutoRenew] = useState(false)
   const reward = require('../../assets/Reward.png');
   const arrow = require('../../assets/RightArrow.png');
   const lock = require('../../assets/Locks.png');
-
   return (
      <SafeAreaView style={styles.MainContainer}>
       <ScrollView >
         <View style={{flex: 0.05,backgroundColor:'red'}}>
-
         </View>
-
-
         <View style={styles.firstview}>
           <Image source={ARROW_ICON} style={{}} alt="Alternate Text"></Image>
           <Text style={styles.faqtext}>Settings</Text>
@@ -45,13 +41,13 @@ const Settings = props => {
                 }}>
                 <Text style={styles.innertexttwo}>Auto Renew</Text>
                 <ToggleSwitch
-                  isOn={false}
+                  isOn={autoRenew}
                   onColor="green"
                   offColor="red"
                   style={{marginLeft: 10}}
                   labelStyle={{color: 'black', fontWeight: '900'}}
                   size="small"
-                  onToggle={isOn => console.log('changed to : ', isOn)}
+                  onToggle={(isOn)=>{setAutoRenew(isOn)}}
                 />
               </View>
             </View>
@@ -100,8 +96,8 @@ const Settings = props => {
           <View>
             <Text style={styles.heading}>Notifications</Text>
             <View style={[styles.innerview, {flexDirection: 'column',paddingVertical:0}]}>
-              <Text style={[styles.textt,{marginTop:10}]}>Email</Text>
-              <Text style={[styles.textt,{marginTop:10}]}>Push notifications</Text>
+              <Text style={[styles.textt,{marginTop:10, paddingVertical:5}]}>Email</Text>
+              <Text style={[styles.textt,{marginTop:10, paddingVertical:5}]}>Push notifications</Text>
               <Text></Text>
             </View>
           </View>
@@ -142,7 +138,7 @@ const Settings = props => {
                 style={{
                   display: 'flex',
                   flexDirection: 'row',
-                  marginBottom: 10,
+                  marginBottom: 15,
                 }}>
                 <Text style={styles.innertextone}>Public</Text>
                 <View
@@ -312,6 +308,7 @@ const styles = StyleSheet.create({
     boxShadow: '0 0 6 rgba(0, 0, 0, 0.12)',
   },
   textt: {
+    // padding:5,
     color: '#383838',
     fontSize: 16,
     fontWeight: '400',
