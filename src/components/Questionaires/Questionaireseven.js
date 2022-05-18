@@ -30,9 +30,17 @@ const QuestionaireSeven = props => {
   const [drinkOrNot, setDrinkOrNot] = useState('');
   const [partnerDrinkOrNot, setPartnerDrinkOrNot] = useState('');
   const [hearAboutUs, setHearAboutUs] = useState('')
-  //   const image = {
-  //     uri: '/Users/manojsinghnegi/Documents/Work/cuperos/src/assets/bg_pattern.png',
-  //   };
+ 
+  const handleCheckButton=()=>{
+    const finalData ={
+      smokeOrNot: smokeOrNot,
+      partnerSmokeOrNot: partnerSmokeOrNot,
+      drinkOrNot: drinkOrNot,
+      partnerDrinkOrNot: partnerDrinkOrNot,
+      hearAboutUs: hearAboutUs
+    }
+    console.log(finalData, 'finaldata')
+ }
   return (
     <SafeAreaView style={styles.MainContainer}>
 <ScrollView>
@@ -204,6 +212,7 @@ const QuestionaireSeven = props => {
             style={styles.linearGradient}>
             <TouchableOpacity
               onPress={() => {
+                handleCheckButton()
                 // console.log(props.navigation, 'e..');
                 props.navigation.navigate('subscription');
               }}>

@@ -79,6 +79,14 @@ const Questionairethree = (props) => {
       })
       setData(updateValues)
      }
+
+     const handleCheckButton=()=>{
+      const finalData = data.filter((ques)=>{
+        if(ques?.check){
+          return ques
+        }
+      })
+    }
   return (
     <SafeAreaView style={styles.MainContainer}>
         <ScrollView>
@@ -118,6 +126,7 @@ const Questionairethree = (props) => {
                 style={styles.linearGradient}>
                   <TouchableOpacity
                   onPress={() => {
+                    handleCheckButton()
                     props.navigation.navigate('questionariesfour');
                   }}>
                 <Text style={styles.buttonText}>Next</Text>

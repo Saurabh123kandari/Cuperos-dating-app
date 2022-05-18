@@ -70,6 +70,14 @@ const handleClick = (item) =>{
   })
   SetQuestionaire(updatedQuestionaire)
 }
+const handleCheckButton=()=>{
+  const finalData = questionaire.filter((ques)=>{
+    if(ques?.check){
+      return ques
+    }
+  })
+  console.log(finalData, 'finaldata')
+}
   return (
     <SafeAreaView style={styles.MainContainer}>
       <ScrollView>
@@ -170,7 +178,8 @@ const handleClick = (item) =>{
             end={{x: 0, y: 1}}
             style={styles.linearGradient}>
             <TouchableOpacity
-              onPress={() => {
+              onPress={() => { 
+                handleCheckButton()
                 // console.log(props.navigation, 'e..');
                 props.navigation.navigate('questionariestwo');
               }}>
