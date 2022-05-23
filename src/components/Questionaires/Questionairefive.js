@@ -95,7 +95,7 @@ const handleClick = (item) =>{
             mt="6"
             mb="6"
             colorScheme="red"
-            value={35}
+            value={75}
             height="1.5"
             background="#D0D0D0"
           />

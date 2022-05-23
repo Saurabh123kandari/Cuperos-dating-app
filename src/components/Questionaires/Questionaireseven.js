@@ -55,7 +55,7 @@ const QuestionaireSeven = props => {
           mt="4"
           mb="6"
           colorScheme="red"
-          value={15}
+          value={95}
           height="1.5"
           background="#D0D0D0"
         />

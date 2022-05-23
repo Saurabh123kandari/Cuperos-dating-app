@@ -34,7 +34,7 @@ const SignupSchema = Yup.object().shape({
   country: Yup.string().required('Country is required'),
   postal: Yup.string().required('Required postal code'),
   password: Yup.string().required('Required password'),
-  confirmPassword: Yup.string().required('Required Confirm password'),
+  confirmPassword: Yup.string().required().oneOf([Yup.ref('password'), null], 'Passwords must match'),
   contactNumber: Yup.string().required('Required'),
 });
 const Signuptwo = (props) => {

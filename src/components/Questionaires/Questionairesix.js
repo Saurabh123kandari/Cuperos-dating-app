@@ -96,7 +96,7 @@ const Questionairesix = (props) => {
             mt="6"
             mb="6"
             colorScheme="red"
-            value={35}
+            value={85}
             height="1.5"
             background="#D0D0D0"
           />
