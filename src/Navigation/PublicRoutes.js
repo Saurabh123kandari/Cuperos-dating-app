@@ -43,8 +43,8 @@ import FAQ from '../components/FAQ/FAQ';
 import ChangePassword from '../components/ForgotPassword/ChangePassword';
 import Verification from '../components/ForgotPassword/Verification';
 import UserProfile from '../components/UserProfile/UserProfile'
-
-
+import MyProfileDemo from '../components/UserProfile/MyProfileDemo'
+import MyProfileDemoTwo from '../components/UserProfile/MyProfileDemoTwo'
 // import {View} from 'native-base';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 // import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -380,6 +380,30 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <UserProfile {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'myprofiledemo',
+    component: props => (
+      <ComponentWrapper>
+       <MyProfileDemo {...props}/>
+      </ComponentWrapper  >
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'myprofiledemotwo',
+    component: props => (
+      <ComponentWrapper>
+       <MyProfileDemoTwo {...props}/>
       </ComponentWrapper  >
     ),
     headerProps: {
