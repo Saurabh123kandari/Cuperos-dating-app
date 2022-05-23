@@ -40,7 +40,7 @@ const Home = props => {
     <SafeAreaView style={styles.MainContainer}>
       <View style={styles.header}>
         <TouchableOpacity onPress={()=>{
-          props.navigation.navigate('MyProfile')
+          props.navigation.navigate('myprofiledemo')
       }}>
         <Image style={styles.image_header} source={roundImage} />
         </TouchableOpacity>
