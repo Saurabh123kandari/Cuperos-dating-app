@@ -43,8 +43,13 @@ import FAQ from '../components/FAQ/FAQ';
 import ChangePassword from '../components/ForgotPassword/ChangePassword';
 import Verification from '../components/ForgotPassword/Verification';
 import UserProfile from '../components/UserProfile/UserProfile'
+<<<<<<< HEAD
 import MyProfileDemo from '../components/UserProfile/MyProfileDemo'
 import MyProfileDemoTwo from '../components/UserProfile/MyProfileDemoTwo'
+=======
+import ResetPassword from '../components/ForgotPassword/ResetPassword';
+
+>>>>>>> main
 // import {View} from 'native-base';
 // import {createDrawerNavigator} from '@react-navigation/drawer';
 // import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -272,7 +277,7 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <MyProfile {...props}/>
-      </ComponentWrapper  >
+      </ComponentWrapper>
     ),
     headerProps: {
       title: 'pro',
@@ -284,7 +289,7 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <ItsAMatch {...props}/>
-      </ComponentWrapper  >
+      </ComponentWrapper>
     ),
     headerProps: {
       title: 'pro',
@@ -296,7 +301,7 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <Settings {...props}/>
-      </ComponentWrapper  >
+      </ComponentWrapper>
     ),
     headerProps: {
       title: 'pro',
@@ -308,7 +313,7 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <Reward {...props}/>
-      </ComponentWrapper  >
+      </ComponentWrapper>
     ),
     headerProps: {
       title: 'pro',
@@ -320,7 +325,7 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <ContactUs {...props}/>
-      </ComponentWrapper  >
+      </ComponentWrapper>
     ),
     headerProps: {
       title: 'pro',
@@ -356,7 +361,19 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <ChangePassword {...props}/>
-      </ComponentWrapper  >
+      </ComponentWrapper>
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'resetpassword',
+    component: props => (
+      <ComponentWrapper>
+       <ResetPassword {...props}/>
+      </ComponentWrapper>
     ),
     headerProps: {
       title: 'pro',
@@ -368,7 +385,7 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <Verification {...props}/>
-      </ComponentWrapper  >
+      </ComponentWrapper>
     ),
     headerProps: {
       title: 'pro',
@@ -380,7 +397,7 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <UserProfile {...props}/>
-      </ComponentWrapper  >
+      </ComponentWrapper>
     ),
     headerProps: {
       title: 'pro',
