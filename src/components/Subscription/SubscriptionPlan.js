@@ -22,7 +22,7 @@ const SubscriptionPlan = (props) => {
   const innerimage = require('../../assets/Maskgroup.png');
   const arrowicon = require('../../assets/Vector7.png');
   const downarrow = require('../../assets/Vector6.png');
-  const downarrows = require('../../assets/Vector8.png');
+  const downArrowWhite = require('../../assets/Vector8.png');
   const data = [
     {
       id: 0,
@@ -98,11 +98,13 @@ const SubscriptionPlan = (props) => {
                   onPress={() => {
                     setIsBasicDetails(!isBasicDetails);
                   }}>
+                <View style={{ flexDirection: 'row',}}>
                   <Text
                     style={{color: '#F14E53', fontSize: 14, fontWeight: '400'}}>
                     Details
                   </Text>
-                  <Image style={{marginTop: 4}} source={downarrow}></Image>
+                  <Image style={{margin: 7}} source={downarrow}></Image>
+                </View>
                 </TouchableOpacity>
               </View>
             </View>
@@ -158,11 +160,13 @@ const SubscriptionPlan = (props) => {
                   onPress={() => {
                     setIsStandardDetails(!isStandardDetails);
                   }}>
+                <View style={{ flexDirection: 'row',}}>
                   <Text
                     style={{color: '#FFFFFF', fontSize: 14, fontWeight: '400'}}>
                     Details
                   </Text>
-                  <Image style={{marginTop: 4}} source={downarrows}></Image>
+                  <Image style={{margin: 7}} source={downArrowWhite}></Image>
+                  </View>
                 </TouchableOpacity>
               </View>
             </View>
@@ -230,11 +234,13 @@ const SubscriptionPlan = (props) => {
                   onPress={() => {
                     setIsPremiumDetails(!isPremiumDetails);
                   }}>
+                 <View style={{ flexDirection: 'row',}}>
                   <Text
                     style={{color: '#F14E53', fontSize: 14, fontWeight: '400'}}>
                     Details
                   </Text>
-                  <Image style={{marginTop: 4}} source={downarrow}></Image>
+                  <Image style={{margin: 7}} source={downarrow}></Image>
+                </View>
                 </TouchableOpacity>
               </View>
             </View>
