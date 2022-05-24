@@ -12,16 +12,22 @@ import {Image, ScrollView, Input} from 'native-base';
 
 const ChatList = () => {
   const bgimage = require('../../assets/bg_pattern.png');
+  const blueHeartImage = require('../../assets/blueheart.png')
   const data = [
+    // {
+    //   id: 1,
+    //   profileimage: require('../../assets/blueheart.png'),
+    //   text: 'Likes',
+    // },
     {
       id: 1,
       profileimage: require('../../assets/ProfileIcon.png'),
-      text: 'Likes',
+      text: 'Rima',
     },
     {
       id: 2,
       profileimage: require('../../assets/ProfileIcon.png'),
-      text: 'Rima',
+      text: 'Anita',
     },
     {
       id: 3,
@@ -38,7 +44,6 @@ const ChatList = () => {
       profileimage: require('../../assets/ProfileIcon.png'),
       text: 'Anita',
     },
-
     {
       id: 6,
       profileimage: require('../../assets/ProfileIcon.png'),
@@ -49,16 +54,10 @@ const ChatList = () => {
       profileimage: require('../../assets/ProfileIcon.png'),
       text: 'Anita',
     },
-    {
-      id: 8,
-      profileimage: require('../../assets/ProfileIcon.png'),
-      text: 'Anita',
-    },
   ];
 
   const profileimage = require('../../assets/ProfileIcon.png');
-  const searchimage = require('../../assets/ChatSearch.png');
-  
+  const searchimage = require('../../assets/ChatSearch.png');  
   return (
     <View style={styles.MainContainer}>
       <View style={styles.view_one}>
@@ -75,16 +74,26 @@ const ChatList = () => {
               style={{marginHorizontal: 20}}
               size={5}
               resizeMode="contain"></Image>
-          }></Input>
+               }>
+             </Input>
       </View>
 
       <View style={styles.view_three}>
         <Text style={styles.text_two}>Matches</Text>
        
         <ScrollView horizontal>
+        <View style={{marginTop: 20, padding: 10}}>
+        <Image
+          size={50}
+          resizeMode={'contain'}
+          borderRadius={100}
+          source={blueHeartImage}
+          alt="Alternate Text"
+        />
+        <Text style={{padding:5, marginLeft:3}}>Likes</Text>
+      </View>
           {data.map(item => {
             return (
-              <>
                 <View style={{marginTop: 20, padding: 10}}>
                   <Image
                     size={50}
@@ -93,11 +102,8 @@ const ChatList = () => {
                     source={item.profileimage}
                     alt="Alternate Text"
                   />
-                  <Text style={{}}>{item.text}</Text>
-
-                  {/* <Image  source={item.profileimage} style={{borderRadius:100,}}></Image> */}
-                </View>
-              </>
+                  <Text style={{padding:5,marginLeft:3}}>{item.text}</Text>
+                </View>           
             );
           })}
         </ScrollView>
@@ -117,23 +123,18 @@ const styles = StyleSheet.create({
   },
   view_one: {
     flex: 0.1,
-  // backgroundColor:'green'
   },
   view_two: {
     flex: 0.1,
-    // backgroundColor:'orange' ,
     paddingHorizontal: 20,
   },
   view_three: {
     flex: 0.2,
-    // backgroundColor: 'yellow',
     paddingHorizontal: 20,
     display: 'flex',
-    //flexDirection: 'row',
   },
   view_four: {
     flex: 0.6,
-  //  backgroundColor:'pink' ,
     paddingHorizontal: 20,
   },
   text_one: {
