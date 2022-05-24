@@ -103,7 +103,13 @@ const Questionairefour = props => {
             return (
               <TouchableOpacity onPress={() => handleClick(item)}>
                 <View
-                  style={item?.check ? [styles.inner_view_two, {backgroundColor: '#FF0000'}] : styles.inner_view_two}>
+                  style={item?.check ? [styles.inner_view_two,{backgroundColor: '#ff0000'}] : styles.inner_view_two}>
+                  {item?.check ? <View style={styles.redCheck}>
+                    <Image style={styles.imageStyle}
+                      source={require('../../assets/RedCheck.png')}
+                    />
+                  </View>
+                    : null}
                   <View
                     style={ item?.check ? [styles.inner_view, {backgroundColor: '#C70000'}] : styles.inner_view }>
                     <Image
@@ -111,7 +117,7 @@ const Questionairefour = props => {
                       style={{width: 32, height: 32, color: '#9D9D9D'}}
                       alt="Alternate Text"></Image>
                   </View>
-                  <Text style={item?.check ? [styles.texttwo, {color: '#FFFFFF'}] : styles.texttwo}>
+                  <Text style={item?.check ? [styles.texttwo, {color: '#ffffff'}] : styles.texttwo}>
                     {item.text}
                   </Text>
                 </View>
@@ -143,6 +149,19 @@ const styles = StyleSheet.create({
   MainContainer: {
     flex: 1,
     backgroundColor: '#FFFFFF',
+  },
+  redCheck:{
+    position:'absolute',
+    width: 34,
+    height: 34,
+    right:-10,
+    top:-10,
+
+  },
+  imageStyle:{
+    borderWidth:4,
+    borderColor:'#ffffff',
+    borderRadius:50
   },
   icon_view_one: {
     marginTop: 10,
