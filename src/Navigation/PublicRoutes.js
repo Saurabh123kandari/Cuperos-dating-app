@@ -43,6 +43,7 @@ import FAQ from '../components/FAQ/FAQ';
 import ChangePassword from '../components/ForgotPassword/ChangePassword';
 import Verification from '../components/ForgotPassword/Verification';
 import UserProfile from '../components/UserProfile/UserProfile'
+import EditProfile from '../components/UserProfile/EditProfile'
 import MyProfileDemo from '../components/UserProfile/MyProfileDemo'
 import MyProfileDemoTwo from '../components/UserProfile/MyProfileDemoTwo'
 import ResetPassword from '../components/ForgotPassword/ResetPassword';
@@ -394,6 +395,18 @@ const stackArray = [
     component: props => (
       <ComponentWrapper>
        <UserProfile {...props}/>
+      </ComponentWrapper>
+    ),
+    headerProps: {
+      title: 'pro',
+      showBack: false,
+    },
+  },
+  {
+    name: 'editprofile',
+    component: props => (
+      <ComponentWrapper>
+       <EditProfile {...props}/>
       </ComponentWrapper>
     ),
     headerProps: {
