@@ -33,8 +33,14 @@ const SignupSchema = Yup.object().shape({
   qualification: Yup.string().required('Qualification is required'),
   country: Yup.string().required('Country is required'),
   postal: Yup.string().required('Required postal code'),
-  password: Yup.string().required('Required password'),
-  confirmPassword: Yup.string().required('Required Confirm password'),
+  password: Yup
+    .string()
+    .required('Please Enter your password')
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+      "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+    ),
+  confirmPassword: Yup.string().required().oneOf([Yup.ref('password'), null], 'Passwords must match'),
   contactNumber: Yup.string().required('Required'),
 });
 const Signuptwo = (props) => {
